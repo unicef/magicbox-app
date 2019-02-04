@@ -1,28 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { connect } from 'react-redux';
+import KeplerGl from 'kepler.gl';
+
+const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <KeplerGl
+          id="map"
+          mapboxApiAccessToken={MAPBOX_TOKEN}
+        />
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => state;
+const mapDispathToProps = dispatch => ({dispatch});
+
+export default connect(mapStateToProps, mapDispathToProps)(App);
