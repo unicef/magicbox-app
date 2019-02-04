@@ -10,8 +10,15 @@ import keplerGlReducer from 'kepler.gl/reducers';
 import {taskMiddleware} from 'react-palm/tasks';
 import {handleActions} from 'redux-actions';
 
+const customKeplerGlReducer = keplerGlReducer.initialState({
+  uiState: {
+    currentModal: null,
+    activeSidePanel: null,
+  }
+});
+
 const reducers = combineReducers({
-  keplerGl: keplerGlReducer,
+  keplerGl: customKeplerGlReducer,
   app: handleActions({}, {}),
 });
 
