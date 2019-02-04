@@ -14,7 +14,18 @@ const customKeplerGlReducer = keplerGlReducer.initialState({
   uiState: {
     currentModal: null,
     activeSidePanel: null,
-  }
+    readOnly: true,
+    mapControls: {
+      splitMap: { show: false },
+      toggle3d: { show: false },
+      mapLegend: { show: true },
+    },
+  },
+  mapState: {
+    zoom: 2,
+    latitude: 0,
+    longitude: 0,
+  },
 });
 
 const reducers = combineReducers({
