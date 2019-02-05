@@ -3,10 +3,32 @@ import { connect } from 'react-redux';
 import KeplerGl from 'kepler.gl';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 import './App.css';
+import { addDataToMap } from 'kepler.gl/actions';
+import Processors from 'kepler.gl/processors';
 
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
 class App extends Component {
+
+  componentDidMount() {
+    fetch('/countries.json')
+    .then(res => res.json())
+    .then(t => {
+      let dataSets = {
+        datasets: [
+          {
+            info: {
+              id: 'global-admin-0',
+              label: 'global-admin-0'
+            },
+            data: Processors.processGeojson(t)
+          }
+        ]
+      };
+      this.props.dispatch(addDataToMap(dataSets));
+    })
+    .catch(err => console.log(err))
+  }
 
   render() {
     return (
