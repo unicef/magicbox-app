@@ -4,13 +4,12 @@ import KeplerGl from 'kepler.gl';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 import './App.css';
 
-
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
 class App extends Component {
 
   render() {
-return (
+    return (
       <div className="App">
         <AutoSizer>
           {({height, width}) => (
