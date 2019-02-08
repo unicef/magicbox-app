@@ -22,7 +22,7 @@ const Root = ({ store }) => (
 );
 
 Root.propTypes = {
-  store: PropTypes.objectOf(PropTypes.object()).isRequired,
+  store: PropTypes.shape({}).isRequired,
 };
 
 export default Root;
