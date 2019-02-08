@@ -17,7 +17,7 @@ class App extends Component {
     .then(data => {
       this.props.dispatch(addDataToMap(data));
     })
-    .catch(err => console.log(err))
+    .catch(console.error)
   }
 
   render() {
