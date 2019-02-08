@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import KeplerGl from 'kepler.gl';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 import './App.css';
-import { addDataToMap } from 'kepler.gl/actions';
+import { addDataToMap, onLayerClick } from 'kepler.gl/actions';
 import Processors from 'kepler.gl/processors';
 
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
@@ -19,10 +19,10 @@ class App extends Component {
           {
             info: {
               id: 'global-admin-0',
-              label: 'global-admin-0'
+              label: 'global-admin-0',
             },
-            data: Processors.processGeojson(t)
-          }
+            data: Processors.processGeojson(t),
+          },
         ]
       };
       this.props.dispatch(addDataToMap(dataSets));
@@ -31,6 +31,8 @@ class App extends Component {
   }
 
   render() {
+    let { onCountryClick } = this.props;
+
     return (
       <div className="App">
         <AutoSizer>
@@ -40,6 +42,7 @@ class App extends Component {
               mapboxApiAccessToken={MAPBOX_TOKEN}
               height={height}
               width={width}
+              actions={{ onLayerClick: onCountryClick }}
             />
           )}
         </AutoSizer>
@@ -47,8 +50,18 @@ class App extends Component {
     );
   }
 }
-
 const mapStateToProps = state => state;
-const mapDispathToProps = dispatch => ({dispatch});
+const mapDispathToProps = dispatch => ({
+  dispatch,
+  onCountryClick: (info) => {
+    // A country click event only happens if the user has clicked in a country
+    if (info) {
+      console.log('will dispatch country click for:', info.object.properties);
+    }
+
+    // Dispatch usual action
+    return onLayerClick(info);
+  },
+});
 
 export default connect(mapStateToProps, mapDispathToProps)(App);
