@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import KeplerGl from 'kepler.gl';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 import './App.css';
-import { addDataToMap } from 'kepler.gl/actions';
-import Processors from 'kepler.gl/processors';
 
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
@@ -20,7 +18,6 @@ class App extends Component {
               mapboxApiAccessToken={MAPBOX_TOKEN}
               height={height}
               width={width}
-              onMapClick={this.onClick}
             />
           )}
         </AutoSizer>
