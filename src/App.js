@@ -13,19 +13,9 @@ class App extends Component {
   componentDidMount() {
     fetch('/countries.json')
     .then(res => res.json())
-    .then(t => {
-      let dataSets = {
-        datasets: [
-          {
-            info: {
-              id: 'global-admin-0',
-              label: 'global-admin-0',
-            },
-            data: Processors.processGeojson(t),
-          },
-        ]
-      };
-      this.props.dispatch(addDataToMap(dataSets));
+    .then(Processors.processKeplerglJSON)
+    .then(data => {
+      this.props.dispatch(addDataToMap(data));
     })
     .catch(err => console.log(err))
   }
