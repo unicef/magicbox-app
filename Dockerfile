@@ -1,7 +1,7 @@
 FROM nginx:1.15.2-alpine
 
 # Copy Nginx config
-COPY ./configs/nginx.conf /etc/nginx/nginx.conf
+COPY ./config/nginx.conf /etc/nginx/nginx.conf
 
 # Copy static files
 COPY ./build /var/www
