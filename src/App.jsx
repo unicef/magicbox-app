@@ -24,7 +24,7 @@ class App extends Component {
   render() {
     let { onCountryClick } = this.props;
 
-    console.log("Current selected country is:", this.props.app.country);
+    //console.log("Current selected country is:", this.props.app.country);
 
     return (
       <div className="App">

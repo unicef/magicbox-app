@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import * as serviceWorker from './serviceWorker';
 import { createStore, applyMiddleware } from 'redux';
 import { taskMiddleware } from 'react-palm/tasks';
+import thunk from 'redux-thunk';
+import './index.css';
+import * as serviceWorker from './serviceWorker';
 import Root from './components/Root';
 import reducers from './reducers';
 
 // Creating the store
-const store = createStore(reducers, applyMiddleware(taskMiddleware));
+const store = createStore(reducers, applyMiddleware(taskMiddleware, thunk));
 
 // Render the root component
 ReactDOM.render(<Root store={store} />, document.getElementById('root'));
