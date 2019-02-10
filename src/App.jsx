@@ -5,31 +5,37 @@ import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 import './App.css';
 import { addDataToMap, onLayerClick } from 'kepler.gl/actions';
 import Processors from 'kepler.gl/processors';
-import { onCountryClick } from './actions';
+import PropTypes from 'prop-types';
+import * as Actions from './actions';
 
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
 class App extends Component {
-
   componentDidMount() {
+    const { dispatch } = this.props;
+
+    dispatch(Actions.loadData('/countries.json'));
+
+    // this.props.match.params
     fetch('/countries.json')
-    .then(res => res.json())
-    .then(Processors.processKeplerglJSON)
-    .then(data => {
-      this.props.dispatch(addDataToMap(data));
-    })
-    .catch(console.error)
+      .then(res => res.json())
+      .then(Processors.processKeplerglJSON)
+      .then(data => dispatch(addDataToMap(data)))
+      // eslint-disable-next-line
+      .catch(console.error);
   }
 
   render() {
-    let { onCountryClick } = this.props;
+    const { onCountryClick } = this.props;
 
-    //console.log("Current selected country is:", this.props.app.country);
+    // console.log("Current selected country is:", this.props.app.country);
+    // eslint-disable-next-line
+    console.log('percentage:', this.props.app.ui.loading);
 
     return (
       <div className="App">
         <AutoSizer>
-          {({height, width}) => (
+          {({ height, width }) => (
             <KeplerGl
               id="map"
               mapboxApiAccessToken={MAPBOX_TOKEN}
@@ -44,13 +50,18 @@ class App extends Component {
   }
 }
 
+App.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  onCountryClick: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = state => state;
 const mapDispathToProps = dispatch => ({
   dispatch,
   onCountryClick: (info) => {
     // A country click event only happens if the user has clicked in a country
     if (info) {
-      dispatch(onCountryClick(info.object.properties));
+      dispatch(Actions.onCountryClick(info.object.properties));
     }
 
     // Dispatch usual action

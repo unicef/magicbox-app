@@ -25,7 +25,7 @@ const loadData = url => ((dispatch) => {
     .then((response) => {
       // get stream reader
       const reader = response.body.getReader();
-      const totalSize = response.headers.get('Content-Length');
+      const totalSize = parseFloat(response.headers.get('Content-Length'), 10) || 0;
       let totalRead = 0;
 
       return new ReadableStream({
@@ -40,7 +40,7 @@ const loadData = url => ((dispatch) => {
             totalRead += value.byteLength;
             // dispatch fetching data with percentage read
             if (totalSize !== 0) {
-              dispatch(fetchData(totalRead / totalSize));
+              dispatch(fetchingData(totalRead / totalSize));
             }
             // Enqueue value
             controller.enqueue(value);
@@ -57,7 +57,7 @@ const loadData = url => ((dispatch) => {
     // parse to json
     .then(response => response.json())
     // set fetching data with 1 -> 100%
-    .then(data => dispatch(fetchData(data)))
+    .then(data => dispatch(fetchedData(data)))
     // set error
     .catch(err => dispatch(errorFetchingData(err)));
 });
