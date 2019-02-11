@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect, ReactReduxContext } from 'react-redux';
-import KeplerGl from 'kepler.gl';
-import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 import './App.css';
 import PropTypes from 'prop-types';
 import * as Actions from './actions';
+import Map from './components/Map';
 
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
@@ -23,24 +22,17 @@ class App extends Component {
     console.log('percentage:', this.props.app.ui.loading);
 
     return (
-      <ReactReduxContext.Consumer>
-        {({ store }) => (
-          <div className="App">
-            <AutoSizer>
-              {({ height, width }) => (
-                <KeplerGl
-                  id="map"
-                  mapboxApiAccessToken={MAPBOX_TOKEN}
-                  height={height}
-                  width={width}
-                  actions={{ onLayerClick: onCountryClick }}
-                  store={store}
-                />
-              )}
-            </AutoSizer>
-          </div>
-        )}
-      </ReactReduxContext.Consumer>
+      <div className="App">
+        <ReactReduxContext.Consumer>
+          {({ store }) => (
+            <Map
+              store={store}
+              mapboxToken={MAPBOX_TOKEN}
+              onCountryClick={onCountryClick}
+            />
+          )}
+        </ReactReduxContext.Consumer>
+      </div>
     );
   }
 }
