@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect, ReactReduxContext } from 'react-redux';
-import './App.css';
 import PropTypes from 'prop-types';
+import { onLayerClick } from 'kepler.gl/actions';
+import './App.css';
 import * as Actions from './actions';
 import Map from './components/Map';
 
@@ -15,9 +16,12 @@ class App extends Component {
   }
 
   render() {
-    const { onCountryClick } = this.props;
+    const { onCountryClick, match: { params: { country } } } = this.props;
     // eslint-disable-next-line
     console.log('percentage:', this.props.app.ui.loading);
+
+    // Country click should only be available when no country is selected
+    const clickCallback = country ? onLayerClick : onCountryClick;
 
     return (
       <div className="App">
@@ -26,7 +30,7 @@ class App extends Component {
             <Map
               store={store}
               mapboxToken={MAPBOX_TOKEN}
-              onCountryClick={onCountryClick}
+              onCountryClick={clickCallback}
             />
           )}
         </ReactReduxContext.Consumer>
