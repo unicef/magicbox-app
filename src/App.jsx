@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect, ReactReduxContext } from 'react-redux';
 import KeplerGl from 'kepler.gl';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 import './App.css';
@@ -24,19 +24,24 @@ class App extends Component {
     console.log('percentage:', this.props.app.ui.loading);
 
     return (
-      <div className="App">
-        <AutoSizer>
-          {({ height, width }) => (
-            <KeplerGl
-              id="map"
-              mapboxApiAccessToken={MAPBOX_TOKEN}
-              height={height}
-              width={width}
-              actions={{ onLayerClick: onCountryClick }}
-            />
-          )}
-        </AutoSizer>
-      </div>
+      <ReactReduxContext.Consumer>
+        {({ store }) => (
+          <div className="App">
+            <AutoSizer>
+              {({ height, width }) => (
+                <KeplerGl
+                  id="map"
+                  mapboxApiAccessToken={MAPBOX_TOKEN}
+                  height={height}
+                  width={width}
+                  actions={{ onLayerClick: onCountryClick }}
+                  store={store}
+                />
+              )}
+            </AutoSizer>
+          </div>
+        )}
+      </ReactReduxContext.Consumer>
     );
   }
 }
