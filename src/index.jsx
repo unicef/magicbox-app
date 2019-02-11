@@ -8,8 +8,18 @@ import * as serviceWorker from './serviceWorker';
 import Root from './components/Root';
 import reducers from './reducers';
 
+// Setting up middlewares
+/* thunk and taskMiddleware are somehow conflicting
+ * for use cases where we need to concatenate a async
+ * task after another async task. In this case, the
+ * second async task is immediately dispatched.
+ * To overcome this issue, thunk has to be applied
+ * before taskMiddleware.
+ * */
+const middlewares = [thunk, taskMiddleware];
+
 // Creating the store
-const store = createStore(reducers, applyMiddleware(taskMiddleware, thunk));
+const store = createStore(reducers, applyMiddleware(...middlewares));
 
 // Render the root component
 ReactDOM.render(<Root store={store} />, document.getElementById('root'));

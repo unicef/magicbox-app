@@ -1,13 +1,16 @@
 import ActionTypes from '../constants/action-types';
 
+const DEFAULT_DATASET_NAME = 'shape.json';
+const DEFAULT_PATH = '/';
+
 export const INITIAL_APP_STATE = {
   ui: {
     loading: 1,
     error: null,
   },
   data: {
-    path: '/',
-    datasetName: 'countries.json',
+    path: DEFAULT_PATH,
+    datasetName: DEFAULT_DATASET_NAME,
     dataset: null,
   },
 };
@@ -30,8 +33,9 @@ export const fetchDataUpdater = (state, action) => ({
   },
   data: {
     ...state.data,
-    // get from pattern url in the payload
-    path: action.payload,
+    path: action.payload.path || DEFAULT_PATH,
+    datasetName: action.payload.dataset || DEFAULT_DATASET_NAME,
+    dataset: null,
   },
 });
 

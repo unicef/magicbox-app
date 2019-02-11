@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import KeplerGl from 'kepler.gl';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 import './App.css';
-import { addDataToMap, onLayerClick } from 'kepler.gl/actions';
-import Processors from 'kepler.gl/processors';
+import { onLayerClick } from 'kepler.gl/actions';
 import PropTypes from 'prop-types';
 import * as Actions from './actions';
 
@@ -12,23 +11,15 @@ const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
 class App extends Component {
   componentDidMount() {
-    const { dispatch } = this.props;
-
-    dispatch(Actions.loadData('/countries.json'));
-
-    // this.props.match.params
-    fetch('/countries.json')
-      .then(res => res.json())
-      .then(Processors.processKeplerglJSON)
-      .then(data => dispatch(addDataToMap(data)))
-      // eslint-disable-next-line
-      .catch(console.error);
+    const { onLoadMap } = this.props;
+    // eslint-disable-next-line
+    const { country, dataset } = this.props.match.params;
+    // eslint-disable-next-line
+    onLoadMap(dataset, this.props.match.path);
   }
 
   render() {
     const { onCountryClick } = this.props;
-
-    // console.log("Current selected country is:", this.props.app.country);
     // eslint-disable-next-line
     console.log('percentage:', this.props.app.ui.loading);
 
@@ -51,8 +42,8 @@ class App extends Component {
 }
 
 App.propTypes = {
-  dispatch: PropTypes.func.isRequired,
   onCountryClick: PropTypes.func.isRequired,
+  onLoadMap: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => state;
@@ -67,6 +58,7 @@ const mapDispathToProps = dispatch => ({
     // Dispatch usual action
     return onLayerClick(info);
   },
+  onLoadMap: (dataset, path) => dispatch(Actions.loadDataToMap(dataset, path)),
 });
 
 export default connect(mapStateToProps, mapDispathToProps)(App);

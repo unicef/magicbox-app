@@ -1,4 +1,6 @@
 import { createAction } from 'redux-actions';
+import { addDataToMap } from 'kepler.gl/actions';
+import Processors from 'kepler.gl/processors';
 import ActionTypes from '../constants/action-types';
 
 const [
@@ -16,12 +18,16 @@ const [
 ].map(action => createAction(action));
 
 // Load data action
-const loadData = url => ((dispatch) => {
+const loadData = (dataset = null, path = null) => ((dispatch, getState) => {
   // Initialize fetching state
-  dispatch(fetchData(url));
+  dispatch(fetchData({ dataset, path }));
+
+  // fetch dataset from url
+  const { app: { data } } = getState();
+  const url = `${data.path}${data.datasetName}`;
 
   // Fetch data from url
-  fetch(url)
+  return fetch(url)
     .then((response) => {
       // get stream reader
       const reader = response.body.getReader();
@@ -57,10 +63,18 @@ const loadData = url => ((dispatch) => {
     // parse to json
     .then(response => response.json())
     // set fetching data with 1 -> 100%
-    .then(data => dispatch(fetchedData(data)))
+    .then(responseJson => dispatch(fetchedData(responseJson)))
     // set error
     .catch(err => dispatch(errorFetchingData(err)));
 });
+
+// Load data to map
+const loadDataToMap = (dataset = null, path = null) => ((dispatch, getState) => (
+  dispatch(loadData(dataset, path))
+    .then(() => getState().app.data.dataset)
+    .then(Processors.processKeplerglJSON)
+    .then(data => dispatch(addDataToMap(data)))
+));
 
 export {
   onCountryClick,
@@ -69,4 +83,5 @@ export {
   fetchedData,
   errorFetchingData,
   loadData,
+  loadDataToMap,
 };
