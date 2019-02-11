@@ -1,6 +1,7 @@
 import { createAction } from 'redux-actions';
 import { addDataToMap, onLayerClick } from 'kepler.gl/actions';
 import Processors from 'kepler.gl/processors';
+import { push } from 'connected-react-router';
 import ActionTypes from '../constants/action-types';
 
 const [
@@ -20,10 +21,16 @@ const [
 ].map(action => createAction(action));
 
 // On country click action
-const onCountryClick = info => (dispatch) => {
+const onCountryClick = info => (dispatch, getState) => {
+  // dispatch country select action
   dispatch(onCountrySelect(info.object.properties));
+  // dispatch usual kepler.gl action
   dispatch(onLayerClick(info));
-  // history.push(`${data.path}${data.dataset}`);
+  // get current state
+  const { app: { data } } = getState();
+  // dispatch push to change the url
+  dispatch(push(data.path));
+  // return noop because kepler is expecting a action
   return noop();
 };
 
@@ -35,6 +42,9 @@ const loadData = (dataset = null, path = null) => ((dispatch, getState) => {
   // fetch dataset from url
   const { app: { data } } = getState();
   const url = `${data.path}${data.datasetName}`;
+
+  // eslint-disable-next-line
+  console.log('Getting data from:', url);
 
   // Fetch data from url
   return fetch(url)
