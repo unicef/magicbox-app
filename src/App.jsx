@@ -3,7 +3,6 @@ import { connect, ReactReduxContext } from 'react-redux';
 import KeplerGl from 'kepler.gl';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 import './App.css';
-import { onLayerClick } from 'kepler.gl/actions';
 import PropTypes from 'prop-types';
 import * as Actions from './actions';
 
@@ -54,15 +53,7 @@ App.propTypes = {
 const mapStateToProps = state => state;
 const mapDispathToProps = dispatch => ({
   dispatch,
-  onCountryClick: (info) => {
-    // A country click event only happens if the user has clicked in a country
-    if (info) {
-      dispatch(Actions.onCountryClick(info.object.properties));
-    }
-
-    // Dispatch usual action
-    return onLayerClick(info);
-  },
+  onCountryClick: info => dispatch(Actions.onCountryClick(info)),
   onLoadMap: (dataset, path) => dispatch(Actions.loadDataToMap(dataset, path)),
 });
 

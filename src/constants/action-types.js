@@ -1,6 +1,7 @@
 // All action types
 const ActionTypes = Object.keys({
-  COUNTRY_CLICK: null,
+  NOOP: null,
+  COUNTRY_SELECT: null,
   FETCH_DATA: null,
   FETCHING_DATA: null,
   FETCHED_DATA: null,

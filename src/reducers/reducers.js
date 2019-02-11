@@ -16,7 +16,7 @@ export const INITIAL_APP_STATE = {
 };
 
 // Update country name
-export const countryClickUpdater = (state, action) => ({
+export const countrySelectUpdater = (state, action) => ({
   ...state,
   data: {
     ...state.data,
@@ -71,7 +71,7 @@ export const errorFetchingDataUpdater = (state, action) => ({
 });
 
 export default {
-  [ActionTypes.COUNTRY_CLICK]: countryClickUpdater,
+  [ActionTypes.COUNTRY_SELECT]: countrySelectUpdater,
   [ActionTypes.FETCH_DATA]: fetchDataUpdater,
   [ActionTypes.FETCHING_DATA]: fetchingDataUpdater,
   [ActionTypes.FETCHED_DATA]: fetchedDataUpdater,

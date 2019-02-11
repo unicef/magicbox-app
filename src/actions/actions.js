@@ -1,21 +1,31 @@
 import { createAction } from 'redux-actions';
-import { addDataToMap } from 'kepler.gl/actions';
+import { addDataToMap, onLayerClick } from 'kepler.gl/actions';
 import Processors from 'kepler.gl/processors';
 import ActionTypes from '../constants/action-types';
 
 const [
-  onCountryClick,
+  noop,
+  onCountrySelect,
   fetchData,
   fetchingData,
   fetchedData,
   errorFetchingData,
 ] = [
-  ActionTypes.COUNTRY_CLICK,
+  ActionTypes.NOOP,
+  ActionTypes.COUNTRY_SELECT,
   ActionTypes.FETCH_DATA,
   ActionTypes.FETCHING_DATA,
   ActionTypes.FETCHED_DATA,
   ActionTypes.ERROR_FETCHING_DATA,
 ].map(action => createAction(action));
+
+// On country click action
+const onCountryClick = info => (dispatch) => {
+  dispatch(onCountrySelect(info.object.properties));
+  dispatch(onLayerClick(info));
+  // history.push(`${data.path}${data.dataset}`);
+  return noop();
+};
 
 // Load data action
 const loadData = (dataset = null, path = null) => ((dispatch, getState) => {
@@ -77,6 +87,7 @@ const loadDataToMap = (dataset = null, path = null) => ((dispatch, getState) => 
 ));
 
 export {
+  onCountrySelect,
   onCountryClick,
   fetchData,
   fetchingData,
