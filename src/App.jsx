@@ -9,11 +9,9 @@ const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
 class App extends Component {
   componentDidMount() {
-    const { onLoadMap } = this.props;
-    // eslint-disable-next-line
-    const { country, dataset } = this.props.match.params;
-    // eslint-disable-next-line
-    onLoadMap(dataset, this.props.match.path);
+    const { onLoadMap, history, match: { params: { country, dataset } } } = this.props;
+    onLoadMap(dataset, country ? `/c/${country}/` : '/');
+    history.listen(loc => onLoadMap(dataset, loc.pathname));
   }
 
   render() {
@@ -40,6 +38,8 @@ class App extends Component {
 App.propTypes = {
   onCountryClick: PropTypes.func.isRequired,
   onLoadMap: PropTypes.func.isRequired,
+  match: PropTypes.shape({}).isRequired,
+  history: PropTypes.shape({}).isRequired,
 };
 
 const mapStateToProps = state => state;
