@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { taskMiddleware } from 'react-palm/tasks';
 import thunk from 'redux-thunk';
+import { createBrowserHistory } from 'history';
+import { routerMiddleware } from 'connected-react-router';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import Root from './components/Root';
 import reducers from './reducers';
+
+// Create browser history
+const history = createBrowserHistory();
 
 // Setting up middlewares
 /* thunk and taskMiddleware are somehow conflicting
@@ -16,13 +21,13 @@ import reducers from './reducers';
  * To overcome this issue, thunk has to be applied
  * before taskMiddleware.
  * */
-const middlewares = [thunk, taskMiddleware];
+const middlewares = [thunk, taskMiddleware, routerMiddleware(history)];
 
 // Creating the store
-const store = createStore(reducers, applyMiddleware(...middlewares));
+const store = createStore(reducers(history), applyMiddleware(...middlewares));
 
 // Render the root component
-ReactDOM.render(<Root store={store} />, document.getElementById('root'));
+ReactDOM.render(<Root store={store} history={history} />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

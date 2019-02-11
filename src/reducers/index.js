@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { handleActions } from 'redux-actions';
+import { connectRouter } from 'connected-react-router';
 import keplerGlReducer from 'kepler.gl/reducers';
 import appReducers, { INITIAL_APP_STATE } from './reducers';
 
@@ -23,9 +24,10 @@ const customKeplerGlReducer = keplerGlReducer.initialState({
 });
 
 // Combine kepler reducers and app reducers
-const reducers = combineReducers({
+const reducers = history => combineReducers({
   keplerGl: customKeplerGlReducer,
   app: handleActions(appReducers, INITIAL_APP_STATE),
+  router: connectRouter(history),
 });
 
 export default reducers;

@@ -1,28 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
 import App from '../App';
 
-// Temporary component
-const NotImplemented = () => (<h1>Sorry, we do not have this feature yet :(</h1>);
-
 // Root component
-const Root = ({ store }) => (
+const Root = ({ store, history }) => (
   <Provider store={store}>
-    <Router>
+    <ConnectedRouter history={history}>
       <Switch>
-        <Route path="/c/:country/:dataset?" component={NotImplemented} />
-        <Route path="/c/:country?" component={NotImplemented} />
-        <Route path="/:dataset" component={NotImplemented} />
+        <Route path="/c/:country/:dataset?" component={App} />
+        <Route path="/:dataset" component={App} />
         <Route path="/" component={App} />
       </Switch>
-    </Router>
+    </ConnectedRouter>
   </Provider>
 );
 
 Root.propTypes = {
   store: PropTypes.shape({}).isRequired,
+  history: PropTypes.shape({}).isRequired,
 };
 
 export default Root;
