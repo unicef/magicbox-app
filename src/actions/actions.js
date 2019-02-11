@@ -22,14 +22,19 @@ const [
 
 // On country click action
 const onCountryClick = info => (dispatch, getState) => {
-  // dispatch country select action
-  dispatch(onCountrySelect(info.object.properties));
   // dispatch usual kepler.gl action
   dispatch(onLayerClick(info));
-  // get current state
-  const { app: { data } } = getState();
-  // dispatch push to change the url
-  dispatch(push(data.path));
+
+  // if the user clicked in a object with properties
+  if (info && info.object && info.object.properties) {
+    // dispatch country select action
+    dispatch(onCountrySelect(info.object.properties));
+    // get current state
+    const { app: { data } } = getState();
+    // dispatch push to change the url
+    dispatch(push(data.path));
+  }
+
   // return noop because kepler is expecting a action
   return noop();
 };
