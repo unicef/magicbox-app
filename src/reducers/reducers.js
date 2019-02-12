@@ -9,6 +9,7 @@ export const INITIAL_APP_STATE = {
     error: null,
   },
   data: {
+    country: null,
     path: DEFAULT_PATH,
     datasetName: DEFAULT_DATASET_NAME,
     dataset: null,
@@ -20,7 +21,8 @@ export const countrySelectUpdater = (state, action) => ({
   ...state,
   data: {
     ...state.data,
-    path: `/c/${action.payload.name}/`,
+    country: action.payload.name,
+    path: `/c/${action.payload.url}/`,
   },
 });
 
