@@ -80,6 +80,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@gfx/zopfli": "^1.0.10",
+    "compression-webpack-plugin": "^2.0.0",
+    "copy-webpack-plugin": "^4.6.0",
     "eslint-config-airbnb": "17.1.0",
     "husky": "^1.3.1"
   },
