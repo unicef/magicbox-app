@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect, ReactReduxContext } from 'react-redux';
 import PropTypes from 'prop-types';
-import { onLayerClick } from 'kepler.gl/actions';
+import { onLayerClick, updateVisData } from 'kepler.gl/actions';
+import { parse } from 'query-string';
 import './App.css';
 import * as Actions from './actions';
 import Map from './components/Map';
@@ -10,9 +11,25 @@ const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
 class App extends Component {
   componentDidMount() {
-    const { onLoadMap, history, match: { params: { country, dataset } } } = this.props;
+    const {
+      dispatch,
+      onLoadMap,
+      history,
+      location: { search },
+      match: { params: { country, dataset } },
+    } = this.props;
+
     onLoadMap(dataset, country ? `/c/${country}/` : '/');
     history.listen(loc => onLoadMap(dataset, loc.pathname));
+
+    // enable builder mode if needed
+    const values = parse(search);
+
+    if (typeof values.builder !== 'undefined') {
+      // eslint-disable-next-line
+      console.log('builder mode');
+      dispatch(updateVisData({}, { readOnly: false }, {}));
+    }
   }
 
   render() {
@@ -44,6 +61,8 @@ App.propTypes = {
   onLoadMap: PropTypes.func.isRequired,
   match: PropTypes.shape({}).isRequired,
   history: PropTypes.shape({}).isRequired,
+  dispatch: PropTypes.func.isRequired,
+  location: PropTypes.shape({}).isRequired,
 };
 
 const mapStateToProps = state => state;
