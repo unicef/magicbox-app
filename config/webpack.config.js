@@ -599,7 +599,7 @@ module.exports = function(webpackEnv) {
           formatter: typescriptFormatter,
         }),
       // Compress assets after build
-      new CompressionPlugin({
+      isEnvProduction && new CompressionPlugin({
         compressionOptions: {
           numiterations: 15
         },
