@@ -71,7 +71,7 @@ const loadData = (dataset = null, path = null) => ((dispatch, getState) => {
             totalRead += value.byteLength;
             // dispatch fetching data with percentage read
             if (totalSize !== 0) {
-              dispatch(fetchingData(totalRead / totalSize));
+              dispatch(fetchingData(100 * totalRead / totalSize));
             }
             // Enqueue value
             controller.enqueue(value);
