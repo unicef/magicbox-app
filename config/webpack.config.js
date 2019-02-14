@@ -27,6 +27,7 @@ const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const zopfli = require('@gfx/zopfli');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
@@ -500,6 +501,10 @@ module.exports = function(webpackEnv) {
             : undefined
         )
       ),
+      // Provide the async attribute to all scripts
+      new ScriptExtHtmlWebpackPlugin({
+        defaultAttribute: 'async',
+      }),
       // Inlines the webpack runtime script. This script is too small to warrant
       // a network request.
       isEnvProduction &&
