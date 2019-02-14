@@ -5,6 +5,7 @@ const DEFAULT_PATH = '/';
 
 export const INITIAL_APP_STATE = {
   ui: {
+    isLoading: false,
     loading: 1,
     error: null,
   },
@@ -30,6 +31,7 @@ export const countrySelectUpdater = (state, action) => ({
 export const fetchDataUpdater = (state, action) => ({
   ...state,
   ui: {
+    isLoading: true,
     error: null,
     loading: 0,
   },
@@ -45,6 +47,7 @@ export const fetchDataUpdater = (state, action) => ({
 export const fetchingDataUpdater = (state, action) => ({
   ...state,
   ui: {
+    isLoading: true,
     error: null,
     loading: action.payload,
   },
@@ -54,6 +57,7 @@ export const fetchingDataUpdater = (state, action) => ({
 export const fetchedDataUpdater = (state, action) => ({
   ...state,
   ui: {
+    isLoading: false,
     error: null,
     loading: 1,
   },
@@ -67,6 +71,7 @@ export const fetchedDataUpdater = (state, action) => ({
 export const errorFetchingDataUpdater = (state, action) => ({
   ...state,
   ui: {
+    isLoading: false,
     loading: 1,
     error: action.payload,
   },
