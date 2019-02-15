@@ -7,9 +7,7 @@ import './App.css';
 import * as Actions from './actions';
 import Map from './components/Map';
 
-const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
-
-class App extends Component {
+export class App extends Component {
   componentDidMount() {
     const {
       dispatch,
