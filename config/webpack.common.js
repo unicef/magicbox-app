@@ -31,8 +31,10 @@ module.exports = {
   plugins: [
     // Define variables to be used during build process
     new webpack.DefinePlugin({
-      MAPBOX_TOKEN: JSON.stringify(process.env.MAPBOX_TOKEN),
       PUBLIC_URL: JSON.stringify(''),
+      'process.env': {
+        MAPBOX_TOKEN: JSON.stringify(process.env.MAPBOX_TOKEN),
+      },
     }),
     // Clean build directory
     new CleanWebpackPlugin([BUILD_DIR]),
@@ -69,6 +71,23 @@ module.exports = {
   // loaders
   module: {
     rules: [
+      // First, run the linter.
+      // It's important to do this before Babel processes the JS.
+      {
+        test: /\.(js|mjs|jsx)$/,
+        enforce: 'pre',
+        use: [
+          {
+            options: {
+              formatter: require.resolve('react-dev-utils/eslintFormatter'),
+              eslintPath: require.resolve('eslint'),
+
+            },
+            loader: require.resolve('eslint-loader'),
+          },
+        ],
+        include: SRC_DIR,
+      },
       // JS and JSX loader
       // Process application JS with Babel.
       {

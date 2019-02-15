@@ -7,6 +7,9 @@ import './App.css';
 import * as Actions from './actions';
 import Map from './components/Map';
 
+// eslint-disable-next-line
+const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN;
+
 export class App extends Component {
   componentDidMount() {
     const {
