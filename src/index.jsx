@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
-import { taskMiddleware } from 'react-palm/tasks';
 import thunk from 'redux-thunk';
 import { createBrowserHistory } from 'history';
 import { routerMiddleware } from 'connected-react-router';
@@ -14,14 +13,7 @@ import reducers from './reducers';
 const history = createBrowserHistory();
 
 // Setting up middlewares
-/* thunk and taskMiddleware are somehow conflicting
- * for use cases where we need to concatenate a async
- * task after another async task. In this case, the
- * second async task is immediately dispatched.
- * To overcome this issue, thunk has to be applied
- * before taskMiddleware.
- * */
-const middlewares = [thunk, taskMiddleware, routerMiddleware(history)];
+const middlewares = [thunk, routerMiddleware(history)];
 
 // Creating the store
 const store = createStore(reducers(history), applyMiddleware(...middlewares));
