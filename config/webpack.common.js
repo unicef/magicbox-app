@@ -65,8 +65,9 @@ module.exports = {
   ],
   // output bundle name
   output: {
-    filename: '[name].[contenthash].js',
+    filename: '[name].[hash:8].js',
     path: BUILD_DIR,
+    publicPath: '/',
   },
   // loaders
   module: {
