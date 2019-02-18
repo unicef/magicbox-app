@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, lazy, Suspense } from 'react';
 import { connect, ReactReduxContext } from 'react-redux';
 import PropTypes from 'prop-types';
 import { onLayerClick, updateVisData } from 'kepler.gl/actions';
-import { parse } from 'query-string';
 import './App.css';
 import * as Actions from './actions';
-import Map from './components/Map';
+
+// eslint-disable-next-line
+const LazyMap = lazy(() => import(/* webpackChunkName: "map" */ './components/Map'));
 
 // eslint-disable-next-line
 const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN;
@@ -17,16 +18,15 @@ export class App extends Component {
       onLoadMap,
       history,
       location: { search },
-      match: { params: { country, dataset } },
+      match: { params: { dataset } },
     } = this.props;
 
-    onLoadMap(dataset, country ? `/c/${country}/` : '/');
     history.listen(loc => onLoadMap(dataset, loc.pathname));
 
     // enable builder mode if needed
-    const values = parse(search);
+    const urlParams = new URLSearchParams(search);
 
-    if (typeof values.builder !== 'undefined') {
+    if (typeof urlParams.get('builder') !== 'undefined') {
       // eslint-disable-next-line
       console.log('builder mode');
       dispatch(updateVisData({}, { readOnly: false }, {}));
@@ -34,7 +34,12 @@ export class App extends Component {
   }
 
   render() {
-    const { onCountryClick, match: { params: { country } } } = this.props;
+    const {
+      onLoadMap,
+      match: { params: { country, dataset } },
+      onCountryClick,
+    } = this.props;
+
     // eslint-disable-next-line
     console.log('percentage:', this.props.app.ui.loading);
 
@@ -45,11 +50,14 @@ export class App extends Component {
       <div className="App">
         <ReactReduxContext.Consumer>
           {({ store }) => (
-            <Map
-              store={store}
-              mapboxToken={MAPBOX_TOKEN}
-              onCountryClick={clickCallback}
-            />
+            <Suspense fallback={<div>Loading...</div>}>
+              <LazyMap
+                store={store}
+                mapboxToken={MAPBOX_TOKEN}
+                onCountryClick={clickCallback}
+                onLoad={() => onLoadMap(dataset, country ? `/c/${country}/` : '/')}
+              />
+            </Suspense>
           )}
         </ReactReduxContext.Consumer>
       </div>

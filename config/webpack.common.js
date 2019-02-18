@@ -66,6 +66,7 @@ module.exports = {
   // output bundle name
   output: {
     filename: '[name].[hash:8].js',
+    chunkFilename: '[name].[hash:8].js',
     path: BUILD_DIR,
     publicPath: '/',
   },
@@ -95,6 +96,9 @@ module.exports = {
         test: /\.jsx?$/,
         loader: 'babel-loader',
         options: {
+          presets: [
+            "react-app",
+          ],
           customize: require.resolve('babel-preset-react-app/webpack-overrides'),
           plugins: [
             [

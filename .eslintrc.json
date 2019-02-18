@@ -1,5 +1,10 @@
 {
-  "extends": ["airbnb"],
+  "extends": [
+    "react-app",
+    "airbnb",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
   "env": {
     "browser": true
   }
