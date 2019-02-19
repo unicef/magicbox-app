@@ -9,6 +9,7 @@
     "test": "jest --config ./config/jest.config.js"
   },
   "dependencies": {
+    "@material-ui/core": "^3.9.2",
     "connected-react-router": "^6.3.0",
     "history": "^4.7.2",
     "kepler.gl": "^0.2.1-beta.1",

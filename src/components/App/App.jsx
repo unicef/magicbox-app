@@ -3,6 +3,7 @@ import { connect, ReactReduxContext } from 'react-redux';
 import PropTypes from 'prop-types';
 import { onLayerClick, updateVisData } from 'kepler.gl/actions';
 import * as Actions from '../../actions';
+import LoadingIndicator from '../LoadingIndicator';
 
 // Load Map component dinamically -> code splitting
 const LazyMap = lazy(() => import(/* webpackChunkName: "map" */ '../Map'));
@@ -28,19 +29,23 @@ export class App extends Component {
       match: { params: { country, dataset } },
       location: { search },
       onCountryClick,
+      app: {
+        ui: {
+          loading,
+          isLoading,
+        },
+      },
     } = this.props;
-
-    // eslint-disable-next-line
-    console.log('percentage:', this.props.app.ui.loading);
 
     // Country click should only be available when no country is selected
     const clickCallback = country ? onLayerClick : onCountryClick;
 
     return (
       <div className="App">
+        {isLoading && <LoadingIndicator value={loading} />}
         <ReactReduxContext.Consumer>
           {({ store }) => (
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<LoadingIndicator />}>
               <LazyMap
                 store={store}
                 mapboxToken={MAPBOX_TOKEN}
@@ -61,6 +66,7 @@ App.propTypes = {
   match: PropTypes.shape({}).isRequired,
   history: PropTypes.shape({}).isRequired,
   location: PropTypes.shape({}).isRequired,
+  app: PropTypes.shape({}).isRequired,
 };
 
 const mapStateToProps = state => state;
