@@ -16,8 +16,6 @@ module.exports = merge(common, {
   plugins: [
     // Compress assets
     new CompressionPlugin({
-      exclude: /index.html/,
-      deleteOriginalAssets: true,
       compressionOptions: {
         numiterations: 15
       },
