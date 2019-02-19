@@ -5,6 +5,10 @@ import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 import PropTypes from 'prop-types';
 import withReducer from '../helpers/with-reducer';
 
+/**
+ * This reducer is placed here to be able to load it dinamically
+ * alongside with kepler.gl
+ */
 // It is time to create and load kepler reducers
 // Create custom reducer
 const customKeplerGlReducer = keplerGlReducer.initialState({
