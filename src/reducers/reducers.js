@@ -59,7 +59,7 @@ export const fetchedDataUpdater = (state, action) => ({
   ui: {
     isLoading: false,
     error: null,
-    loading: 1,
+    loading: 100,
   },
   data: {
     ...state.data,
@@ -72,7 +72,7 @@ export const errorFetchingDataUpdater = (state, action) => ({
   ...state,
   ui: {
     isLoading: false,
-    loading: 1,
+    loading: 0,
     error: action.payload,
   },
 });

@@ -1,12 +1,33 @@
 import React, { Component } from 'react';
 import KeplerGl from 'kepler.gl';
+import keplerGlReducer from 'kepler.gl/reducers';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 import PropTypes from 'prop-types';
+import withReducer from '../with-reducer';
+
+// It is time to create and load kepler reducers
+// Create custom reducer
+const customKeplerGlReducer = keplerGlReducer.initialState({
+  uiState: {
+    currentModal: null,
+    activeSidePanel: null,
+    readOnly: true,
+    mapControls: {
+      splitMap: { show: false },
+      toggle3d: { show: false },
+      mapLegend: { show: true },
+    },
+  },
+  mapState: {
+    zoom: 1,
+    latitude: 0,
+    longitude: 0,
+  },
+});
 
 class Map extends Component {
   componentDidMount() {
     const { onLoad } = this.props;
-
     // Execute onLoad action
     onLoad();
   }
@@ -42,4 +63,4 @@ Map.propTypes = {
   onLoad: PropTypes.func.isRequired,
 };
 
-export default Map;
+export default withReducer('keplerGl', customKeplerGlReducer)(Map);
