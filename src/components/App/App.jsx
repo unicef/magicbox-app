@@ -2,11 +2,10 @@ import React, { Component, lazy, Suspense } from 'react';
 import { connect, ReactReduxContext } from 'react-redux';
 import PropTypes from 'prop-types';
 import { onLayerClick, updateVisData } from 'kepler.gl/actions';
-import './App.css';
-import * as Actions from './actions';
+import * as Actions from '../../actions';
 
 // eslint-disable-next-line
-const LazyMap = lazy(() => import(/* webpackChunkName: "map" */ './components/Map'));
+const LazyMap = lazy(() => import(/* webpackChunkName: "map" */ '../Map'));
 
 // eslint-disable-next-line
 const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN;

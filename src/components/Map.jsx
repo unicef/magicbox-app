@@ -3,7 +3,7 @@ import KeplerGl from 'kepler.gl';
 import keplerGlReducer from 'kepler.gl/reducers';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 import PropTypes from 'prop-types';
-import withReducer from '../with-reducer';
+import withReducer from '../helpers/with-reducer';
 
 // It is time to create and load kepler reducers
 // Create custom reducer

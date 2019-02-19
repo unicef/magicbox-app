@@ -5,8 +5,8 @@ const withReducer = (key, reducer) => ((WrappedComponent) => {
   class Extended extends Component {
     constructor(props) {
       super(props);
-      const { store } = props;
-      store.injectReducer(key, reducer);
+      // const { store } = props;
+      props.store.injectReducer(key, reducer);
     }
 
     render() {

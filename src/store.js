@@ -13,11 +13,13 @@ const createReducer = (history, asyncReducers) => combineReducers({
 
 // Creating the store
 const initializeStore = (history) => {
-  // Setting up middlewares
+  // Setup middlewares
   const middlewares = [thunk, routerMiddleware(history)];
 
+  // Create the store
   const store = createStore(createReducer(history), applyMiddleware(...middlewares));
 
+  // Setup injectReducer function
   store.asyncReducers = {};
   store.injectReducer = (key, reducer) => {
     store.asyncReducers[key] = reducer;
