@@ -54,9 +54,10 @@ const loadData = (dataset = null, path = null) => ((dispatch, getState) => {
   // Fetch data from url
   return fetch(url)
     .then((response) => {
+      const totalSizeString = response.headers.get('X-Original-Content-Length') || response.headers.get('Content-Length');
       // get stream reader
       const reader = response.body.getReader();
-      const totalSize = parseFloat(response.headers.get('Content-Length'), 10) || 0;
+      const totalSize = parseFloat(totalSizeString, 10) || 0;
       let totalRead = 0;
 
       return new ReadableStream({
