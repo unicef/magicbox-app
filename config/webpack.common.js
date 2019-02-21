@@ -31,9 +31,9 @@ module.exports = {
   plugins: [
     // Define variables to be used during build process
     new webpack.DefinePlugin({
-      PUBLIC_URL: JSON.stringify(''),
       'process.env': {
-        MAPBOX_TOKEN: JSON.stringify(process.env.MAPBOX_TOKEN),
+        MAPBOX_TOKEN: JSON.stringify(process.env.REACT_APP_MAPBOX_TOKEN),
+        PUBLIC_URL: JSON.stringify(''),
       },
     }),
     // Clean build directory
