@@ -8,6 +8,8 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const zopfli = require('@gfx/zopfli');
 // Workbox plugin to generate our SW
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+// Async scripts
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 
 // Set NODE_ENV and BABEL_ENV to build scripts
 process.env.NODE_ENV = 'production';
@@ -17,18 +19,10 @@ module.exports = merge(common, {
   mode: 'production',
   plugins: [
     // Generate SW
-    new WorkboxWebpackPlugin.GenerateSW({
-      clientsClaim: true,
-      exclude: [/\.map$/, /asset-manifest\.json$/],
-      importWorkboxFrom: 'cdn',
-      navigateFallback: '/index.html',
-      navigateFallbackBlacklist: [
-        // Exclude URLs starting with /_, as they're likely an API call
-        new RegExp('^/_'),
-        // Exclude URLs containing a dot, as they're likely a resource in
-        // public/ and not a SPA route
-        new RegExp('/[^/]+\\.[^/]+$'),
-      ],
+    new WorkboxWebpackPlugin.GenerateSW(),
+    // Async attribute to script tags
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'async',
     }),
     // Compress assets
     new CompressionPlugin({
