@@ -37,7 +37,7 @@ module.exports = {
       },
     }),
     // Clean build directory
-    new CleanWebpackPlugin([BUILD_DIR]),
+    new CleanWebpackPlugin([BUILD_DIR], { root: path.resolve(__dirname, '../' ) }),
     // Copy content from public to build
     new CopyWebpackPlugin([{ from: 'public', to: './' }]),
     // Output an HTML importing all bundles
