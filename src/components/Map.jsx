@@ -19,7 +19,7 @@ const customKeplerGlReducer = keplerGlReducer.initialState({
     mapControls: {
       splitMap: { show: false },
       toggle3d: { show: false },
-      mapLegend: { show: true },
+      mapLegend: { show: false },
     },
   },
   mapState: {
@@ -41,6 +41,7 @@ class Map extends Component {
       store,
       mapboxToken,
       onCountryClick,
+      heightTaken,
     } = this.props;
 
     return (
@@ -49,7 +50,7 @@ class Map extends Component {
           <KeplerGl
             id="map"
             mapboxApiAccessToken={mapboxToken}
-            height={height}
+            height={height - heightTaken}
             width={width}
             actions={{ onLayerClick: onCountryClick }}
             store={store}
@@ -65,6 +66,7 @@ Map.propTypes = {
   mapboxToken: PropTypes.string.isRequired,
   onCountryClick: PropTypes.func.isRequired,
   onLoad: PropTypes.func.isRequired,
+  heightTaken: PropTypes.number.isRequired,
 };
 
 export default withReducer('keplerGl', customKeplerGlReducer)(Map);

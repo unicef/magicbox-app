@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { onLayerClick, updateVisData } from 'kepler.gl/actions';
 import * as Actions from '../../actions';
 import LoadingIndicator from '../LoadingIndicator';
+import AppBar from '../AppBar';
 
 // Load Map component dinamically -> code splitting
 const LazyMap = lazy(() => import(/* webpackChunkName: "map" */ '../Map'));
@@ -12,6 +13,14 @@ const LazyMap = lazy(() => import(/* webpackChunkName: "map" */ '../Map'));
 const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN;
 
 export class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      appBarHeight: 0,
+    };
+  }
+
   componentDidMount() {
     const {
       onLoadMap,
@@ -37,11 +46,18 @@ export class App extends Component {
       },
     } = this.props;
 
+    // Internal state to manage view details
+    const { appBarHeight } = this.state;
+
     // Country click should only be available when no country is selected
     const clickCallback = country ? onLayerClick : onCountryClick;
 
     return (
       <div className="App">
+        <AppBar
+          title="Poverty Mapping"
+          onLoad={container => this.setState({ appBarHeight: container.clientHeight })}
+        />
         {isLoading && <LoadingIndicator value={loading} />}
         <ReactReduxContext.Consumer>
           {({ store }) => (
@@ -51,6 +67,7 @@ export class App extends Component {
                 mapboxToken={MAPBOX_TOKEN}
                 onCountryClick={clickCallback}
                 onLoad={() => onLoadMap(dataset, country ? `/c/${country}/` : '/', search)}
+                heightTaken={appBarHeight}
               />
             </Suspense>
           )}
