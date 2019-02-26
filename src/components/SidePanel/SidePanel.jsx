@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-// import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+// import Button from '@material-ui/core/Button';
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
+
 
 const styles = {
   root: {
@@ -12,11 +15,8 @@ const styles = {
   drawerSide: {
     width: '300px',
   },
-  button: {
-    textAlign: 'right',
-  },
-  h4: {
-    padding: '20px',
+  keyboardArrowRight: {
+    zIndex: '10000',
   },
 };
 
@@ -28,7 +28,7 @@ class SidePanel extends Component {
     };
   }
 
-  toggleDrawer() {
+  toggleDrawer = () => {
     this.setState(prevState => ({ openDrawer: !prevState.openDrawer }));
   }
 
@@ -37,8 +37,9 @@ class SidePanel extends Component {
     const { openDrawer } = this.state;
     return (
       <div>
-        <button onClick={this.toggleDrawer.bind(this)} containerClassName="button" type="button"> Toggle Drawer</button>
+        <KeyboardArrowRight onClick={this.toggleDrawer} color="secondary" />
         <Drawer open={openDrawer} containerClassName="drawer-side" openSecondary docked>
+          <KeyboardArrowLeft onClick={this.toggleDrawer} color="secondary" />
           <Typography variant="h6" color="inherit">
             {title}
           </Typography>
