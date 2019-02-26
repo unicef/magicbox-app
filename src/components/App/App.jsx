@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { onLayerClick, updateVisData } from 'kepler.gl/actions';
 import * as Actions from '../../actions';
 import LoadingIndicator from '../LoadingIndicator';
-import AppBar from '../AppBar';
+import SidePanel from '../SidePanel';
 
 // Load Map component dinamically -> code splitting
 const LazyMap = lazy(() => import(/* webpackChunkName: "map" */ '../Map'));
@@ -54,9 +54,8 @@ export class App extends Component {
 
     return (
       <div className="App">
-        <AppBar
+        <SidePanel
           title="Poverty Mapping"
-          onLoad={container => this.setState({ appBarHeight: container.clientHeight })}
         />
         {isLoading && <LoadingIndicator value={loading} />}
         <ReactReduxContext.Consumer>
