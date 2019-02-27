@@ -19,7 +19,7 @@ const customKeplerGlReducer = keplerGlReducer.initialState({
     mapControls: {
       splitMap: { show: false },
       toggle3d: { show: false },
-      mapLegend: { show: true },
+      mapLegend: { show: false },
     },
   },
   mapState: {
