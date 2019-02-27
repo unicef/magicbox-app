@@ -12,11 +12,46 @@ const styles = {
   root: {
     flexGrow: 1,
   },
-  drawerSide: {
+  drawer: {
     width: '300px',
   },
   keyboardArrowRight: {
-    zIndex: '10000',
+    position: 'fixed',
+    zIndex: '1',
+    color: 'gray',
+    marginTop: '100px',
+    marginLeft: '10px',
+    paddingTop: '2px',
+    paddingBottom: '2px',
+    backgroundColor: 'black',
+  },
+  keyboardArrowLeft: {
+    position: 'fixed',
+    color: 'gray',
+    marginTop: '100px',
+    marginLeft: '280px',
+    paddingTop: '2px',
+    paddingBottom: '2px',
+    backgroundColor: 'black',
+    zIndex: '1',
+  },
+  typography: {
+    fontSize: '16px',
+    fontWeight: 'bold',
+    padding: '10px',
+    textAlign: 'center',
+  },
+  legend: {
+    height: '300px',
+    width: '300px',
+    marginBottom: '5px',
+    backgroundColor: 'white',
+  },
+  scale: {
+    height: '100px',
+    width: '300px',
+    margin: '0px',
+    backgroundColor: 'white',
   },
 };
 
@@ -33,16 +68,18 @@ class SidePanel extends Component {
   }
 
   render() {
-    const { title } = this.props;
+    const { classes, title } = this.props;
     const { openDrawer } = this.state;
     return (
       <div>
-        <KeyboardArrowRight onClick={this.toggleDrawer} color="secondary" />
-        <Drawer open={openDrawer} containerClassName="drawer-side" openSecondary docked>
-          <KeyboardArrowLeft onClick={this.toggleDrawer} color="secondary" />
-          <Typography variant="h6" color="inherit">
+        <KeyboardArrowRight onClick={this.toggleDrawer} className={classes.keyboardArrowRight} />
+        <Drawer open={openDrawer} className={classes.drawer}>
+          <KeyboardArrowLeft onClick={this.toggleDrawer} className={classes.keyboardArrowLeft} />
+          <Typography className={classes.typography}>
             {title}
           </Typography>
+          <h4 className={classes.legend}>Legend will go here</h4>
+          <h4 className={classes.scale}>Scale will go here</h4>
         </Drawer>
       </div>
     );
@@ -50,6 +87,7 @@ class SidePanel extends Component {
 }
 
 SidePanel.propTypes = {
+  classes: PropTypes.shape({}).isRequired,
   title: PropTypes.string.isRequired,
 };
 
