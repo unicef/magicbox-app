@@ -15,7 +15,11 @@ const styles = theme => ({
 });
 
 const DataInfo = ({ classes }) => (
-  <Fab color="primary" aria-label="Explore" className={classes.exploreButton}>
+  <Fab
+    color="secondary"
+    aria-label="Explore"
+    className={classes.exploreButton}
+  >
     <MenuIcon />
   </Fab>
 );
