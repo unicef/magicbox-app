@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { onLayerClick, updateVisData } from 'kepler.gl/actions';
 import * as Actions from '../../actions';
 import LoadingIndicator from '../LoadingIndicator';
+import DataInfo from '../DataInfo';
 
 // Load Map component dinamically -> code splitting
 const LazyMap = lazy(() => import(/* webpackChunkName: "map" */ '../Map'));
@@ -42,6 +43,7 @@ export class App extends Component {
 
     return (
       <div className="App">
+        <DataInfo />
         {isLoading && <LoadingIndicator value={loading} />}
         <ReactReduxContext.Consumer>
           {({ store }) => (
