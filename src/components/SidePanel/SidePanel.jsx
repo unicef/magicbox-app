@@ -29,7 +29,7 @@ const styles = {
     position: 'fixed',
     color: 'gray',
     marginTop: '100px',
-    marginLeft: '280px',
+    marginLeft: '310px',
     paddingTop: '2px',
     paddingBottom: '2px',
     backgroundColor: 'black',
@@ -72,9 +72,12 @@ class SidePanel extends Component {
     const { openDrawer } = this.state;
     return (
       <div>
-        <KeyboardArrowRight onClick={this.toggleDrawer} className={classes.keyboardArrowRight} />
-        <Drawer open={openDrawer} className={classes.drawer}>
+        { openDrawer ? (
           <KeyboardArrowLeft onClick={this.toggleDrawer} className={classes.keyboardArrowLeft} />
+        )  : (
+          <KeyboardArrowRight onClick={this.toggleDrawer} className={classes.keyboardArrowRight} />          
+        )}
+        <Drawer open={openDrawer} className={classes.drawer}>
           <Typography className={classes.typography}>
             {title}
           </Typography>
