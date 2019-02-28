@@ -9,6 +9,11 @@ import CloseIcon from '@material-ui/icons/Close';
 const styles = theme => ({
   dataInfo: {
   },
+  dataInfoContent: {
+    width: '100%',
+    height: '100%',
+    minWidth: '50vw',
+  },
   closeExploreButton: {
     margin: theme.spacing.unit,
     position: 'absolute',
@@ -53,7 +58,9 @@ const DataInfo = ({ classes, open, toggleAction }) => (
       >
         <CloseIcon />
       </Fab>
-      This is just a simple text
+      <div className={classes.dataInfoContent}>
+        This is just a simple text
+      </div>
     </Drawer>
   </React.Fragment>
 );
