@@ -11,6 +11,7 @@ const [
   fetchingData,
   fetchedData,
   errorFetchingData,
+  toggleDataInfo,
 ] = [
   ActionTypes.NOOP,
   ActionTypes.COUNTRY_SELECT,
@@ -18,6 +19,7 @@ const [
   ActionTypes.FETCHING_DATA,
   ActionTypes.FETCHED_DATA,
   ActionTypes.ERROR_FETCHING_DATA,
+  ActionTypes.TOGGLE_DATA_INFO,
 ].map(action => createAction(action));
 
 // On country click action
@@ -109,6 +111,7 @@ export {
   fetchingData,
   fetchedData,
   errorFetchingData,
+  toggleDataInfo,
   loadData,
   loadDataToMap,
 };

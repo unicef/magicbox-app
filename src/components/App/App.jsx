@@ -34,8 +34,10 @@ export class App extends Component {
         ui: {
           loading,
           isLoading,
+          dataInfoOpen,
         },
       },
+      toggleDataInfo,
     } = this.props;
 
     // Country click should only be available when no country is selected
@@ -43,7 +45,7 @@ export class App extends Component {
 
     return (
       <div className="App">
-        <DataInfo />
+        <DataInfo open={dataInfoOpen} toggleAction={toggleDataInfo} />
         {isLoading && <LoadingIndicator value={loading} />}
         <ReactReduxContext.Consumer>
           {({ store }) => (
@@ -69,6 +71,7 @@ App.propTypes = {
   history: PropTypes.shape({}).isRequired,
   location: PropTypes.shape({}).isRequired,
   app: PropTypes.shape({}).isRequired,
+  toggleDataInfo: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => state;
@@ -85,6 +88,7 @@ const mapDispathToProps = dispatch => ({
       dispatch(updateVisData({}, { readOnly: false }, {}));
     }
   },
+  toggleDataInfo: () => dispatch(Actions.toggleDataInfo()),
 });
 
 export default connect(mapStateToProps, mapDispathToProps)(App);

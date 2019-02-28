@@ -5,6 +5,7 @@ const DEFAULT_PATH = '/';
 
 export const INITIAL_APP_STATE = {
   ui: {
+    dataInfoOpen: false,
     isLoading: false,
     loading: 1,
     error: null,
@@ -31,6 +32,7 @@ export const countrySelectUpdater = (state, action) => ({
 export const fetchDataUpdater = (state, action) => ({
   ...state,
   ui: {
+    ...state.ui,
     isLoading: true,
     error: null,
     loading: 0,
@@ -47,6 +49,7 @@ export const fetchDataUpdater = (state, action) => ({
 export const fetchingDataUpdater = (state, action) => ({
   ...state,
   ui: {
+    ...state.ui,
     isLoading: true,
     error: null,
     loading: action.payload,
@@ -57,6 +60,7 @@ export const fetchingDataUpdater = (state, action) => ({
 export const fetchedDataUpdater = (state, action) => ({
   ...state,
   ui: {
+    ...state.ui,
     isLoading: false,
     error: null,
     loading: 100,
@@ -71,9 +75,19 @@ export const fetchedDataUpdater = (state, action) => ({
 export const errorFetchingDataUpdater = (state, action) => ({
   ...state,
   ui: {
+    ...state.ui,
     isLoading: false,
     loading: 0,
     error: action.payload,
+  },
+});
+
+// toggle data info modal
+export const toggleDataInfoUpdater = state => ({
+  ...state,
+  ui: {
+    ...state.ui,
+    dataInfoOpen: !state.ui.dataInfoOpen,
   },
 });
 
@@ -83,4 +97,5 @@ export default {
   [ActionTypes.FETCHING_DATA]: fetchingDataUpdater,
   [ActionTypes.FETCHED_DATA]: fetchedDataUpdater,
   [ActionTypes.ERROR_FETCHING_DATA]: errorFetchingDataUpdater,
+  [ActionTypes.TOGGLE_DATA_INFO]: toggleDataInfoUpdater,
 };
