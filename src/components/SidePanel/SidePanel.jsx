@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Typography from '@material-ui/core/Typography';
-// import Button from '@material-ui/core/Button';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
+import SidePanelLegend from '../SidePanelLegend';
+import SidePanelScale from '../SidePanelScale';
 
 
 const styles = {
@@ -41,12 +42,6 @@ const styles = {
     padding: '10px',
     textAlign: 'center',
   },
-  legend: {
-    height: '300px',
-    width: '300px',
-    marginBottom: '5px',
-    backgroundColor: 'white',
-  },
   scale: {
     height: '100px',
     width: '300px',
@@ -74,15 +69,15 @@ class SidePanel extends Component {
       <div>
         { openDrawer ? (
           <KeyboardArrowLeft onClick={this.toggleDrawer} className={classes.keyboardArrowLeft} />
-        )  : (
+        ) : (
           <KeyboardArrowRight onClick={this.toggleDrawer} className={classes.keyboardArrowRight} />
         )}
-        <Drawer open={openDrawer} className={classes.drawer} variant='persistent' anchor='left'>
+        <Drawer open={openDrawer} className={classes.drawer} variant="persistent" anchor="left">
           <Typography className={classes.typography}>
             {title}
           </Typography>
-          <h4 className={classes.legend}>Legend will go here</h4>
-          <h4 className={classes.scale}>Scale will go here</h4>
+          <SidePanelLegend title={title} />
+          <SidePanelScale title={title} />
         </Drawer>
       </div>
     );
