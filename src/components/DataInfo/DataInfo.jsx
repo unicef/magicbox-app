@@ -43,6 +43,7 @@ const DataInfo = ({ classes, open, toggleAction }) => (
       open={open}
       className={classes.dataInfo}
       classes={{ paper: classes.paper }}
+      ModalProps={{ onBackdropClick: toggleAction }}
     >
       <Fab
         color="secondary"
