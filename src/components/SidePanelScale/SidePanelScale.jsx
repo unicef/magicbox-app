@@ -5,10 +5,10 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
   scale: {
-    height: '100px',
-    width: '300px',
+    height: '118px',
+    width: '291px',
     margin: '0px',
-    backgroundColor: 'white',
+    backgroundColor: '#e3e3e3',
   },
 };
 

@@ -5,10 +5,10 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
   legend: {
-    height: '300px',
-    width: '300px',
+    height: '238px',
+    width: '291px',
     marginBottom: '5px',
-    backgroundColor: 'white',
+    backgroundColor: '#e3e3e3',
     fontColor: 'black',
   },
 };
