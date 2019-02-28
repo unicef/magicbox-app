@@ -7,6 +7,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   dataInfo: {
@@ -14,13 +15,16 @@ const styles = theme => ({
   dataInfoContent: {
     width: '60vw',
     height: '100%',
+    backgroundColor: '#f1f1f1',
   },
   dataInfoContent__tabs: {
+    padding: theme.spacing.unit,
     maxWidth: '30%',
     height: '100%',
     float: 'left',
   },
   dataInfoContent__content: {
+    padding: theme.spacing.unit,
     overflow: 'auto',
     height: '100%',
   },
@@ -99,14 +103,19 @@ class DataInfo extends Component {
                 <ListItem
                   button
                   key={item.order}
+                  selected={i === selectedIndex}
                   onClick={event => this.handleClick(event, i)}
+                  dense
+                  classes={{ dense: classes.listItem }}
                 >
                   <ListItemText primary={item.title} />
                 </ListItem>
               ))}
             </div>
             <div className={classes.dataInfoContent__content}>
-              {content[selectedIndex].content}
+              <Typography>
+                {content[selectedIndex].content}
+              </Typography>
             </div>
           </div>
         </Drawer>
