@@ -59,7 +59,7 @@ class SidePanel extends Component {
   constructor() {
     super();
     this.state = {
-      openDrawer: false,
+      openDrawer: true,
     };
   }
 
@@ -75,9 +75,9 @@ class SidePanel extends Component {
         { openDrawer ? (
           <KeyboardArrowLeft onClick={this.toggleDrawer} className={classes.keyboardArrowLeft} />
         )  : (
-          <KeyboardArrowRight onClick={this.toggleDrawer} className={classes.keyboardArrowRight} />          
+          <KeyboardArrowRight onClick={this.toggleDrawer} className={classes.keyboardArrowRight} />
         )}
-        <Drawer open={openDrawer} className={classes.drawer}>
+        <Drawer open={openDrawer} className={classes.drawer} variant='persistent' anchor='left'>
           <Typography className={classes.typography}>
             {title}
           </Typography>
