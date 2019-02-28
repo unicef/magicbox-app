@@ -15,7 +15,7 @@ const styles = {
   },
   drawer: {
     width: '291px',
-    border: 'none',
+    borderRightWidth: '0px',
   },
   keyboardArrowRight: {
     position: 'fixed',
@@ -46,6 +46,9 @@ const styles = {
     height: '57px',
     textAlign: 'center',
   },
+  paper: {
+    borderRight: 'none',
+  }
 };
 
 class SidePanel extends Component {
@@ -70,7 +73,7 @@ class SidePanel extends Component {
         ) : (
           <KeyboardArrowRight onClick={this.toggleDrawer} className={classes.keyboardArrowRight} />
         )}
-        <Drawer open={openDrawer} className={classes.drawer} variant="persistent" anchor="left">
+        <Drawer open={openDrawer} className={classes.drawer} classes={{paper: classes.paper}} variant="persistent" anchor="left">
           <Typography className={classes.typography}>
             {title}
           </Typography>
