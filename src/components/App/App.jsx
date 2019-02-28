@@ -45,7 +45,11 @@ export class App extends Component {
 
     return (
       <div className="App">
-        <DataInfo open={dataInfoOpen} toggleAction={toggleDataInfo} />
+        <DataInfo
+          open={dataInfoOpen}
+          toggleAction={toggleDataInfo}
+          content={[{ title: 'About', content: 'Lorem ipsulum dolor with format...', order: 1 }, { title: 'HDI & Poverty', content: 'Welcome to UNICEF\'s data visualization tool for Human Development Index (HDI).', order: 2 }]}
+        />
         {isLoading && <LoadingIndicator value={loading} />}
         <ReactReduxContext.Consumer>
           {({ store }) => (
