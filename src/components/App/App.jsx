@@ -14,14 +14,6 @@ const LazyMap = lazy(() => import(/* webpackChunkName: "map" */ '../Map'));
 const MAPBOX_TOKEN = process.env.MAPBOX_TOKEN;
 
 export class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      appBarHeight: 0,
-    };
-  }
-
   componentDidMount() {
     const {
       onLoadMap,
@@ -50,8 +42,6 @@ export class App extends Component {
       toggleSidePanel,
       toggleDataInfo,
     } = this.props;
-    // Internal state to manage view details
-    const { appBarHeight } = this.state;
 
     // Country click should only be available when no country is selected
     const clickCallback = country ? onLayerClick : onCountryClick;
@@ -77,7 +67,6 @@ export class App extends Component {
                 mapboxToken={MAPBOX_TOKEN}
                 onCountryClick={clickCallback}
                 onLoad={() => onLoadMap(dataset, country ? `/c/${country}/` : '/', search)}
-                heightTaken={appBarHeight}
               />
             </Suspense>
           )}

@@ -41,7 +41,6 @@ class Map extends Component {
       store,
       mapboxToken,
       onCountryClick,
-      heightTaken,
     } = this.props;
 
     return (
@@ -50,7 +49,7 @@ class Map extends Component {
           <KeplerGl
             id="map"
             mapboxApiAccessToken={mapboxToken}
-            height={height - heightTaken}
+            height={height}
             width={width}
             actions={{ onLayerClick: onCountryClick }}
             store={store}
@@ -66,7 +65,6 @@ Map.propTypes = {
   mapboxToken: PropTypes.string.isRequired,
   onCountryClick: PropTypes.func.isRequired,
   onLoad: PropTypes.func.isRequired,
-  heightTaken: PropTypes.number.isRequired,
 };
 
 export default withReducer('keplerGl', customKeplerGlReducer)(Map);
