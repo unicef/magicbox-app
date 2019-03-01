@@ -1,5 +1,5 @@
 import { createAction } from 'redux-actions';
-import { addDataToMap, onLayerClick } from 'kepler.gl/actions';
+import { addDataToMap, onLayerClick, updateVisData } from 'kepler.gl/actions';
 import Processors from 'kepler.gl/processors';
 import { push } from 'connected-react-router';
 import ActionTypes from '../constants/action-types';
@@ -106,6 +106,9 @@ const loadDataToMap = (dataset = null, path = null) => ((dispatch, getState) => 
     .then(data => dispatch(addDataToMap(data)))
 ));
 
+// Enable builder mode
+const enableBuilderMode = () => dispatch => dispatch(updateVisData({}, { readOnly: false }, {}));
+
 export {
   onCountrySelect,
   onCountryClick,
@@ -117,4 +120,5 @@ export {
   toggleDataInfo,
   loadData,
   loadDataToMap,
+  enableBuilderMode,
 };

@@ -1,7 +1,7 @@
 import React, { Component, lazy, Suspense } from 'react';
 import { connect, ReactReduxContext } from 'react-redux';
 import PropTypes from 'prop-types';
-import { onLayerClick, updateVisData } from 'kepler.gl/actions';
+import { onLayerClick } from 'kepler.gl/actions';
 import * as Actions from '../../actions';
 import LoadingIndicator from '../LoadingIndicator';
 import SidePanel from '../SidePanel';
@@ -22,14 +22,30 @@ export class App extends Component {
     } = this.props;
 
     // Enable new data to be loaded when URL changes
-    history.listen(loc => onLoadMap(dataset, loc.pathname, loc.search));
+    history.listen(loc => onLoadMap(dataset, loc.pathname));
   }
+
+  setupMapAfterLoad = () => {
+    const {
+      onLoadMap,
+      enableBuilderMode,
+      match: { params: { country, dataset } },
+      location: { search },
+    } = this.props;
+    // Load data to map
+    onLoadMap(dataset, country ? `/c/${country}/` : '/');
+
+    // Enable builder mode if needed
+    // Once it is activated, it will not be deactivated
+    const urlParams = new URLSearchParams(search);
+    if (urlParams.has('builder')) {
+      enableBuilderMode();
+    }
+  };
 
   render() {
     const {
-      onLoadMap,
-      match: { params: { country, dataset } },
-      location: { search },
+      match: { params: { country } },
       onCountryClick,
       app: {
         ui: {
@@ -66,7 +82,7 @@ export class App extends Component {
                 store={store}
                 mapboxToken={MAPBOX_TOKEN}
                 onCountryClick={clickCallback}
-                onLoad={() => onLoadMap(dataset, country ? `/c/${country}/` : '/', search)}
+                onLoad={this.setupMapAfterLoad}
               />
             </Suspense>
           )}
@@ -85,22 +101,15 @@ App.propTypes = {
   app: PropTypes.shape({}).isRequired,
   toggleSidePanel: PropTypes.func.isRequired,
   toggleDataInfo: PropTypes.func.isRequired,
+  enableBuilderMode: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => state;
 const mapDispatchToProps = dispatch => ({
   dispatch,
   onCountryClick: info => dispatch(Actions.onCountryClick(info)),
-  onLoadMap: (dataset, path, search) => {
-    // Load data from path to map
-    dispatch(Actions.loadDataToMap(dataset, path));
-    // Enable builder mode if needed
-    // Once it is activated, it will not be deactivated
-    const urlParams = new URLSearchParams(search);
-    if (urlParams.has('builder')) {
-      dispatch(updateVisData({}, { readOnly: false }, {}));
-    }
-  },
+  onLoadMap: (dataset, path) => dispatch(Actions.loadDataToMap(dataset, path)),
+  enableBuilderMode: () => dispatch(Actions.enableBuilderMode()),
   toggleSidePanel: () => dispatch(Actions.toggleSidePanel()),
   toggleDataInfo: () => dispatch(Actions.toggleDataInfo()),
 });
