@@ -4,6 +4,7 @@ import { createBrowserHistory } from 'history';
 import * as serviceWorker from './serviceWorker';
 import Root from './components/Root';
 import initializeStore from './store';
+import theme from './theme';
 
 // Create browser history
 const history = createBrowserHistory();
@@ -12,7 +13,7 @@ const history = createBrowserHistory();
 const store = initializeStore(history);
 
 // Render the root component
-ReactDOM.render(<Root store={store} history={history} />, document.getElementById('root'));
+ReactDOM.render(<Root store={store} history={history} theme={theme} />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

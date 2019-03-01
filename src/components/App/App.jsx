@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { onLayerClick, updateVisData } from 'kepler.gl/actions';
 import * as Actions from '../../actions';
 import LoadingIndicator from '../LoadingIndicator';
+import DataInfo from '../DataInfo';
 
 // Load Map component dinamically -> code splitting
 const LazyMap = lazy(() => import(/* webpackChunkName: "map" */ '../Map'));
@@ -33,8 +34,10 @@ export class App extends Component {
         ui: {
           loading,
           isLoading,
+          dataInfoOpen,
         },
       },
+      toggleDataInfo,
     } = this.props;
 
     // Country click should only be available when no country is selected
@@ -42,6 +45,11 @@ export class App extends Component {
 
     return (
       <div className="App">
+        <DataInfo
+          open={dataInfoOpen}
+          toggleAction={toggleDataInfo}
+          content={[{ title: 'About', content: 'Lorem ipsulum dolor with format...', order: 1 }, { title: 'HDI & Poverty', content: 'Welcome to UNICEF\'s data visualization tool for Human Development Index (HDI).', order: 2 }]}
+        />
         {isLoading && <LoadingIndicator value={loading} />}
         <ReactReduxContext.Consumer>
           {({ store }) => (
@@ -67,6 +75,7 @@ App.propTypes = {
   history: PropTypes.shape({}).isRequired,
   location: PropTypes.shape({}).isRequired,
   app: PropTypes.shape({}).isRequired,
+  toggleDataInfo: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => state;
@@ -83,6 +92,7 @@ const mapDispathToProps = dispatch => ({
       dispatch(updateVisData({}, { readOnly: false }, {}));
     }
   },
+  toggleDataInfo: () => dispatch(Actions.toggleDataInfo()),
 });
 
 export default connect(mapStateToProps, mapDispathToProps)(App);
