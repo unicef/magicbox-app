@@ -7,6 +7,7 @@ const ActionTypes = Object.keys({
   FETCHED_DATA: null,
   ERROR_FETCHING_DATA: null,
   TOGGLE_SIDE_PANEL: null,
+  TOGGLE_DATA_INFO: null,
 }).reduce((acc, el) => ({ ...acc, [el]: el }), {});
 
 export default ActionTypes;

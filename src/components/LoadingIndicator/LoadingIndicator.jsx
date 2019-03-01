@@ -5,6 +5,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 const LoadingIndicator = ({ value }) => (
   <div className="loadingIndicator">
     <CircularProgress
+      color="secondary"
       variant={value !== null ? 'determinate' : 'indeterminate'}
       value={value}
     />

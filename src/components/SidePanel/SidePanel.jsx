@@ -28,7 +28,6 @@ const styles = {
     paddingTop: '2px',
     paddingBottom: '2px',
     backgroundColor: '#000000',
-    transition: 'ease',
   },
   keyboardArrowLeft: {
     position: 'fixed',
@@ -48,6 +47,7 @@ const styles = {
   },
   paper: {
     borderRight: 'none',
+    backgroundColor: '#292929',
   },
 };
 

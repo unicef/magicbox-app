@@ -5,6 +5,7 @@ import { onLayerClick, updateVisData } from 'kepler.gl/actions';
 import * as Actions from '../../actions';
 import LoadingIndicator from '../LoadingIndicator';
 import SidePanel from '../SidePanel';
+import DataInfo from '../DataInfo';
 
 // Load Map component dinamically -> code splitting
 const LazyMap = lazy(() => import(/* webpackChunkName: "map" */ '../Map'));
@@ -43,9 +44,11 @@ export class App extends Component {
           loading,
           isLoading,
           sidePanelOpen,
+          dataInfoOpen,
         },
       },
       toggleSidePanel,
+      toggleDataInfo,
     } = this.props;
     // Internal state to manage view details
     const { appBarHeight } = this.state;
@@ -59,6 +62,11 @@ export class App extends Component {
           open={sidePanelOpen}
           toggleAction={toggleSidePanel}
           title="Poverty Mapping"
+        />
+        <DataInfo
+          open={dataInfoOpen}
+          toggleAction={toggleDataInfo}
+          content={[{ title: 'About', content: 'Lorem ipsulum dolor with format...', order: 1 }, { title: 'HDI & Poverty', content: 'Welcome to UNICEF\'s data visualization tool for Human Development Index (HDI).', order: 2 }]}
         />
         {isLoading && <LoadingIndicator value={loading} />}
         <ReactReduxContext.Consumer>
@@ -87,10 +95,11 @@ App.propTypes = {
   location: PropTypes.shape({}).isRequired,
   app: PropTypes.shape({}).isRequired,
   toggleSidePanel: PropTypes.func.isRequired,
+  toggleDataInfo: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => state;
-const mapDispathToProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({
   dispatch,
   onCountryClick: info => dispatch(Actions.onCountryClick(info)),
   onLoadMap: (dataset, path, search) => {
@@ -104,6 +113,7 @@ const mapDispathToProps = dispatch => ({
     }
   },
   toggleSidePanel: () => dispatch(Actions.toggleSidePanel()),
+  toggleDataInfo: () => dispatch(Actions.toggleDataInfo()),
 });
 
-export default connect(mapStateToProps, mapDispathToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
