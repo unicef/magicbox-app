@@ -5,6 +5,7 @@ const DEFAULT_PATH = '/';
 
 export const INITIAL_APP_STATE = {
   ui: {
+    sidePanelOpen: true,
     dataInfoOpen: false,
     isLoading: false,
     loading: 1,
@@ -82,6 +83,14 @@ export const errorFetchingDataUpdater = (state, action) => ({
   },
 });
 
+// toggle side panel
+export const toggleSidePanelUpdater = state => ({
+  ...state,
+  ui: {
+    ...state.ui,
+    sidePanelOpen: !state.ui.sidePanelOpen,
+  },
+});
 // toggle data info modal
 export const toggleDataInfoUpdater = state => ({
   ...state,
@@ -97,5 +106,6 @@ export default {
   [ActionTypes.FETCHING_DATA]: fetchingDataUpdater,
   [ActionTypes.FETCHED_DATA]: fetchedDataUpdater,
   [ActionTypes.ERROR_FETCHING_DATA]: errorFetchingDataUpdater,
+  [ActionTypes.TOGGLE_SIDE_PANEL]: toggleSidePanelUpdater,
   [ActionTypes.TOGGLE_DATA_INFO]: toggleDataInfoUpdater,
 };

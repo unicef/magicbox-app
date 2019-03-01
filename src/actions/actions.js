@@ -11,6 +11,7 @@ const [
   fetchingData,
   fetchedData,
   errorFetchingData,
+  toggleSidePanel,
   toggleDataInfo,
 ] = [
   ActionTypes.NOOP,
@@ -19,6 +20,7 @@ const [
   ActionTypes.FETCHING_DATA,
   ActionTypes.FETCHED_DATA,
   ActionTypes.ERROR_FETCHING_DATA,
+  ActionTypes.TOGGLE_SIDE_PANEL,
   ActionTypes.TOGGLE_DATA_INFO,
 ].map(action => createAction(action));
 
@@ -111,6 +113,7 @@ export {
   fetchingData,
   fetchedData,
   errorFetchingData,
+  toggleSidePanel,
   toggleDataInfo,
   loadData,
   loadDataToMap,

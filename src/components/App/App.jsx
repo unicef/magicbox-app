@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { onLayerClick, updateVisData } from 'kepler.gl/actions';
 import * as Actions from '../../actions';
 import LoadingIndicator from '../LoadingIndicator';
+import SidePanel from '../SidePanel';
 import DataInfo from '../DataInfo';
 
 // Load Map component dinamically -> code splitting
@@ -34,9 +35,11 @@ export class App extends Component {
         ui: {
           loading,
           isLoading,
+          sidePanelOpen,
           dataInfoOpen,
         },
       },
+      toggleSidePanel,
       toggleDataInfo,
     } = this.props;
 
@@ -45,6 +48,11 @@ export class App extends Component {
 
     return (
       <div className="App">
+        <SidePanel
+          open={sidePanelOpen}
+          toggleAction={toggleSidePanel}
+          title="Poverty Mapping"
+        />
         <DataInfo
           open={dataInfoOpen}
           toggleAction={toggleDataInfo}
@@ -75,11 +83,12 @@ App.propTypes = {
   history: PropTypes.shape({}).isRequired,
   location: PropTypes.shape({}).isRequired,
   app: PropTypes.shape({}).isRequired,
+  toggleSidePanel: PropTypes.func.isRequired,
   toggleDataInfo: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => state;
-const mapDispathToProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({
   dispatch,
   onCountryClick: info => dispatch(Actions.onCountryClick(info)),
   onLoadMap: (dataset, path, search) => {
@@ -92,7 +101,8 @@ const mapDispathToProps = dispatch => ({
       dispatch(updateVisData({}, { readOnly: false }, {}));
     }
   },
+  toggleSidePanel: () => dispatch(Actions.toggleSidePanel()),
   toggleDataInfo: () => dispatch(Actions.toggleDataInfo()),
 });
 
-export default connect(mapStateToProps, mapDispathToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
