@@ -1,9 +1,12 @@
 import ActionTypes from '../constants/action-types';
 
-const DEFAULT_DATASET_NAME = 'shape.json';
+const DEFAULT_DATASET_NAME = 'shape';
 const DEFAULT_PATH = '/';
+const DEFAULT_TITLE = 'Loading...';
 
 export const INITIAL_APP_STATE = {
+  title: DEFAULT_TITLE,
+  dataInfo: [],
   ui: {
     sidePanelOpen: true,
     dataInfoOpen: false,
@@ -60,6 +63,8 @@ export const fetchingDataUpdater = (state, action) => ({
 // Update dataset
 export const fetchedDataUpdater = (state, action) => ({
   ...state,
+  title: action.payload.appConfig.title,
+  dataInfo: action.payload.appConfig.dataInfo.sort((a, b) => a.order - b.order),
   ui: {
     ...state.ui,
     isLoading: false,
@@ -68,7 +73,7 @@ export const fetchedDataUpdater = (state, action) => ({
   },
   data: {
     ...state.data,
-    dataset: action.payload,
+    dataset: action.payload.mapConfig,
   },
 });
 

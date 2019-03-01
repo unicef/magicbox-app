@@ -48,6 +48,8 @@ export class App extends Component {
       match: { params: { country } },
       onCountryClick,
       app: {
+        title,
+        dataInfo,
         ui: {
           loading,
           isLoading,
@@ -67,12 +69,12 @@ export class App extends Component {
         <SidePanel
           open={sidePanelOpen}
           toggleAction={toggleSidePanel}
-          title="Poverty Mapping"
+          title={title}
         />
         <DataInfo
           open={dataInfoOpen}
           toggleAction={toggleDataInfo}
-          content={[{ title: 'About', content: 'Lorem ipsulum dolor with format...', order: 1 }, { title: 'HDI & Poverty', content: 'Welcome to UNICEF\'s data visualization tool for Human Development Index (HDI).', order: 2 }]}
+          content={dataInfo}
         />
         {isLoading && <LoadingIndicator value={loading} />}
         <ReactReduxContext.Consumer>

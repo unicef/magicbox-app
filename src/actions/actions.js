@@ -50,7 +50,7 @@ const loadData = (dataset = null, path = null) => ((dispatch, getState) => {
 
   // fetch dataset from url
   const { app: { data } } = getState();
-  const url = `${data.path}${data.datasetName}`;
+  const url = `${data.path}${data.datasetName}.json`;
 
   // eslint-disable-next-line
   console.log('Getting data from:', url);
