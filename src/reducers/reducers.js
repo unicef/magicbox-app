@@ -5,6 +5,7 @@ const DEFAULT_PATH = '/';
 
 export const INITIAL_APP_STATE = {
   ui: {
+    sidePanelOpen: true,
     isLoading: false,
     loading: 1,
     error: null,
@@ -77,10 +78,19 @@ export const errorFetchingDataUpdater = (state, action) => ({
   },
 });
 
+export const toggleSidePanelUpdater = state => ({
+  ...state,
+  ui: {
+    ...state.ui,
+    sidePanelOpen: !state.ui.sidePanelOpen,
+  },
+});
+
 export default {
   [ActionTypes.COUNTRY_SELECT]: countrySelectUpdater,
   [ActionTypes.FETCH_DATA]: fetchDataUpdater,
   [ActionTypes.FETCHING_DATA]: fetchingDataUpdater,
   [ActionTypes.FETCHED_DATA]: fetchedDataUpdater,
   [ActionTypes.ERROR_FETCHING_DATA]: errorFetchingDataUpdater,
+  [ActionTypes.TOGGLE_SIDE_PANEL]: toggleSidePanelUpdater,
 };

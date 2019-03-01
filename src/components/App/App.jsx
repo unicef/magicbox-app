@@ -42,10 +42,11 @@ export class App extends Component {
         ui: {
           loading,
           isLoading,
+          sidePanelOpen,
         },
       },
+      toggleSidePanel,
     } = this.props;
-
     // Internal state to manage view details
     const { appBarHeight } = this.state;
 
@@ -55,6 +56,8 @@ export class App extends Component {
     return (
       <div className="App">
         <SidePanel
+          open={sidePanelOpen}
+          toggleAction={toggleSidePanel}
           title="Poverty Mapping"
         />
         {isLoading && <LoadingIndicator value={loading} />}
@@ -83,6 +86,7 @@ App.propTypes = {
   history: PropTypes.shape({}).isRequired,
   location: PropTypes.shape({}).isRequired,
   app: PropTypes.shape({}).isRequired,
+  toggleSidePanel: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => state;
@@ -99,6 +103,7 @@ const mapDispathToProps = dispatch => ({
       dispatch(updateVisData({}, { readOnly: false }, {}));
     }
   },
+  toggleSidePanel: () => dispatch(Actions.toggleSidePanel()),
 });
 
 export default connect(mapStateToProps, mapDispathToProps)(App);
