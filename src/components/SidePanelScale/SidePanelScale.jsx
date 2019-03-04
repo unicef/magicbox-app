@@ -29,12 +29,23 @@ const styles = {
     letterSpacing: '0.9px',
     color: '#000000',
   },
+  scaleNumbers: {
+    paddingLeft: '22px',
+    paddingRight: '60px',
+    fontFamily: 'IBM Plex Sans',
+    lineHeight: '2.6',
+    color: '#000000',
+    fontSize: '15px',
+  },
 };
 
 const SidePanelScale = ({ classes, title }) => (
   <div className={classes.scale}>
     <div className={classes.title}>{title}</div>
     <Chip className={classes.chip} />
+    <span className={classes.scaleNumbers}>0.1</span>
+    <span className={classes.scaleNumbers}>0.5</span>
+    <span className={classes.scaleNumbers}>0.9</span>
   </div>
 );
 
