@@ -2,12 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Typography from '@material-ui/core/Typography';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import SidePanelLegend from '../SidePanelLegend';
 import SidePanelScale from '../SidePanelScale';
-
+import SidePanelHeader from '../SidePanelHeader';
 
 const styles = {
   root: {
@@ -39,12 +38,6 @@ const styles = {
     backgroundColor: '#000000',
     zIndex: '1',
   },
-  typography: {
-    fontSize: '16px',
-    fontWeight: 'bold',
-    height: '57px',
-    textAlign: 'center',
-  },
   paper: {
     borderRight: 'none',
     backgroundColor: '#292929',
@@ -64,11 +57,9 @@ const SidePanel = ({
       <KeyboardArrowRight onClick={toggleAction} className={classes.keyboardArrowRight} />
     ) }
     <Drawer open={open} className={classes.drawer} classes={{ paper: classes.paper }} variant="persistent" anchor="left">
-      <Typography className={classes.typography}>
-        {title}
-      </Typography>
-      <SidePanelLegend title={title} />
-      <SidePanelScale title={title} />
+      <SidePanelHeader title={title} />
+      <SidePanelLegend />
+      <SidePanelScale title="HDI SCALE" />
     </Drawer>
   </div>
 );
