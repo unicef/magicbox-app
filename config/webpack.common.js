@@ -141,6 +141,11 @@ module.exports = {
                 }
             }]
       },
+      // file loader
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: "file-loader?name=/public/images/[name].[ext]"
+      }
       // Another loader here
     ],
   },
