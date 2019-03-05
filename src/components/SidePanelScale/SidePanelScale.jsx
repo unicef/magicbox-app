@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Chip from '@material-ui/core/Chip';
+import Deviation from './deviation_scale.png';
 
 
 const styles = {
@@ -11,14 +12,22 @@ const styles = {
     margin: '0px',
     backgroundColor: '#e3e3e3',
   },
-  chip: {
+  chipGradient: {
     marginLeft: '22px',
     marginTop: '22px',
-    backgroundColor: 'gray',
     width: '242px',
     height: '10px',
     borderRadius: '5px',
     backgroundImage: 'linear-gradient(to right, #e4e6ea, #7280c7 44%, #182fab)',
+  },
+  chipDivergent: {
+    marginLeft: '22px',
+    marginTop: '22px',
+    width: '242px',
+    height: '10px',
+    borderRadius: '5px',
+    backgroundImage: `url(${Deviation})`,
+    backgroundSize: 'cover',
   },
   title: {
     paddingTop: '17px',
@@ -37,14 +46,21 @@ const styles = {
     color: '#000000',
     fontSize: '15px',
   },
+  scaleText: {
+    paddingLeft: '28px',
+    fontFamily: 'IBM Plex Sans',
+    lineHeight: '3',
+    color: '#000000',
+    fontSize: '13px',
+  },
 };
 
 const SidePanelScale = ({ classes, title, range }) => (
   <div className={classes.scale}>
     <div className={classes.title}>{title}</div>
-    <Chip className={classes.chip} />
+    <Chip className={classes.chipDivergent} />
     {range.map(item => (
-      <span className={classes.scaleNumbers}>{item}</span>
+      <span className={classes.scaleText}>{item}</span>
     ))}
   </div>
 );

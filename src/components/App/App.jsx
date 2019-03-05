@@ -67,7 +67,7 @@ export class App extends Component {
         <SidePanel
           open={sidePanelOpen}
           toggleAction={toggleSidePanel}
-          content={{ legend: { text: 'Click on the countries with a red outline to explore the HDI at municipality level.' }, scale: { title: 'HDI SCALE', range: [0.1, 0.5, 0.9] } }}
+          content={{ legend: { text: 'Click on the countries with a red outline to explore the HDI at municipality level.' }, scale: { title: 'HDI SCALE', range: [0.1, 0.5, 0.9], divergentRange: ['Negative', 'No Deviation', 'Positive'] } }}
         />
         <DataInfo
           open={dataInfoOpen}

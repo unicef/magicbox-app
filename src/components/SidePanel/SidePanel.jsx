@@ -40,7 +40,7 @@ const styles = {
   },
   paper: {
     borderRight: 'none',
-    backgroundColor: '#292929',
+    backgroundColor: 'rgba(41, 41, 41, 0.57)',
   },
 };
 
@@ -59,7 +59,7 @@ const SidePanel = ({
     <Drawer open={open} className={classes.drawer} classes={{ paper: classes.paper }} variant="persistent" anchor="left">
       <SidePanelHeader />
       <SidePanelLegend text={content.legend.text} />
-      <SidePanelScale title={content.scale.title} range={content.scale.range} />
+      <SidePanelScale title={content.scale.title} range={content.scale.divergentRange} />
     </Drawer>
   </div>
 );
