@@ -21,17 +21,18 @@ const styles = {
   },
 };
 
-const SidePanelLegend = ({ classes }) => (
+const SidePanelLegend = ({ classes, text }) => (
   <div className={classes.legend}>
-    <img src={Instructions} alt="Pointer clicking on country outlined in red" className={classes.image} />
+    <img src={Instructions} alt="Instructions for how to identify and select countries that have data" className={classes.image} />
     <div className={classes.content}>
-      Click on the countries with a red outline to explore the HDI at municipality level.
+      {text}
     </div>
   </div>
 );
 
 SidePanelLegend.propTypes = {
   classes: PropTypes.shape({}).isRequired,
+  text: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles)(SidePanelLegend);

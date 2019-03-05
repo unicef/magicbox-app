@@ -47,8 +47,8 @@ const styles = {
 const SidePanel = ({
   classes,
   open,
-  title,
   toggleAction,
+  content,
 }) => (
   <div>
     { open ? (
@@ -57,9 +57,9 @@ const SidePanel = ({
       <KeyboardArrowRight onClick={toggleAction} className={classes.keyboardArrowRight} />
     ) }
     <Drawer open={open} className={classes.drawer} classes={{ paper: classes.paper }} variant="persistent" anchor="left">
-      <SidePanelHeader title={title} />
-      <SidePanelLegend />
-      <SidePanelScale title="HDI SCALE" />
+      <SidePanelHeader />
+      <SidePanelLegend text={content.legend.text} />
+      <SidePanelScale title={content.scale.title} range={content.scale.range} />
     </Drawer>
   </div>
 );
@@ -67,7 +67,7 @@ const SidePanel = ({
 SidePanel.propTypes = {
   classes: PropTypes.shape({}).isRequired,
   open: PropTypes.bool.isRequired,
-  title: PropTypes.string.isRequired,
+  content: PropTypes.shape({}).isRequired,
   toggleAction: PropTypes.func.isRequired,
 };
 

@@ -132,19 +132,15 @@ module.exports = {
       },
       // image loader
       {
-        test: /\.(png|jp(e*)g|svg)$/,
-            use: [{
-                loader: 'url-loader',
-                options: {
-                    limit: 8000, // Convert images < 8kb to base64 strings
-                    name: 'images/[hash]-[name].[ext]'
-                }
-            }]
-      },
-      // file loader
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: "file-loader?name=/public/images/[name].[ext]"
+        test: /\.(png|jpg|svg)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
       }
       // Another loader here
     ],

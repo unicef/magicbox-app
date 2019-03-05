@@ -39,19 +39,20 @@ const styles = {
   },
 };
 
-const SidePanelScale = ({ classes, title }) => (
+const SidePanelScale = ({ classes, title, range }) => (
   <div className={classes.scale}>
     <div className={classes.title}>{title}</div>
     <Chip className={classes.chip} />
-    <span className={classes.scaleNumbers}>0.1</span>
-    <span className={classes.scaleNumbers}>0.5</span>
-    <span className={classes.scaleNumbers}>0.9</span>
+    {range.map(item => (
+      <span className={classes.scaleNumbers}>{item}</span>
+    ))}
   </div>
 );
 
 SidePanelScale.propTypes = {
   classes: PropTypes.shape({}).isRequired,
   title: PropTypes.string.isRequired,
+  range: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 export default withStyles(styles)(SidePanelScale);

@@ -16,7 +16,7 @@ const styles = {
 
 const SidePanelHeader = ({ classes }) => (
   <div className={classes.header}>
-    <img src={logo} alt="UNICEF logo and the title Poverty Map" className={classes.image} />
+    <img src={logo} alt="UNICEF Poverty Map" className={classes.image} />
   </div>
 );
 
