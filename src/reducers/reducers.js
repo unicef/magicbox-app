@@ -2,7 +2,7 @@ import ActionTypes from '../constants/action-types';
 
 const DEFAULT_DATASET_NAME = 'shape';
 const DEFAULT_PATH = '/';
-const DEFAULT_TITLE = 'Loading...';
+const DEFAULT_TITLE = 'POVERTY MAP';
 
 export const INITIAL_APP_STATE = {
   title: DEFAULT_TITLE,

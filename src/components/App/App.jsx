@@ -48,7 +48,6 @@ export class App extends Component {
       match: { params: { country } },
       onCountryClick,
       app: {
-        title,
         dataInfo,
         ui: {
           loading,
@@ -63,13 +62,12 @@ export class App extends Component {
 
     // Country click should only be available when no country is selected
     const clickCallback = country ? onLayerClick : onCountryClick;
-
     return (
       <div className="App">
         <SidePanel
           open={sidePanelOpen}
           toggleAction={toggleSidePanel}
-          title={title}
+          content={{ legend: { text: 'Click on the countries with a red outline to explore the HDI at municipality level.' }, scale: { title: 'HDI SCALE', range: [0.1, 0.5, 0.9], divergentRange: ['Negative', 'No Deviation', 'Positive'] } }}
         />
         <DataInfo
           open={dataInfoOpen}

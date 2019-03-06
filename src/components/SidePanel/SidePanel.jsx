@@ -2,12 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Typography from '@material-ui/core/Typography';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import SidePanelLegend from '../SidePanelLegend';
 import SidePanelScale from '../SidePanelScale';
-
+import SidePanelHeader from '../SidePanelHeader';
 
 const styles = {
   root: {
@@ -39,23 +38,17 @@ const styles = {
     backgroundColor: '#000000',
     zIndex: '1',
   },
-  typography: {
-    fontSize: '16px',
-    fontWeight: 'bold',
-    height: '57px',
-    textAlign: 'center',
-  },
   paper: {
     borderRight: 'none',
-    backgroundColor: '#292929',
+    backgroundColor: 'rgba(41, 41, 41, 0.57)',
   },
 };
 
 const SidePanel = ({
   classes,
   open,
-  title,
   toggleAction,
+  content,
 }) => (
   <div>
     { open ? (
@@ -64,11 +57,9 @@ const SidePanel = ({
       <KeyboardArrowRight onClick={toggleAction} className={classes.keyboardArrowRight} />
     ) }
     <Drawer open={open} className={classes.drawer} classes={{ paper: classes.paper }} variant="persistent" anchor="left">
-      <Typography className={classes.typography}>
-        {title}
-      </Typography>
-      <SidePanelLegend title={title} />
-      <SidePanelScale title={title} />
+      <SidePanelHeader />
+      <SidePanelLegend text={content.legend.text} />
+      <SidePanelScale title={content.scale.title} range={content.scale.divergentRange} />
     </Drawer>
   </div>
 );
@@ -76,7 +67,7 @@ const SidePanel = ({
 SidePanel.propTypes = {
   classes: PropTypes.shape({}).isRequired,
   open: PropTypes.bool.isRequired,
-  title: PropTypes.string.isRequired,
+  content: PropTypes.shape({}).isRequired,
   toggleAction: PropTypes.func.isRequired,
 };
 

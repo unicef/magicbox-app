@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import Chip from '@material-ui/core/Chip';
+import Deviation from './deviation_scale.png';
 
 
 const styles = {
@@ -10,31 +12,63 @@ const styles = {
     margin: '0px',
     backgroundColor: '#e3e3e3',
   },
+  chipGradient: {
+    marginLeft: '22px',
+    marginTop: '22px',
+    width: '242px',
+    height: '10px',
+    borderRadius: '5px',
+    backgroundImage: 'linear-gradient(to right, #e4e6ea, #7280c7 44%, #182fab)',
+  },
+  chipDivergent: {
+    marginLeft: '22px',
+    marginTop: '22px',
+    width: '242px',
+    height: '10px',
+    borderRadius: '5px',
+    backgroundImage: `url(${Deviation})`,
+    backgroundSize: 'cover',
+  },
+  title: {
+    paddingTop: '17px',
+    paddingLeft: '22px',
+    fontFamily: 'IBM Plex Sans',
+    fontSize: '13px',
+    fontWeight: 'bold',
+    letterSpacing: '0.9px',
+    color: '#000000',
+  },
+  scaleNumbers: {
+    paddingLeft: '22px',
+    paddingRight: '60px',
+    fontFamily: 'IBM Plex Sans',
+    lineHeight: '2.6',
+    color: '#000000',
+    fontSize: '15px',
+  },
+  scaleText: {
+    paddingLeft: '28px',
+    fontFamily: 'IBM Plex Sans',
+    lineHeight: '3',
+    color: '#000000',
+    fontSize: '13px',
+  },
 };
 
-class SidePanelScale extends Component {
-  constructor() {
-    super();
-    this.state = {
-      content: 'scale',
-    };
-  }
-
-  render() {
-    const { classes, title } = this.props;
-    const { content } = this.state;
-    return (
-      <div className={classes.scale}>
-        <h4>{title}</h4>
-        <h4>{content}</h4>
-      </div>
-    );
-  }
-}
+const SidePanelScale = ({ classes, title, range }) => (
+  <div className={classes.scale}>
+    <div className={classes.title}>{title}</div>
+    <Chip className={classes.chipDivergent} />
+    {range.map(item => (
+      <span className={classes.scaleText}>{item}</span>
+    ))}
+  </div>
+);
 
 SidePanelScale.propTypes = {
   classes: PropTypes.shape({}).isRequired,
   title: PropTypes.string.isRequired,
+  range: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 export default withStyles(styles)(SidePanelScale);
