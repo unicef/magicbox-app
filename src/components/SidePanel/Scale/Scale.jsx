@@ -55,7 +55,7 @@ const styles = {
   },
 };
 
-const SidePanelScale = ({ classes, title, range }) => (
+const Scale = ({ classes, title, range }) => (
   <div className={classes.scale}>
     <div className={classes.title}>{title}</div>
     <Chip className={classes.chipDivergent} />
@@ -65,7 +65,7 @@ const SidePanelScale = ({ classes, title, range }) => (
   </div>
 );
 
-SidePanelScale.propTypes = {
+Scale.propTypes = {
   classes: PropTypes.shape({}).isRequired,
   title: PropTypes.string.isRequired,
   range: PropTypes.arrayOf(PropTypes.oneOfType([
@@ -74,4 +74,4 @@ SidePanelScale.propTypes = {
   ])).isRequired,
 };
 
-export default withStyles(styles)(SidePanelScale);
+export default withStyles(styles)(Scale);

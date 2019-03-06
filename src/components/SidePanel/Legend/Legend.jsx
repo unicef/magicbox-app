@@ -21,7 +21,7 @@ const styles = {
   },
 };
 
-const SidePanelLegend = ({ classes, text }) => (
+const Legend = ({ classes, text }) => (
   <div className={classes.legend}>
     <img src={Instructions} alt="Instructions for how to identify and select countries that have data" className={classes.image} />
     <div className={classes.content}>
@@ -30,9 +30,9 @@ const SidePanelLegend = ({ classes, text }) => (
   </div>
 );
 
-SidePanelLegend.propTypes = {
+Legend.propTypes = {
   classes: PropTypes.shape({}).isRequired,
   text: PropTypes.string.isRequired,
 };
 
-export default withStyles(styles)(SidePanelLegend);
+export default withStyles(styles)(Legend);

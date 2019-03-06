@@ -14,14 +14,14 @@ const styles = {
   },
 };
 
-const SidePanelHeader = ({ classes }) => (
+const Header = ({ classes }) => (
   <div className={classes.header}>
     <img src={logo} alt="UNICEF Poverty Map" className={classes.image} />
   </div>
 );
 
-SidePanelHeader.propTypes = {
+Header.propTypes = {
   classes: PropTypes.shape({}).isRequired,
 };
 
-export default withStyles(styles)(SidePanelHeader);
+export default withStyles(styles)(Header);
