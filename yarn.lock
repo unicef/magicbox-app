@@ -8329,17 +8329,6 @@ react-palm@^1.1.2:
     react-reconciler "^0.12.0"
     react-test-renderer "^16.4.2"
 
-react-palm@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/react-palm/-/react-palm-2.0.0.tgz#03be811ced642e9f1ca0fb437e99b8f55419413b"
-  integrity sha512-ZwpYBkKlb+c4lmifQw5Ispqt/e6krZlDYkah/eh9h5L7fZvBvUBIdqw/GakdvZ8/nynUKCDdCXQVX4PCIUoIsg==
-  dependencies:
-    babel-plugin-transform-object-rest-spread "^6.26.0"
-    function.prototype.name "^1.1.0"
-    react-dom "^16.4.2"
-    react-reconciler "^0.12.0"
-    react-test-renderer "^16.4.2"
-
 react-reconciler@^0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/react-reconciler/-/react-reconciler-0.12.0.tgz#dd3ecd98f64a2d8449298dadab041910cafd2849"
