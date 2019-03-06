@@ -13,6 +13,9 @@ const styles = {
     width: '291px',
     borderRightWidth: '0px',
   },
+  content: {
+    width: '291px',
+  },
   keyboardArrowRight: {
     position: 'fixed',
     zIndex: '1',
@@ -33,7 +36,7 @@ const styles = {
     height: '38px',
     width: '22px',
     backgroundColor: '#000000',
-    zIndex: '1',
+    zIndex: 1,
   },
   paper: {
     borderRight: 'none',
@@ -54,7 +57,9 @@ const SidePanel = ({
       <KeyboardArrowRight onClick={toggleAction} className={classes.keyboardArrowRight} />
     ) }
     <Drawer open={open} className={classes.drawer} classes={{ paper: classes.paper }} variant="persistent" anchor="left">
-      {children}
+      <div className={classes.content}>
+        {children}
+      </div>
     </Drawer>
   </div>
 );
