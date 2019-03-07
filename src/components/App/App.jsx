@@ -16,12 +16,17 @@ export class App extends Component {
   componentDidMount() {
     const {
       onLoadMap,
+      onZoomLevelChange,
       history,
       match: { params: { dataset } },
     } = this.props;
 
     // Enable new data to be loaded when URL changes
     history.listen(loc => onLoadMap(dataset, loc.pathname));
+
+    // Add mouse wheel event to control dataset accordingly
+    // with zoom level
+    window.addEventListener('mousewheel', onZoomLevelChange);
   }
 
   setupMapAfterLoad = () => {
@@ -44,13 +49,14 @@ export class App extends Component {
 
   loadSidePanelComponents = () => {
     const {
+      dispatch,
       app: { sidePanel },
     } = this.props;
 
     return sidePanel.map(c => ({
       ...c,
       component: lazy(() => import(`../SidePanel/${c.component}`)),
-    })).map(C => <C.component {...C.props} key={C.order} />);
+    })).map(C => <C.component {...C.props} key={C.order} dispatch={dispatch} />);
   };
 
   render() {
@@ -115,6 +121,7 @@ App.propTypes = {
   toggleSidePanel: PropTypes.func.isRequired,
   toggleDataInfo: PropTypes.func.isRequired,
   enableBuilderMode: PropTypes.func.isRequired,
+  onZoomLevelChange: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => state;
@@ -125,6 +132,7 @@ const mapDispatchToProps = dispatch => ({
   enableBuilderMode: () => dispatch(Actions.enableBuilderMode()),
   toggleSidePanel: () => dispatch(Actions.toggleSidePanel()),
   toggleDataInfo: () => dispatch(Actions.toggleDataInfo()),
+  onZoomLevelChange: () => dispatch(Actions.onZoomLevelChange()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

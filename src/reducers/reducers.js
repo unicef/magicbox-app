@@ -28,8 +28,8 @@ export const countrySelectUpdater = (state, action) => ({
   ...state,
   data: {
     ...state.data,
-    country: action.payload.name,
-    path: `/c/${action.payload.url}/`,
+    country: action.payload ? action.payload.name : null,
+    path: action.payload ? `/c/${action.payload.url}/` : null,
   },
 });
 
