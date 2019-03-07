@@ -43,8 +43,16 @@ export class App extends Component {
     }
   };
 
-  loadSidePanelComponents = components => components.sort((a, b) => a.order - b.order)
-    .map(c => ({ ...c, component: lazy(() => import(`../SidePanel/${c.component}`)) }));
+  loadSidePanelComponents = () => {
+    const {
+      app: { sidePanel },
+    } = this.props;
+
+    return sidePanel.map(c => ({
+      ...c,
+      component: lazy(() => import(`../SidePanel/${c.component}`)),
+    })).map(C => <C.component {...C.props} key={C.order} />);
+  };
 
   render() {
     const {
@@ -63,31 +71,6 @@ export class App extends Component {
       toggleDataInfo,
     } = this.props;
 
-    // List of components inside the components/SidePanel/ directory that will be
-    // automatically loaded once the configuration is read
-    const sidePanelComponents = [
-      {
-        component: 'Header',
-        props: {},
-        order: 1,
-      },
-      {
-        component: 'Legend',
-        props: {
-          text: 'Click on the countries with a red outline to explore the HDI at municipality level.',
-        },
-        order: 2,
-      },
-      {
-        component: 'Scale',
-        props: {
-          title: 'HDI SCALE',
-          range: ['Negative', 'No Deviation', 'Positive'],
-        },
-        order: 3,
-      },
-    ];
-
     // Country click should only be available when no country is selected
     const clickCallback = country ? onLayerClick : onCountryClick;
     return (
@@ -97,10 +80,7 @@ export class App extends Component {
           toggleAction={toggleSidePanel}
         >
           <Suspense fallback={<LoadingIndicator />}>
-            {
-              this.loadSidePanelComponents(sidePanelComponents)
-                .map(C => <C.component {...C.props} key={C.order} />)
-            }
+            {this.loadSidePanelComponents()}
           </Suspense>
         </SidePanel>
         <DataInfo
