@@ -1,7 +1,6 @@
 import React, { Component, lazy, Suspense } from 'react';
 import { connect, ReactReduxContext } from 'react-redux';
 import PropTypes from 'prop-types';
-import { onLayerClick } from 'kepler.gl/actions';
 import * as Actions from '../../actions';
 import LoadingIndicator from '../LoadingIndicator';
 import SidePanel from '../SidePanel';
@@ -72,7 +71,7 @@ export class App extends Component {
     } = this.props;
 
     // Country click should only be available when no country is selected
-    const clickCallback = country ? onLayerClick : onCountryClick;
+    const clickCallback = !country ? onCountryClick : null;
     return (
       <div className="App">
         <SidePanel
