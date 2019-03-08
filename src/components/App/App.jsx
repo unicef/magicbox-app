@@ -47,24 +47,13 @@ export class App extends Component {
     }
   };
 
-  loadSidePanelComponents = () => {
-    const {
-      dispatch,
-      app: { sidePanel },
-    } = this.props;
-
-    return sidePanel.map(c => ({
-      ...c,
-      component: lazy(() => import(`../SidePanel/${c.component}`)),
-    })).map(C => <C.component {...C.props} key={C.order} dispatch={dispatch} />);
-  };
-
   render() {
     const {
       match: { params: { country } },
       onCountryClick,
       app: {
         dataInfo,
+        sidePanel,
         ui: {
           loading,
           isLoading,
@@ -85,7 +74,7 @@ export class App extends Component {
           toggleAction={toggleSidePanel}
         >
           <Suspense fallback={<LoadingIndicator />}>
-            {this.loadSidePanelComponents()}
+            {sidePanel.map(C => <C.component {...C.props} key={C.order} />)}
           </Suspense>
         </SidePanel>
         <DataInfo

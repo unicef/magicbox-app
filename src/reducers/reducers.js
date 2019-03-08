@@ -1,3 +1,4 @@
+import { lazy } from 'react';
 import ActionTypes from '../constants/action-types';
 
 const DEFAULT_DATASET_NAME = 'shape';
@@ -66,7 +67,12 @@ export const fetchedDataUpdater = (state, action) => ({
   ...state,
   title: action.payload.appConfig.title,
   dataInfo: action.payload.appConfig.dataInfo.sort((a, b) => a.order - b.order),
-  sidePanel: action.payload.appConfig.sidePanel.sort((a, b) => a.order - b.order),
+  sidePanel: action.payload.appConfig.sidePanel
+    .sort((a, b) => a.order - b.order)
+    .map(c => ({
+      ...c,
+      component: lazy(() => import(`../components/SidePanel/${c.component}`)),
+    })),
   ui: {
     ...state.ui,
     isLoading: false,

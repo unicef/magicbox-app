@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Radio from '@material-ui/core/Radio';
@@ -31,22 +32,25 @@ class LayerToggler extends Component {
   constructor(props) {
     super(props);
 
+    const selectedValue = props.layers[0].id;
+
     this.state = {
-      selectedValue: props.layers[0].id,
+      selectedValue,
     };
+
+    props.selectLayer(selectedValue);
   }
 
   handleChange = (event) => {
     const {
-      dispatch,
+      selectLayer,
     } = this.props;
 
     this.setState({
       selectedValue: event.target.value,
     }, () => {
       const { selectedValue } = this.state;
-      console.log(selectedValue);
-      dispatch(setVisibleLayers([selectedValue]));
+      selectLayer(selectedValue);
     });
   };
 
@@ -94,7 +98,13 @@ LayerToggler.propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
   })).isRequired,
-  dispatch: PropTypes.func.isRequired,
+  selectLayer: PropTypes.func.isRequired,
 };
 
-export default withStyles(styles)(LayerToggler);
+const mapStateToProps = state => state;
+
+const mapDispatchToProps = dispatch => ({
+  selectLayer: layerId => dispatch(setVisibleLayers([layerId])),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(LayerToggler));
