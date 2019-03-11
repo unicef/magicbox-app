@@ -58,9 +58,9 @@ const styles = {
 const Scale = ({ classes, title, range }) => (
   <div className={classes.scale}>
     <div className={classes.title}>{title}</div>
-    <Chip className={classes.chipDivergent} />
+    <Chip className={classes.chipGradient} />
     {range.map(item => (
-      <span className={classes.scaleText} key={item}>{item}</span>
+      <span className={classes.scaleNumbers} key={item}>{item}</span>
     ))}
   </div>
 );
