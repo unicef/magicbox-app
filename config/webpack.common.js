@@ -130,6 +130,18 @@ module.exports = {
           'css-loader',
         ],
       },
+      // image loader
+      {
+        test: /\.(png|jpg|svg)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
+      }
       // Another loader here
     ],
   },

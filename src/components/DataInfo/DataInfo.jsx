@@ -53,7 +53,6 @@ class DataInfo extends Component {
 
     this.state = {
       selectedIndex: 0,
-      content: props.content.sort((a, b) => a.order - b.order),
     };
   }
 
@@ -66,9 +65,9 @@ class DataInfo extends Component {
       classes,
       open,
       toggleAction,
+      content,
     } = this.props;
     const {
-      content,
       selectedIndex,
     } = this.state;
 
@@ -114,7 +113,7 @@ class DataInfo extends Component {
             </div>
             <div className={classes.dataInfoContent__content}>
               <Typography>
-                {content[selectedIndex].content}
+                {content.length ? content[selectedIndex].content : ''}
               </Typography>
             </div>
           </div>

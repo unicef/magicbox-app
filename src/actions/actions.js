@@ -1,5 +1,10 @@
 import { createAction } from 'redux-actions';
-import { addDataToMap, onLayerClick } from 'kepler.gl/actions';
+import {
+  addDataToMap,
+  onLayerClick,
+  updateVisData,
+  layerConfigChange,
+} from 'kepler.gl/actions';
 import Processors from 'kepler.gl/processors';
 import { push } from 'connected-react-router';
 import ActionTypes from '../constants/action-types';
@@ -50,7 +55,7 @@ const loadData = (dataset = null, path = null) => ((dispatch, getState) => {
 
   // fetch dataset from url
   const { app: { data } } = getState();
-  const url = `${data.path}${data.datasetName}`;
+  const url = `${data.path}${data.datasetName}.json`;
 
   // eslint-disable-next-line
   console.log('Getting data from:', url);
@@ -106,6 +111,70 @@ const loadDataToMap = (dataset = null, path = null) => ((dispatch, getState) => 
     .then(data => dispatch(addDataToMap(data)))
 ));
 
+// On Zoom level change
+const onZoomLevelChange = () => (dispatch, getState) => {
+  // Minimum zoom level allowed before triggering request for
+  // global explorer dataset
+  const MIN_ZOOM_LEVEL = 1.5;
+  const {
+    keplerGl: {
+      map: {
+        mapState: {
+          zoom,
+        },
+      },
+    },
+    app: {
+      data: {
+        country,
+      },
+    },
+  } = getState();
+
+  // check if it is necessary to trigger the load event
+  if (zoom && country && zoom <= MIN_ZOOM_LEVEL) {
+    // Remove selected country
+    dispatch(onCountrySelect(null));
+    // Go to the main screen
+    dispatch(push('/'));
+  }
+};
+
+// Set visible layers by id
+const setVisibleLayers = visibleLayersIds => (dispatch, getState) => {
+  const state = getState();
+
+  // Check if map is already defined
+  if (!(state.keplerGl
+      && state.keplerGl.map
+      && state.keplerGl.map.visState
+      && state.keplerGl.map.visState.layers)) {
+    return dispatch(noop());
+  }
+
+  const {
+    keplerGl: {
+      map: {
+        visState: {
+          layers,
+        },
+      },
+    },
+  } = state;
+
+  const allUniqueVisibleLayers = new Set(visibleLayersIds);
+
+  layers.forEach((layer) => {
+    const isVisible = allUniqueVisibleLayers.has(layer.id);
+    dispatch(layerConfigChange(layer, { isVisible }));
+  });
+
+  return dispatch(noop());
+};
+
+// Enable builder mode
+const enableBuilderMode = () => dispatch => dispatch(updateVisData({}, { readOnly: false }, {}));
+
 export {
   onCountrySelect,
   onCountryClick,
@@ -117,4 +186,7 @@ export {
   toggleDataInfo,
   loadData,
   loadDataToMap,
+  enableBuilderMode,
+  onZoomLevelChange,
+  setVisibleLayers,
 };
