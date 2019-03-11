@@ -4,9 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
-import SidePanelLegend from '../SidePanelLegend';
-import SidePanelScale from '../SidePanelScale';
-import SidePanelHeader from '../SidePanelHeader';
 
 const styles = {
   root: {
@@ -15,6 +12,9 @@ const styles = {
   drawer: {
     width: '291px',
     borderRightWidth: '0px',
+  },
+  content: {
+    width: '291px',
   },
   keyboardArrowRight: {
     position: 'fixed',
@@ -36,7 +36,7 @@ const styles = {
     height: '38px',
     width: '22px',
     backgroundColor: '#000000',
-    zIndex: '1',
+    zIndex: 1,
   },
   paper: {
     borderRight: 'none',
@@ -48,7 +48,7 @@ const SidePanel = ({
   classes,
   open,
   toggleAction,
-  content,
+  children,
 }) => (
   <div>
     { open ? (
@@ -57,9 +57,9 @@ const SidePanel = ({
       <KeyboardArrowRight onClick={toggleAction} className={classes.keyboardArrowRight} />
     ) }
     <Drawer open={open} className={classes.drawer} classes={{ paper: classes.paper }} variant="persistent" anchor="left">
-      <SidePanelHeader />
-      <SidePanelLegend text={content.legend.text} />
-      <SidePanelScale title={content.scale.title} range={content.scale.divergentRange} />
+      <div className={classes.content}>
+        {children}
+      </div>
     </Drawer>
   </div>
 );
@@ -67,7 +67,7 @@ const SidePanel = ({
 SidePanel.propTypes = {
   classes: PropTypes.shape({}).isRequired,
   open: PropTypes.bool.isRequired,
-  content: PropTypes.shape({}).isRequired,
+  children: PropTypes.shape({}).isRequired,
   toggleAction: PropTypes.func.isRequired,
 };
 

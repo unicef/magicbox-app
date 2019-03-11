@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import { App } from '../App.jsx';
+import { App } from '../App';
 
 describe("App", () => {
   it('renders without crashing', () => {
     const props = {
       onLoadMap: () => null,
       onCountryClick: () => null,
+      toggleDataInfo: () => null,
+      toggleSidePanel: () => null,
+      enableBuilderMode: () => null,
       match: {
         params: {
           country: 'Testing',

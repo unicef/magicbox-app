@@ -1,3 +1,4 @@
+import { lazy } from 'react';
 import ActionTypes from '../constants/action-types';
 
 const DEFAULT_DATASET_NAME = 'shape';
@@ -7,6 +8,7 @@ const DEFAULT_TITLE = 'POVERTY MAP';
 export const INITIAL_APP_STATE = {
   title: DEFAULT_TITLE,
   dataInfo: [],
+  sidePanel: [],
   ui: {
     sidePanelOpen: true,
     dataInfoOpen: false,
@@ -27,8 +29,8 @@ export const countrySelectUpdater = (state, action) => ({
   ...state,
   data: {
     ...state.data,
-    country: action.payload.name,
-    path: `/c/${action.payload.url}/`,
+    country: action.payload ? action.payload.name : null,
+    path: action.payload ? `/c/${action.payload.url}/` : null,
   },
 });
 
@@ -65,6 +67,12 @@ export const fetchedDataUpdater = (state, action) => ({
   ...state,
   title: action.payload.appConfig.title,
   dataInfo: action.payload.appConfig.dataInfo.sort((a, b) => a.order - b.order),
+  sidePanel: action.payload.appConfig.sidePanel
+    .sort((a, b) => a.order - b.order)
+    .map(c => ({
+      ...c,
+      component: lazy(() => import(`../components/SidePanel/${c.component}`)),
+    })),
   ui: {
     ...state.ui,
     isLoading: false,

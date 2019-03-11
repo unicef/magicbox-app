@@ -1,7 +1,6 @@
 import React, { Component, lazy, Suspense } from 'react';
 import { connect, ReactReduxContext } from 'react-redux';
 import PropTypes from 'prop-types';
-import { onLayerClick } from 'kepler.gl/actions';
 import * as Actions from '../../actions';
 import LoadingIndicator from '../LoadingIndicator';
 import SidePanel from '../SidePanel';
@@ -17,12 +16,17 @@ export class App extends Component {
   componentDidMount() {
     const {
       onLoadMap,
+      onZoomLevelChange,
       history,
       match: { params: { dataset } },
     } = this.props;
 
     // Enable new data to be loaded when URL changes
     history.listen(loc => onLoadMap(dataset, loc.pathname));
+
+    // Add mouse wheel event to control dataset accordingly
+    // with zoom level
+    window.addEventListener('mousewheel', onZoomLevelChange);
   }
 
   setupMapAfterLoad = () => {
@@ -49,6 +53,7 @@ export class App extends Component {
       onCountryClick,
       app: {
         dataInfo,
+        sidePanel,
         ui: {
           loading,
           isLoading,
@@ -61,14 +66,17 @@ export class App extends Component {
     } = this.props;
 
     // Country click should only be available when no country is selected
-    const clickCallback = country ? onLayerClick : onCountryClick;
+    const clickCallback = !country ? onCountryClick : null;
     return (
       <div className="App">
         <SidePanel
           open={sidePanelOpen}
           toggleAction={toggleSidePanel}
-          content={{ legend: { text: 'Click on the countries with a red outline to explore the HDI at municipality level.' }, scale: { title: 'HDI SCALE', range: [0.1, 0.5, 0.9], divergentRange: ['Negative', 'No Deviation', 'Positive'] } }}
-        />
+        >
+          <Suspense fallback={<LoadingIndicator />}>
+            {sidePanel.map(C => <C.component {...C.props} key={C.order} />)}
+          </Suspense>
+        </SidePanel>
         <DataInfo
           open={dataInfoOpen}
           toggleAction={toggleDataInfo}
@@ -102,6 +110,7 @@ App.propTypes = {
   toggleSidePanel: PropTypes.func.isRequired,
   toggleDataInfo: PropTypes.func.isRequired,
   enableBuilderMode: PropTypes.func.isRequired,
+  onZoomLevelChange: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => state;
@@ -112,6 +121,7 @@ const mapDispatchToProps = dispatch => ({
   enableBuilderMode: () => dispatch(Actions.enableBuilderMode()),
   toggleSidePanel: () => dispatch(Actions.toggleSidePanel()),
   toggleDataInfo: () => dispatch(Actions.toggleDataInfo()),
+  onZoomLevelChange: () => dispatch(Actions.onZoomLevelChange()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

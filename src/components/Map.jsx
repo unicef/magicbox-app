@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import KeplerGl from 'kepler.gl';
 import keplerGlReducer from 'kepler.gl/reducers';
+import { onLayerClick } from 'kepler.gl/actions';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 import PropTypes from 'prop-types';
 import withReducer from '../helpers/with-reducer';
@@ -51,7 +52,7 @@ class Map extends Component {
             mapboxApiAccessToken={mapboxToken}
             height={height}
             width={width}
-            actions={{ onLayerClick: onCountryClick }}
+            actions={{ onLayerClick: onCountryClick || onLayerClick }}
             store={store}
           />
         )}
@@ -60,10 +61,14 @@ class Map extends Component {
   }
 }
 
+Map.defaultProps = {
+  onCountryClick: null,
+};
+
 Map.propTypes = {
   store: PropTypes.shape({}).isRequired,
   mapboxToken: PropTypes.string.isRequired,
-  onCountryClick: PropTypes.func.isRequired,
+  onCountryClick: PropTypes.func,
   onLoad: PropTypes.func.isRequired,
 };
 
