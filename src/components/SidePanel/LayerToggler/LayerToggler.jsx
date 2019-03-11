@@ -12,7 +12,7 @@ import { setVisibleLayers } from '../../../actions';
 const styles = theme => ({
   root: {
     backgroundColor: '#e3e3e3',
-    height: '118px',
+    height: '238px',
     width: '291px',
     margin: `${theme.spacing.unit}px 0`,
     padding: theme.spacing.unit,
