@@ -27936,10 +27936,10 @@
                     "type": "diverging",
                     "category": "ColorBrewer",
                     "colors": [
-                      "#ca0020",
-                      "#f4a582",
-                      "#bababa",
-                      "#404040"
+                      "#44b800",
+                      "#e94133",
+                      "#0034bc",
+                      "#bababa"
                     ],
                     "reversed": false
                   },
