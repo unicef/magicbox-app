@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Chip from '@material-ui/core/Chip';
 import Deviation from './deviation_scale.png';
+import ScaleInfoIcon from './ScaleInfoIcon';
 
 
 const styles = {
@@ -37,6 +38,8 @@ const styles = {
     fontWeight: 'bold',
     letterSpacing: '0.9px',
     color: '#000000',
+    display: 'flex',
+    flexDirection: 'row',
   },
   scaleNumbers: {
     paddingLeft: '22px',
@@ -53,11 +56,17 @@ const styles = {
     color: '#000000',
     fontSize: '13px',
   },
+  icon: {
+    paddingLeft: '10px',
+  },
 };
 
 const Scale = ({ classes, title, range }) => (
   <div className={classes.scale}>
-    <div className={classes.title}>{title}</div>
+    <div className={classes.title}>
+      {title}
+      <ScaleInfoIcon />
+    </div>
     <Chip className={classes.chipGradient} />
     {range.map(item => (
       <span className={classes.scaleNumbers} key={item}>{item}</span>
