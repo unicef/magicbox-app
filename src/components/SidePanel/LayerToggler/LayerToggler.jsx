@@ -8,6 +8,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { setVisibleLayers } from '../../../actions';
+import Scale from '../Scale/Scale';
 
 const styles = theme => ({
   root: {
@@ -59,37 +60,45 @@ class LayerToggler extends Component {
       classes,
       title,
       layers,
+      scaleTitle,
     } = this.props;
     const {
       selectedValue,
     } = this.state;
 
     return (
-      <div className={classes.root}>
-        <FormControl component="fieldset">
-          <FormLabel component="legend" className={classes.title}>{title}</FormLabel>
-          <RadioGroup
-            aria-label={title}
-            name={`layer-selector-${title}`}
-            value={selectedValue}
-            onChange={this.handleChange}
-          >
-            {
-              layers.map(layer => (
-                <FormControlLabel
-                  value={layer.id}
-                  control={<Radio />}
-                  label={layer.label}
-                  key={layer.id}
-                />
-              ))
-            }
-          </RadioGroup>
-        </FormControl>
+      <div>
+        <div className={classes.root}>
+          <FormControl component="fieldset">
+            <FormLabel component="legend" className={classes.title}>{title}</FormLabel>
+            <RadioGroup
+              aria-label={title}
+              name={`layer-selector-${title}`}
+              value={selectedValue}
+              onChange={this.handleChange}
+            >
+              {
+                layers.map(layer => (
+                  <FormControlLabel
+                    value={layer.id}
+                    control={<Radio />}
+                    label={layer.label}
+                    key={layer.id}
+                  />
+                ))
+              }
+            </RadioGroup>
+          </FormControl>
+        </div>
+        <Scale
+          title={scaleTitle}
+          scaleType={selectedValue}
+        />
       </div>
     );
   }
 }
+
 
 LayerToggler.propTypes = {
   classes: PropTypes.shape({}).isRequired,
@@ -99,6 +108,7 @@ LayerToggler.propTypes = {
     label: PropTypes.string.isRequired,
   })).isRequired,
   selectLayer: PropTypes.func.isRequired,
+  scaleTitle: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => state;
