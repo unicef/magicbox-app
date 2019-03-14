@@ -55,17 +55,30 @@ const styles = {
   },
 };
 
-const Scale = ({ classes, title, range }) => (
+const Scale = ({
+  classes,
+  title,
+  range,
+  style,
+  scaleType,
+}) => (
   <div className={classes.scale}>
     <div className={classes.title}>{title}</div>
-    <Chip className={classes.chipGradient} />
+    <Chip className={scaleType === 'Deviation' ? classes.chipDivergent : classes.chipGradient} style={style} />
     {range.map(item => (
       <span className={classes.scaleNumbers} key={item}>{item}</span>
     ))}
   </div>
 );
 
+Scale.defaultProps = {
+  style: {},
+  scaleType: 'Gradient',
+};
+
 Scale.propTypes = {
+  style: PropTypes.shape({}),
+  scaleType: PropTypes.string,
   classes: PropTypes.shape({}).isRequired,
   title: PropTypes.string.isRequired,
   range: PropTypes.arrayOf(PropTypes.oneOfType([
