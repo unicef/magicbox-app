@@ -47,7 +47,7 @@ const styles = {
     fontSize: '15px',
   },
   scaleText: {
-    paddingLeft: '28px',
+    paddingLeft: '30px',
     fontFamily: 'IBM Plex Sans',
     lineHeight: '3',
     color: '#000000',
@@ -58,22 +58,30 @@ const styles = {
 const Scale = ({
   classes,
   title,
-  range,
+  numericRange,
+  divergentRange,
   style,
   scaleType,
 }) => (
   <div className={classes.scale}>
     <div className={classes.title}>{title}</div>
     <Chip className={scaleType === 'Deviation' ? classes.chipDivergent : classes.chipGradient} style={style} />
-    {range.map(item => (
-      <span className={classes.scaleNumbers} key={item}>{item}</span>
-    ))}
+    { scaleType === 'Deviation' ?
+        divergentRange.map(item => (
+          <span className={classes.scaleText} key={item}>{item}</span>
+        )) :
+        numericRange.map(item => (
+          <span className={classes.scaleNumbers} key={item}>{item}</span>
+        ))
+    }
   </div>
 );
 
 Scale.defaultProps = {
   style: {},
   scaleType: 'Gradient',
+  numericRange: ['0.1', '0.5', '0.9'],
+  divergentRange: ['Positive','No Deviation','Negative'],
 };
 
 Scale.propTypes = {
@@ -81,10 +89,8 @@ Scale.propTypes = {
   scaleType: PropTypes.string,
   classes: PropTypes.shape({}).isRequired,
   title: PropTypes.string.isRequired,
-  range: PropTypes.arrayOf(PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.string,
-  ])).isRequired,
+  numericRange: PropTypes.arrayOf(PropTypes.string),
+  divergentRange: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default withStyles(styles)(Scale);
