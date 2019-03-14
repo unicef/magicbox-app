@@ -55458,19 +55458,19 @@
                   "opacity": 0.9,
                   "thickness": 0.5,
                   "colorRange": {
-                    "name": "ColorBrewer Purples-9",
-                    "type": "sequential",
-                    "category": "ColorBrewer",
+                    "name": "UberPool 9",
+                    "type": "diverging",
+                    "category": "Uber",
                     "colors": [
-                      "#fcfbfd",
-                      "#efedf5",
-                      "#dadaeb",
-                      "#bcbddc",
-                      "#9e9ac8",
-                      "#807dba",
-                      "#6a51a3",
-                      "#54278f",
-                      "#3f007d"
+                      "#E4E6EA",
+                        "#CACFE2",
+                        "#B1B8DA",
+                        "#97A1D2",
+                        "#7E8ACA",
+                        "#6473C2",
+                        "#4B5CBA",
+                        "#3145B2",
+                        "#182FAB"
                     ],
                     "reversed": false
                   },
@@ -55543,19 +55543,19 @@
                   "opacity": 0.9,
                   "thickness": 0.5,
                   "colorRange": {
-                    "name": "ColorBrewer Purples-9",
-                    "type": "sequential",
-                    "category": "ColorBrewer",
+                    "name": "UberPool 9",
+                    "type": "diverging",
+                    "category": "Uber",
                     "colors": [
-                      "#fcfbfd",
-                      "#efedf5",
-                      "#dadaeb",
-                      "#bcbddc",
-                      "#9e9ac8",
-                      "#807dba",
-                      "#6a51a3",
-                      "#54278f",
-                      "#3f007d"
+                      "#E4E6EA",
+                        "#CACFE2",
+                        "#B1B8DA",
+                        "#97A1D2",
+                        "#7E8ACA",
+                        "#6473C2",
+                        "#4B5CBA",
+                        "#3145B2",
+                        "#182FAB"
                     ],
                     "reversed": false
                   },
