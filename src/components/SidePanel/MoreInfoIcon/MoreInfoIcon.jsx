@@ -11,20 +11,22 @@ const styles = ({
     width: '16px',
     marginLeft: '5px',
     marginTop: '1px',
+    zIndex: '10',
   },
   typography: {
-    height: '180px',
-    width: '392px',
+    height: '100px',
+    width: '180px',
     fontFamily: 'IBM Plex Sans',
     backgroundColor: '#000000',
     color: '#ffffff',
+    padding: '20px',
   },
   paper: {
     borderRight: 'none',
   },
 });
 
-class ScaleInfoIcon extends React.Component {
+class MoreInfoIcon extends React.Component {
   state = {
     anchorEl: null,
   };
@@ -60,7 +62,7 @@ class ScaleInfoIcon extends React.Component {
           anchorEl={anchorEl}
           onClose={this.handleClose}
           anchorOrigin={{
-            vertical: 'top',
+            vertical: 'center',
             horizontal: 'right',
           }}
           transformOrigin={{
@@ -75,8 +77,8 @@ class ScaleInfoIcon extends React.Component {
   }
 }
 
-ScaleInfoIcon.propTypes = {
+MoreInfoIcon.propTypes = {
   classes: PropTypes.shape({}).isRequired,
 };
 
-export default withStyles(styles)(ScaleInfoIcon);
+export default withStyles(styles)(MoreInfoIcon);

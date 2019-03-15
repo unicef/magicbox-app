@@ -9,6 +9,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { setVisibleLayers } from '../../../actions';
 import Scale from '../Scale/Scale';
+import MoreInfoIcon from '../MoreInfoIcon/MoreInfoIcon';
 
 const styles = theme => ({
   root: {
@@ -21,12 +22,16 @@ const styles = theme => ({
   },
   title: {
     paddingTop: '17px',
-    paddingLeft: '22px',
+    paddingLeft: '25px',
     fontFamily: 'IBM Plex Sans',
     fontSize: '13px',
     fontWeight: 'bold',
     letterSpacing: '0.9px',
     color: '#000000',
+  },
+  label: {
+    display: 'flex',
+    flexDirection: 'row',
   },
 });
 
@@ -80,12 +85,17 @@ class LayerToggler extends Component {
             >
               {
                 layers.map(layer => (
-                  <FormControlLabel
-                    value={layer.id}
-                    control={<Radio />}
-                    label={layer.label}
-                    key={layer.id}
-                  />
+                  <div className={classes.label}>
+                    <FormControlLabel
+                      value={layer.id}
+                      control={<Radio />}
+                      label={layer.label}
+                      key={layer.id}
+                    />
+                    { layer.id === 'Estimate'
+                      && <MoreInfoIcon key={layer.label} />
+                    }
+                  </div>
                 ))
               }
             </RadioGroup>
