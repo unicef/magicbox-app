@@ -10,22 +10,21 @@ const styles = ({
     height: '16px',
     width: '16px',
     marginLeft: '5px',
-    marginTop: '0.5px',
+    marginTop: '1px',
   },
   typography: {
-    height: '100px',
-    width: '180px',
+    height: '180px',
+    width: '392px',
     fontFamily: 'IBM Plex Sans',
     backgroundColor: '#000000',
     color: '#ffffff',
-    padding: '20px',
   },
   paper: {
     borderRight: 'none',
   },
 });
 
-class InfoIcon extends React.Component {
+class ScaleInfoIcon extends React.Component {
   state = {
     anchorEl: null,
   };
@@ -69,18 +68,15 @@ class InfoIcon extends React.Component {
             horizontal: 'left',
           }}
         >
-          <Typography className={classes.typography}>
-            The HDI scale is from 0 to 1, with 0 representing no or very low HDI
-            and 1 representing the highest possible HDI.
-          </Typography>
+          <Typography className={classes.typography}>The content of the Popover.</Typography>
         </Popover>
       </div>
     );
   }
 }
 
-InfoIcon.propTypes = {
+ScaleInfoIcon.propTypes = {
   classes: PropTypes.shape({}).isRequired,
 };
 
-export default withStyles(styles)(InfoIcon);
+export default withStyles(styles)(ScaleInfoIcon);
