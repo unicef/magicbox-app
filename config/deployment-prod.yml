@@ -11,10 +11,30 @@ spec:
       port: 80
       targetPort: 80
 ---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: magicbox-app-ingress
+  namespace: magicbox
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: magicbox.unicef.io
+    http:
+      paths:
+      - backend:
+          serviceName: magicbox-app-service
+          servicePort: 80
+  tls:
+  - hosts:
+    - magicbox.unicef.io
+    secretName: star-unicef-io
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: magicbox-app-deployment
+  name: magicbox-app
   labels:
     app: magicbox-app
 spec:
