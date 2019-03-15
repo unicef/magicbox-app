@@ -35,7 +35,7 @@ const onCountryClick = info => (dispatch, getState) => {
   dispatch(onLayerClick(info));
 
   // if the user clicked in a object with properties
-  if (info && info.object && info.object.properties) {
+  if (info && info.object && info.object.properties && info.object.properties.url) {
     // dispatch country select action
     dispatch(onCountrySelect(info.object.properties));
     // get current state
