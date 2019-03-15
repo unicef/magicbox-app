@@ -16,6 +16,7 @@ const styles = theme => ({
     height: '238px',
     width: '291px',
     margin: `${theme.spacing.unit}px 0`,
+    marginTop: '0px',
     padding: theme.spacing.unit,
   },
   title: {
