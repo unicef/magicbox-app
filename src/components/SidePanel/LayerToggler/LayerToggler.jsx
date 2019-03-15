@@ -33,6 +33,9 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'row',
   },
+  listItem: {
+    verticalAlign: 'middle',
+  },
 });
 
 class LayerToggler extends Component {
@@ -85,17 +88,17 @@ class LayerToggler extends Component {
             >
               {
                 layers.map(layer => (
-                  <div className={classes.label}>
-                    <FormControlLabel
-                      value={layer.id}
-                      control={<Radio />}
-                      label={layer.label}
-                      key={layer.id}
-                    />
+                  <FormControlLabel
+                    value={layer.id}
+                    control={<Radio />}
+                    label={layer.label}
+                    key={layer.id}
+                    className={classes.listItem}
+                  >
                     { layer.id === 'Estimate'
                       && <MoreInfoIcon key={layer.label} />
                     }
-                  </div>
+                  </FormControlLabel>
                 ))
               }
             </RadioGroup>
