@@ -15462,7 +15462,7 @@
               }
             },
             {
-              "id": "ledsn5u",
+              "id": "Deviation",
               "type": "geojson",
               "config": {
                 "dataId": "zl12p8cfcb",
@@ -15595,4 +15595,4 @@
       "created_at": "Fri Mar 08 2019 10:46:01 GMT-0500 (Eastern Standard Time)"
     }
   }
-  ,"appConfig":{"title":"Global Explorer","dataInfo":[{"title":"About","content":"This is the content for Costa Rica!","order":1},{"title":"General Info","content":"This is the global explorer, here you can see all the countries and click on them to get more data for each one.","order":2}],"sidePanel":[{"component":"Header","props":{},"order":1},{"component":"LayerToggler","props":{"title":"HUMAN DEVELOPEMENT INDEX","layers":[{"id":"s41cbkg","label":"Estimated HDI"},{"id":"jo5uzz","label":"Reported HDI"}, {"id":"ledsn5u","label":"HDI Deviation"}]},"order":2},{"component":"Scale","props":{"title":"HDI SCALE","range":["0.1","0.5","0.9"]},"order":3}]}}
+  ,"appConfig":{"title":"Global Explorer","dataInfo":[{"title":"About","content":"This is the content for Costa Rica!","order":1},{"title":"General Info","content":"This is the global explorer, here you can see all the countries and click on them to get more data for each one.","order":2}],"sidePanel":[{"component":"Header","props":{},"order":1},{"component":"LayerToggler","props":{"title":"HUMAN DEVELOPEMENT INDEX", "scaleTitle":"HDI SCALE","numericRange":["0.1","0.5","0.9"], "divergentRange":["Positive","No Deviation","Negative"],"layers":[{"id":"s41cbkg","label":"Estimated HDI"},{"id":"jo5uzz","label":"Reported HDI"}, {"id":"Deviation","label":"HDI Deviation"}]},"order":2}]}}
