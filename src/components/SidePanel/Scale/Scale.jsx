@@ -66,13 +66,13 @@ const Scale = ({
   <div className={classes.scale}>
     <div className={classes.title}>{title}</div>
     <Chip className={scaleType === 'Deviation' ? classes.chipDivergent : classes.chipGradient} style={style} />
-    { scaleType === 'Deviation' ?
-        divergentRange.map(item => (
-          <span className={classes.scaleText} key={item}>{item}</span>
-        )) :
-        numericRange.map(item => (
-          <span className={classes.scaleNumbers} key={item}>{item}</span>
-        ))
+    { scaleType === 'Deviation'
+      ? divergentRange.map(item => (
+        <span className={classes.scaleText} key={item}>{item}</span>
+      ))
+      : numericRange.map(item => (
+        <span className={classes.scaleNumbers} key={item}>{item}</span>
+      ))
     }
   </div>
 );
@@ -81,7 +81,7 @@ Scale.defaultProps = {
   style: {},
   scaleType: 'Gradient',
   numericRange: ['0.1', '0.5', '0.9'],
-  divergentRange: ['Positive','No Deviation','Negative'],
+  divergentRange: ['Positive', 'No Deviation', 'Negative'],
 };
 
 Scale.propTypes = {

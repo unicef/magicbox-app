@@ -12818,7 +12818,7 @@
               "id": "CRI",
               "properties": {
                 "name": "Costa Rica",
-                "url": "costa rica",
+                "url": "costa-rica",
                 "nationalHdiIndex": 0.78,
                 "hdi": "estimated",
                 "index": 37
@@ -12976,7 +12976,7 @@
               }
             },
             "Costa Rica",
-            "costa rica",
+            "costa-rica",
             0.78,
             "estimated"
           ],
@@ -57867,7 +57867,7 @@
               "id": "CRI",
               "properties": {
                 "name": "Costa Rica",
-                "url": "costa rica",
+                "url": "costa-rica",
                 "nationalHdiIndex": 0.78,
                 "hdi": "estimated",
                 "index": 37
@@ -58025,7 +58025,7 @@
               }
             },
             "Costa Rica",
-            "costa rica",
+            "costa-rica",
             0.78,
             "estimated"
           ],
@@ -102884,7 +102884,7 @@
                 "name": "Costa Rica",
                 "nationalHdiIndex": 0.78,
                 "hdi": "estimated",
-                "url": "costa rica",
+                "url": "costa-rica",
                 "index": 37
               },
               "geometry": {
@@ -103042,7 +103042,7 @@
             "Costa Rica",
             0.78,
             "estimated",
-            "costa rica"
+            "costa-rica"
           ],
           [
             {
