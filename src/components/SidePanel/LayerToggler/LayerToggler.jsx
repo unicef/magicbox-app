@@ -10,6 +10,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { setVisibleLayers } from '../../../actions';
 import Scale from '../Scale/Scale';
 import MoreInfoIcon from '../MoreInfoIcon/MoreInfoIcon';
+import Lens from '@material-ui/icons/lens';
 
 const styles = theme => ({
   root: {
@@ -22,7 +23,8 @@ const styles = theme => ({
   },
   title: {
     paddingTop: '17px',
-    paddingLeft: '25px',
+    paddingLeft: '22px',
+    paddingBottom: '11px',
     fontFamily: 'IBM Plex Sans',
     fontSize: '13px',
     fontWeight: 'bold',
@@ -35,7 +37,19 @@ const styles = theme => ({
   },
   listItem: {
     verticalAlign: 'middle',
+    paddingLeft: '15px',
   },
+  icon: {
+    position: 'absolute',
+    right: '0',
+    zIndex: '100',
+  },
+  radio: {
+    '&$checked': {
+      color: '#2c2cff'
+    }
+  },
+  checked: {}
 });
 
 class LayerToggler extends Component {
@@ -89,15 +103,13 @@ class LayerToggler extends Component {
               {
                 layers.map(layer => (
                   <FormControlLabel
-                    value={layer.id}
-                    control={<Radio />}
-                    label={layer.label}
-                    key={layer.id}
-                    className={classes.listItem}
-                  >
-                    { layer.id === 'Estimate'
-                      && <MoreInfoIcon key={layer.label} />
-                    }
+                      value={layer.id}
+                      control={<Radio classes={{root: classes.radio, checked: classes.checked}}/>}
+                      label={layer.label}
+                      key={layer.id}
+                      className={classes.listItem}
+                    >
+                    <MoreInfoIcon />
                   </FormControlLabel>
                 ))
               }
