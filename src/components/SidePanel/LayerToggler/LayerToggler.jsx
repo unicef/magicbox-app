@@ -20,12 +20,27 @@ const styles = theme => ({
   title: {
     paddingTop: '17px',
     paddingLeft: '22px',
+    paddingBottom: '11px',
     fontFamily: 'IBM Plex Sans',
     fontSize: '13px',
     fontWeight: 'bold',
     letterSpacing: '0.9px',
     color: '#000000',
+    marginTop: '0px',
   },
+  listItem: {
+    paddingLeft: '18px',
+    lineHeight: '2.33',
+    fontSize: '15px',
+    color: '#4a4a4a',
+  },
+  radio: {
+    '&$checked': {
+      color: '#2c2cff',
+    },
+    padding: '8px',
+  },
+  checked: {},
 });
 
 class LayerToggler extends Component {
@@ -78,9 +93,10 @@ class LayerToggler extends Component {
               layers.map(layer => (
                 <FormControlLabel
                   value={layer.id}
-                  control={<Radio />}
+                  control={<Radio classes={{ root: classes.radio, checked: classes.checked }} />}
                   label={layer.label}
                   key={layer.id}
+                  className={classes.listItem}
                 />
               ))
             }
