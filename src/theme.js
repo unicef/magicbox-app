@@ -12,4 +12,9 @@ export default createMuiTheme({
   typography: {
     useNextVariants: true,
   },
+  props: {
+    MuiButtonBase: {
+      disableRipple: true,
+    },
+  },
 });
