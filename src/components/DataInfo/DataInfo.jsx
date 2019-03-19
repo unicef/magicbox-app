@@ -11,23 +11,22 @@ import Typography from '@material-ui/core/Typography';
 import ModalInfo from '../ModalInfo';
 
 const styles = theme => ({
-  dataInfo: {
-  },
   dataInfoContent: {
-    width: '60vw',
     height: '100%',
     backgroundColor: '#f1f1f1',
+    width: '842px',
+    paddingTop: '41px',
   },
   dataInfoContent__tabs: {
-    padding: theme.spacing.unit,
-    maxWidth: '30%',
+    paddingLeft: '46px',
+    width: '215px',
     height: '100%',
     float: 'left',
+    fontSize: '15px',
   },
   dataInfoContent__content: {
-    padding: theme.spacing.unit,
     overflow: 'auto',
-    height: '100%',
+    width: '570px',
   },
   closeExploreButton: {
     margin: theme.spacing.unit,

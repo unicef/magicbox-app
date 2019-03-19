@@ -5,26 +5,26 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = ({
   header: {
     marginLeft: '30px',
-    marginRight: '30px',
+    marginRight: '57px',
     fontFamily: 'IBM Plex Sans',
-    fontSize: '24px',
+    fontSize: '31px',
   },
   title: {
     marginLeft: '30px',
-    marginRight: '30px',
+    marginRight: '57px',
     fontFamily: 'IBM Plex Sans',
     fontSize: '22px',
   },
   text: {
     marginLeft: '30px',
-    marginRight: '30px',
+    marginRight: '57px',
     fontFamily: 'IBM Plex Sans',
-    fontSize: '16px',
+    fontSize: '18px',
   },
 });
 
 const ModalInfo = ({ classes, content }) => (
-  <span>
+  <span className={classes.body}>
     { content.content.map(c => (
       <span>
         { c.header && <p className={classes.header}>{c.header}</p>}

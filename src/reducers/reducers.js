@@ -11,7 +11,7 @@ export const INITIAL_APP_STATE = {
   sidePanel: [],
   ui: {
     sidePanelOpen: true,
-    dataInfoOpen: false,
+    dataInfoOpen: true,
     isLoading: false,
     loading: 1,
     error: null,
