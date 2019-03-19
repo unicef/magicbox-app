@@ -14,7 +14,6 @@ const styles = theme => ({
     backgroundColor: '#e3e3e3',
     height: '238px',
     width: '291px',
-    margin: `${theme.spacing.unit}px 0`,
     padding: theme.spacing.unit,
   },
   title: {

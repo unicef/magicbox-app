@@ -8,6 +8,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
+import ModalInfo from '../ModalInfo';
 
 const styles = theme => ({
   dataInfo: {
@@ -112,8 +113,10 @@ class DataInfo extends Component {
               ))}
             </div>
             <div className={classes.dataInfoContent__content}>
-              <Typography>
-                {content.length ? content[selectedIndex].content : ''}
+              <Typography component="span">
+                { content.length
+                  && <ModalInfo content={content[selectedIndex]} key={selectedIndex} />
+                }
               </Typography>
             </div>
           </div>

@@ -9,7 +9,7 @@ const styles = {
   scale: {
     height: '118px',
     width: '291px',
-    margin: '0px',
+    marginTop: '5px',
     backgroundColor: '#e3e3e3',
   },
   chipGradient: {
