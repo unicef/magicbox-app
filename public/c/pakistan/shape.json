@@ -55609,7 +55609,7 @@
               }
             },
             {
-              "id": "h1jiiqb",
+              "id": "Deviation",
               "type": "geojson",
               "config": {
                 "dataId": "3m1dft3jc",
@@ -55742,4 +55742,4 @@
       "created_at": "Fri Mar 08 2019 11:00:47 GMT-0500 (Eastern Standard Time)"
     }
   }
-  ,"appConfig":{"title":"Global Explorer","dataInfo":[{"title":"About","content":"This is the content for Nigeria!","order":1},{"title":"General Info","content":"This is the global explorer, here you can see all the countries and click on them to get more data for each one.","order":2}],"sidePanel":[{"component":"Header","props":{},"order":1},{"component":"LayerToggler","props":{"title":"HUMAN DEVELOPEMENT INDEX","layers":[{"id":"3b1hymg","label":"Estimated HDI"},{"id":"nph780s","label":"Reported HDI"}, {"id":"h1jiiqb","label":"HDI Deviation"}]},"order":2},{"component":"Scale","props":{"title":"HDI SCALE","range":["0.1","0.5","0.9"]},"order":3}]}}
+  ,"appConfig":{"title":"Global Explorer","dataInfo":[{"title":"About","content":"This is the content for Nigeria!","order":1},{"title":"General Info","content":"This is the global explorer, here you can see all the countries and click on them to get more data for each one.","order":2}],"sidePanel":[{"component":"Header","props":{},"order":1},{"component":"LayerToggler","props":{"title":"HUMAN DEVELOPEMENT INDEX", "scaleTitle":"HDI SCALE","numericRange":["0.1","0.5","0.9"], "divergentRange":["Positive","No Deviation","Negative"],"layers":[{"id":"3b1hymg","label":"Estimated HDI"},{"id":"nph780s","label":"Reported HDI"}, {"id":"Deviation","label":"HDI Deviation"}]},"order":2}]}}
