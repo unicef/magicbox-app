@@ -25,7 +25,7 @@ const styles = ({
 
 const ModalInfo = ({ classes, content }) => (
   <span className={classes.body}>
-    { content.content.map(c => (
+    { content && content.content && content.content.map && content.content.map(c => (
       <span key={c.id}>
         { c.header && <p className={classes.header}>{c.header}</p>}
         { c.title && <p className={classes.title}>{c.title}</p>}
