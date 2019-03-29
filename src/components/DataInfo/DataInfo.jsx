@@ -114,8 +114,10 @@ class DataInfo extends Component {
             </div>
             <div className={classes.dataInfoContent__content}>
               <Typography component="span">
-                { content.length
-                  && <ModalInfo content={content[selectedIndex]} key={selectedIndex} />
+                {
+                  content.length
+                    ? <ModalInfo content={content[selectedIndex]} key={selectedIndex} />
+                    : 'Loading...'
                 }
               </Typography>
             </div>
