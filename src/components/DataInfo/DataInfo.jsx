@@ -27,6 +27,7 @@ const styles = theme => ({
   dataInfoContent__content: {
     overflow: 'auto',
     width: '570px',
+    height: '90%',
   },
   closeExploreButton: {
     margin: theme.spacing.unit,
