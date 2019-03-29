@@ -135316,6 +135316,7 @@
 }
 ,"appConfig":
 {"title":"Global Explorer",
+  "dataInfoOpen": true,
   "dataInfo":[
     {"title":"About",
       "content":[{"id": "content-1", "content":"Accurate estimates of population demographics are vital in order to understand social and economic inequalities, and are essential to UNICEF's work, as knowing where the most vulnerable children and families live is important for resource allocation. Traditional methods of collecting such estimates, however, are both time-consuming and expensive. Here, we outline a complementary approach. The map shows poverty estimated using novel sources of data such as social media, mobile phones, and satellite images. It uses techniques from machine learning and artificial intelligence (AI) to estimate the poverty at sub-national scales and understand its temporal dynamics."}],
