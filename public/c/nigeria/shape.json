@@ -38339,7 +38339,7 @@
                 "columns": {
                   "geojson": "_geojson"
                 },
-                "isVisible": false,
+                "isVisible": true,
                 "visConfig": {
                   "opacity": 1,
                   "thickness": 0.5,
@@ -38509,7 +38509,7 @@
                 "columns": {
                   "geojson": "_geojson"
                 },
-                "isVisible": true,
+                "isVisible": false,
                 "visConfig": {
                   "opacity": 0.8,
                   "thickness": 0.5,
