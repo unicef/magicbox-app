@@ -4,7 +4,7 @@
       {
         "version": "v1",
         "data": {
-          "id": "ygn5iar0l",
+          "id": "7ypkouio4",
           "label": "nepal.json",
           "color": [
             143,
@@ -662,8 +662,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 1
                 }
               },
@@ -674,8 +674,8 @@
               0.4,
               0.5,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -1019,8 +1019,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 2
                 }
               },
@@ -1031,8 +1031,8 @@
               0.5,
               0.6,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -1500,8 +1500,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 3
                 }
               },
@@ -1512,8 +1512,8 @@
               0.5,
               0.6,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -1773,8 +1773,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 4
                 }
               },
@@ -1785,8 +1785,8 @@
               0.5,
               0.6,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -2026,8 +2026,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 5
                 }
               },
@@ -2038,8 +2038,8 @@
               0.5,
               0.5,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -2251,8 +2251,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 6
                 }
               },
@@ -2263,8 +2263,8 @@
               0.5,
               0.6,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -2916,8 +2916,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 8
                 }
               },
@@ -2928,8 +2928,8 @@
               0.4,
               0.5,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -3709,8 +3709,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 10
                 }
               },
@@ -3721,8 +3721,8 @@
               0.5,
               0.5,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -4762,8 +4762,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 13
                 }
               },
@@ -4774,8 +4774,8 @@
               0.4,
               0.4,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -5095,8 +5095,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.2,
                   "reportedHdi": 0.3,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 14
                 }
               },
@@ -5107,8 +5107,8 @@
               0.2,
               0.3,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -5344,8 +5344,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.1,
                   "reportedHdi": 0.2,
-                  "deviationValue": 0.1,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 15
                 }
               },
@@ -5356,8 +5356,8 @@
               0.1,
               0.2,
               null,
-              0.1,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -5641,8 +5641,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.2,
                   "reportedHdi": 0.3,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 16
                 }
               },
@@ -5653,8 +5653,8 @@
               0.2,
               0.3,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -7018,8 +7018,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.2,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.2,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 20
                 }
               },
@@ -7030,8 +7030,8 @@
               0.2,
               0.4,
               null,
-              0.2,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -7407,8 +7407,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.3,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.10000000000000003,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 21
                 }
               },
@@ -7419,8 +7419,8 @@
               0.3,
               0.4,
               null,
-              0.10000000000000003,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -7780,8 +7780,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.3,
                   "reportedHdi": 0.3,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 22
                 }
               },
@@ -7792,8 +7792,8 @@
               0.3,
               0.3,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -8085,8 +8085,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 23
                 }
               },
@@ -8097,8 +8097,8 @@
               0.5,
               0.6,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -8278,8 +8278,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.9,
                   "reportedHdi": 0.9,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 24
                 }
               },
@@ -8290,8 +8290,8 @@
               0.9,
               0.9,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -8379,8 +8379,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.8,
                   "reportedHdi": 0.8,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 25
                 }
               },
@@ -8391,8 +8391,8 @@
               0.8,
               0.8,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -8564,8 +8564,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 1,
                   "reportedHdi": 1,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 26
                 }
               },
@@ -8576,8 +8576,8 @@
               1,
               1,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -8829,8 +8829,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.3,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.10000000000000003,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 27
                 }
               },
@@ -8841,8 +8841,8 @@
               0.3,
               0.4,
               null,
-              0.10000000000000003,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -9190,8 +9190,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.3,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.10000000000000003,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 28
                 }
               },
@@ -9202,8 +9202,8 @@
               0.3,
               0.4,
               null,
-              0.10000000000000003,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -9651,8 +9651,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.3,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.10000000000000003,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 29
                 }
               },
@@ -9663,8 +9663,8 @@
               0.3,
               0.4,
               null,
-              0.10000000000000003,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -10128,8 +10128,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 30
                 }
               },
@@ -10140,8 +10140,8 @@
               0.5,
               0.5,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -10805,8 +10805,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.3,
                   "reportedHdi": 0.3,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 32
                 }
               },
@@ -10817,8 +10817,8 @@
               0.3,
               0.3,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -11110,8 +11110,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.3,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.10000000000000003,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 33
                 }
               },
@@ -11122,8 +11122,8 @@
               0.3,
               0.4,
               null,
-              0.10000000000000003,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -11603,8 +11603,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.6,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 34
                 }
               },
@@ -11615,8 +11615,8 @@
               0.6,
               0.7,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -12372,8 +12372,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 36
                 }
               },
@@ -12384,8 +12384,8 @@
               0.5,
               0.5,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -12781,8 +12781,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 37
                 }
               },
@@ -12793,8 +12793,8 @@
               0.4,
               0.5,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -13198,8 +13198,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 38
                 }
               },
@@ -13210,8 +13210,8 @@
               0.5,
               0.6,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -13527,8 +13527,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.8,
                   "reportedHdi": 0.8,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 39
                 }
               },
@@ -13539,8 +13539,8 @@
               0.8,
               0.8,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -14360,8 +14360,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.6,
                   "reportedHdi": 0.5,
-                  "deviationValue": -0.09999999999999998,
-                  "deviationAccuracy": "Overestimate",
+                  "deviationValue": "0.1",
+                  "deviationAccuracy": "Negative",
                   "index": 41
                 }
               },
@@ -14372,8 +14372,8 @@
               0.6,
               0.5,
               null,
-              -0.09999999999999998,
-              "Overestimate"
+              "0.1",
+              "Negative"
             ],
             [
               {
@@ -14777,8 +14777,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 42
                 }
               },
@@ -14789,8 +14789,8 @@
               0.4,
               0.5,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -15430,8 +15430,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 44
                 }
               },
@@ -15442,8 +15442,8 @@
               0.4,
               0.4,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -16191,8 +16191,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 46
                 }
               },
@@ -16203,8 +16203,8 @@
               0.5,
               0.5,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -16612,8 +16612,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 47
                 }
               },
@@ -16624,8 +16624,8 @@
               0.4,
               0.5,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -16905,8 +16905,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 48
                 }
               },
@@ -16917,8 +16917,8 @@
               0.5,
               0.5,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -17130,8 +17130,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.2,
                   "reportedHdi": 0.3,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 49
                 }
               },
@@ -17142,8 +17142,8 @@
               0.2,
               0.3,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -19427,8 +19427,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 55
                 }
               },
@@ -19439,8 +19439,8 @@
               0.4,
               0.5,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -19716,8 +19716,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 56
                 }
               },
@@ -19728,8 +19728,8 @@
               0.4,
               0.4,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -20073,8 +20073,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.3,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.10000000000000003,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 57
                 }
               },
@@ -20085,8 +20085,8 @@
               0.3,
               0.4,
               null,
-              0.10000000000000003,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -20570,8 +20570,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 58
                 }
               },
@@ -20582,8 +20582,8 @@
               0.4,
               0.4,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -26115,8 +26115,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.3,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.10000000000000003,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 70
                 }
               },
@@ -26127,8 +26127,8 @@
               0.3,
               0.4,
               null,
-              0.10000000000000003,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -26452,8 +26452,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 71
                 }
               },
@@ -26464,8 +26464,8 @@
               0.4,
               0.4,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -27726,55 +27726,41 @@
       "version": "v1",
       "config": {
         "visState": {
-          "filters": [
-            {
-              "dataId": "ygn5iar0l",
-              "id": "7twkhb9gp",
-              "name": "estimatedHdi",
-              "type": "range",
-              "value": [
-                0,
-                1
-              ],
-              "enlarged": false,
-              "plotType": "histogram",
-              "yAxis": null
-            }
-          ],
+          "filters": [],
           "layers": [
             {
-              "id": "3v47s6",
+              "id": "estimate",
               "type": "geojson",
               "config": {
-                "dataId": "ygn5iar0l",
+                "dataId": "7ypkouio4",
                 "label": "Estimated HDI",
                 "color": [
                   23,
                   184,
-                  190,
-                  255
+                  190
                 ],
                 "columns": {
                   "geojson": "_geojson"
                 },
                 "isVisible": true,
                 "visConfig": {
-                  "opacity": 0.9,
+                  "opacity": 1,
                   "thickness": 0.5,
                   "colorRange": {
-                    "name": "UberPool 9",
+                    "name": "Uber Viz Diverging 3.5",
                     "type": "diverging",
                     "category": "Uber",
                     "colors": [
+                      "#9e9e9e",
                       "#E4E6EA",
-                        "#CACFE2",
-                        "#B1B8DA",
-                        "#97A1D2",
-                        "#7E8ACA",
-                        "#6473C2",
-                        "#4B5CBA",
-                        "#3145B2",
-                        "#182FAB"
+                      "#CACFE2",
+                      "#B1B8DA",
+                      "#97A1D2",
+                      "#7E8ACA",
+                      "#6473C2",
+                      "#4B5CBA",
+                      "#3145B2",
+                      "#182FAB"
                     ],
                     "reversed": false
                   },
@@ -27828,38 +27814,38 @@
               }
             },
             {
-              "id": "u45l9ah",
+              "id": "reported",
               "type": "geojson",
               "config": {
-                "dataId": "ygn5iar0l",
+                "dataId": "7ypkouio4",
                 "label": "Reported HDI",
                 "color": [
                   255,
-                  153,
-                  31,
-                  255
+                  203,
+                  153
                 ],
                 "columns": {
                   "geojson": "_geojson"
                 },
                 "isVisible": false,
                 "visConfig": {
-                  "opacity": 0.8,
+                  "opacity": 1,
                   "thickness": 0.5,
                   "colorRange": {
-                    "name": "UberPool 9",
+                    "name": "Uber Viz Diverging 3.5",
                     "type": "diverging",
                     "category": "Uber",
                     "colors": [
+                      "#9e9e9e",
                       "#E4E6EA",
-                        "#CACFE2",
-                        "#B1B8DA",
-                        "#97A1D2",
-                        "#7E8ACA",
-                        "#6473C2",
-                        "#4B5CBA",
-                        "#3145B2",
-                        "#182FAB"
+                      "#CACFE2",
+                      "#B1B8DA",
+                      "#97A1D2",
+                      "#7E8ACA",
+                      "#6473C2",
+                      "#4B5CBA",
+                      "#3145B2",
+                      "#182FAB"
                     ],
                     "reversed": false
                   },
@@ -27903,7 +27889,7 @@
                   "name": "reportedHdi",
                   "type": "real"
                 },
-                "colorScale": "quantile",
+                "colorScale": "quantize",
                 "sizeField": null,
                 "sizeScale": "linear",
                 "heightField": null,
@@ -27916,30 +27902,29 @@
               "id": "Deviation",
               "type": "geojson",
               "config": {
-                "dataId": "ygn5iar0l",
+                "dataId": "7ypkouio4",
                 "label": "HDI Deviation",
                 "color": [
-                  119,
-                  110,
-                  87,
-                  255
+                  255,
+                  203,
+                  153
                 ],
                 "columns": {
                   "geojson": "_geojson"
                 },
                 "isVisible": false,
                 "visConfig": {
-                  "opacity": 0.8,
+                  "opacity": 1,
                   "thickness": 0.5,
                   "colorRange": {
                     "name": "ColorBrewer RdGy-4",
                     "type": "diverging",
                     "category": "ColorBrewer",
                     "colors": [
-                      "#44b800",
-                      "#e94133",
-                      "#0034bc",
-                      "#bababa"
+                    "#e94133",
+                    "#44b800",
+                    "#0034bc",
+                    "#bababa"
                     ],
                     "reversed": false
                   },
@@ -27996,14 +27981,12 @@
           "interactionConfig": {
             "tooltip": {
               "fieldsToShow": {
-                "ygn5iar0l": [
-                  "admin",
+                "7ypkouio4": [
                   "region",
                   "poverty_type",
                   "estimatedHdi",
                   "reportedHdi",
-                  "deviationValue",
-                  "deviationAccuracy"
+                  "deviationValue"
                 ]
               },
               "enabled": true
@@ -28019,10 +28002,10 @@
         "mapState": {
           "bearing": 0,
           "dragRotate": false,
-          "latitude": 29.15899678114682,
-          "longitude": 83.4506676878078,
+          "latitude": 28.29281386589479,
+          "longitude": 84.43700742089175,
           "pitch": 0,
-          "zoom": 6.5579422435768695,
+          "zoom": 7.411335331926475,
           "isSplit": false
         },
         "mapStyle": {
@@ -28043,7 +28026,7 @@
     },
     "info": {
       "app": "kepler.gl",
-      "created_at": "Fri Mar 08 2019 10:33:33 GMT-0500 (Eastern Standard Time)"
+      "created_at": "Tue Apr 02 2019 15:03:07 GMT-0400 (Eastern Daylight Time)"
     }
   }
   ,"appConfig":{"title":"Global Explorer","dataInfo":[{"title":"About","content":"This is the content for Pakistan!","order":1},{"title":"General Info","content":"This is the global explorer, here you can see all the countries and click on them to get more data for each one.","order":2}],"sidePanel":[{"component":"Header","props":{},"order":1},{"component":"LayerToggler","props":{"title":"HUMAN DEVELOPEMENT INDEX", "scaleTitle":"HDI SCALE","numericRange":["0.1","0.5","0.9"], "divergentRange":["Positive","No Deviation","Negative"],"layers":[{"id":"3v47s6","label":"Estimated HDI"},{"id":"u45l9ah","label":"Reported HDI"}, {"id":"Deviation","label":"HDI Deviation"}]},"order":2}]}}

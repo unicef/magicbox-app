@@ -4,7 +4,7 @@
       {
         "version": "v1",
         "data": {
-          "id": "3m1dft3jc",
+          "id": "nuuqxdkh",
           "label": "pakistan.json",
           "color": [
             143,
@@ -1318,8 +1318,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.1,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.30000000000000004,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 2
                 }
               },
@@ -1330,8 +1330,8 @@
               0.1,
               0.4,
               null,
-              0.30000000000000004,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -2611,8 +2611,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.3,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.39999999999999997,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.4",
+                  "deviationAccuracy": "Positive",
                   "index": 4
                 }
               },
@@ -2623,8 +2623,8 @@
               0.3,
               0.7,
               null,
-              0.39999999999999997,
-              "Underestimate"
+              "-0.4",
+              "Positive"
             ],
             [
               {
@@ -5128,8 +5128,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.2,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.39999999999999997,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.4",
+                  "deviationAccuracy": "Positive",
                   "index": 10
                 }
               },
@@ -5140,8 +5140,8 @@
               0.2,
               0.6,
               null,
-              0.39999999999999997,
-              "Underestimate"
+              "-0.4",
+              "Positive"
             ],
             [
               {
@@ -5993,8 +5993,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.29999999999999993,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 12
                 }
               },
@@ -6005,8 +6005,8 @@
               0.4,
               0.7,
               null,
-              0.29999999999999993,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -6962,8 +6962,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.2,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.49999999999999994,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.5",
+                  "deviationAccuracy": "Positive",
                   "index": 14
                 }
               },
@@ -6974,8 +6974,8 @@
               0.2,
               0.7,
               null,
-              0.49999999999999994,
-              "Underestimate"
+              "-0.5",
+              "Positive"
             ],
             [
               {
@@ -8251,8 +8251,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.1,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.4,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.4",
+                  "deviationAccuracy": "Positive",
                   "index": 16
                 }
               },
@@ -8263,8 +8263,8 @@
               0.1,
               0.5,
               null,
-              0.4,
-              "Underestimate"
+              "-0.4",
+              "Positive"
             ],
             [
               {
@@ -8776,8 +8776,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.1,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.30000000000000004,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 17
                 }
               },
@@ -8788,8 +8788,8 @@
               0.1,
               0.4,
               null,
-              0.30000000000000004,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -10133,8 +10133,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.3,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.10000000000000003,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 21
                 }
               },
@@ -10145,8 +10145,8 @@
               0.3,
               0.4,
               null,
-              0.10000000000000003,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -11054,8 +11054,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.1,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.30000000000000004,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 23
                 }
               },
@@ -11066,8 +11066,8 @@
               0.1,
               0.4,
               null,
-              0.30000000000000004,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -18083,8 +18083,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.9,
                   "reportedHdi": 1,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 45
                 }
               },
@@ -18095,8 +18095,8 @@
               0.9,
               1,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -18288,8 +18288,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 46
                 }
               },
@@ -18300,8 +18300,8 @@
               0.5,
               0.6,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -19717,8 +19717,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.3,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.39999999999999997,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.4",
+                  "deviationAccuracy": "Positive",
                   "index": 50
                 }
               },
@@ -19729,8 +19729,8 @@
               0.3,
               0.7,
               null,
-              0.39999999999999997,
-              "Underestimate"
+              "-0.4",
+              "Positive"
             ],
             [
               {
@@ -20218,8 +20218,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 51
                 }
               },
@@ -20230,8 +20230,8 @@
               0.4,
               0.5,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -20483,8 +20483,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.2,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.3,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 52
                 }
               },
@@ -20495,8 +20495,8 @@
               0.2,
               0.5,
               null,
-              0.3,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -20852,8 +20852,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.7,
                   "reportedHdi": 0.9,
-                  "deviationValue": 0.20000000000000007,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 53
                 }
               },
@@ -20864,8 +20864,8 @@
               0.7,
               0.9,
               null,
-              0.20000000000000007,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -21161,8 +21161,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.1,
                   "reportedHdi": 0.3,
-                  "deviationValue": 0.19999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 54
                 }
               },
@@ -21173,8 +21173,8 @@
               0.1,
               0.3,
               null,
-              0.19999999999999998,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -21634,8 +21634,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 55
                 }
               },
@@ -21646,8 +21646,8 @@
               0.5,
               0.6,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -22407,8 +22407,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.3,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.2,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 57
                 }
               },
@@ -22419,8 +22419,8 @@
               0.3,
               0.5,
               null,
-              0.2,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -22628,8 +22628,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.6,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 58
                 }
               },
@@ -22640,8 +22640,8 @@
               0.6,
               0.7,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -22817,8 +22817,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 59
                 }
               },
@@ -22829,8 +22829,8 @@
               0.5,
               0.6,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -23334,8 +23334,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.6,
                   "reportedHdi": 0.8,
-                  "deviationValue": 0.20000000000000007,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 60
                 }
               },
@@ -23346,8 +23346,8 @@
               0.6,
               0.8,
               null,
-              0.20000000000000007,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -23543,8 +23543,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.1,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.30000000000000004,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 61
                 }
               },
@@ -23555,8 +23555,8 @@
               0.1,
               0.4,
               null,
-              0.30000000000000004,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -23792,8 +23792,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 62
                 }
               },
@@ -23804,8 +23804,8 @@
               0.4,
               0.5,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -23977,8 +23977,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.6,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 63
                 }
               },
@@ -23989,8 +23989,8 @@
               0.6,
               0.7,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -24514,8 +24514,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.2,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.2,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 65
                 }
               },
@@ -24526,8 +24526,8 @@
               0.2,
               0.4,
               null,
-              0.2,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -24971,8 +24971,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 66
                 }
               },
@@ -24983,8 +24983,8 @@
               0.5,
               0.6,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -25764,8 +25764,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.2,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.3,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 69
                 }
               },
@@ -25776,8 +25776,8 @@
               0.2,
               0.5,
               null,
-              0.3,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -26281,8 +26281,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.6,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 70
                 }
               },
@@ -26293,8 +26293,8 @@
               0.6,
               0.7,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -27034,8 +27034,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.19999999999999996,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 71
                 }
               },
@@ -27046,8 +27046,8 @@
               0.5,
               0.7,
               null,
-              0.19999999999999996,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -28011,8 +28011,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.6,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 72
                 }
               },
@@ -28023,8 +28023,8 @@
               0.6,
               0.7,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -28476,8 +28476,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.19999999999999996,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 73
                 }
               },
@@ -28488,8 +28488,8 @@
               0.4,
               0.6,
               null,
-              0.19999999999999996,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -28989,8 +28989,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.6,
                   "reportedHdi": 0.9,
-                  "deviationValue": 0.30000000000000004,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 74
                 }
               },
@@ -29001,8 +29001,8 @@
               0.6,
               0.9,
               null,
-              0.30000000000000004,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -29326,8 +29326,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.6,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 75
                 }
               },
@@ -29338,8 +29338,8 @@
               0.6,
               0.7,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -29915,8 +29915,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.29999999999999993,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 76
                 }
               },
@@ -29927,8 +29927,8 @@
               0.4,
               0.7,
               null,
-              0.29999999999999993,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -30488,8 +30488,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.7,
                   "reportedHdi": 0.8,
-                  "deviationValue": 0.10000000000000009,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 77
                 }
               },
@@ -30500,8 +30500,8 @@
               0.7,
               0.8,
               null,
-              0.10000000000000009,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -30885,8 +30885,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.6,
                   "reportedHdi": 0.8,
-                  "deviationValue": 0.20000000000000007,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 78
                 }
               },
@@ -30897,8 +30897,8 @@
               0.6,
               0.8,
               null,
-              0.20000000000000007,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -31154,8 +31154,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.6,
                   "reportedHdi": 0.9,
-                  "deviationValue": 0.30000000000000004,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 79
                 }
               },
@@ -31166,8 +31166,8 @@
               0.6,
               0.9,
               null,
-              0.30000000000000004,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -31419,8 +31419,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.19999999999999996,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 80
                 }
               },
@@ -31431,8 +31431,8 @@
               0.4,
               0.6,
               null,
-              0.19999999999999996,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -32012,8 +32012,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.8,
-                  "deviationValue": 0.30000000000000004,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 81
                 }
               },
@@ -32024,8 +32024,8 @@
               0.5,
               0.8,
               null,
-              0.30000000000000004,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -32449,8 +32449,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.7,
                   "reportedHdi": 0.8,
-                  "deviationValue": 0.10000000000000009,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 82
                 }
               },
@@ -32461,8 +32461,8 @@
               0.7,
               0.8,
               null,
-              0.10000000000000009,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -32906,8 +32906,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 83
                 }
               },
@@ -32918,8 +32918,8 @@
               0.5,
               0.6,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -33495,8 +33495,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.19999999999999996,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 84
                 }
               },
@@ -33507,8 +33507,8 @@
               0.4,
               0.6,
               null,
-              0.19999999999999996,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -33940,8 +33940,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.19999999999999996,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 85
                 }
               },
@@ -33952,8 +33952,8 @@
               0.5,
               0.7,
               null,
-              0.19999999999999996,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -34237,8 +34237,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 1,
                   "reportedHdi": 1,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 86
                 }
               },
@@ -34249,8 +34249,8 @@
               1,
               1,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -34654,8 +34654,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.7,
                   "reportedHdi": 0.9,
-                  "deviationValue": 0.20000000000000007,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 87
                 }
               },
@@ -34666,8 +34666,8 @@
               0.7,
               0.9,
               null,
-              0.20000000000000007,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -35239,8 +35239,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.2,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.3,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 88
                 }
               },
@@ -35251,8 +35251,8 @@
               0.2,
               0.5,
               null,
-              0.3,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -35548,8 +35548,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.7,
                   "reportedHdi": 0.9,
-                  "deviationValue": 0.20000000000000007,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 89
                 }
               },
@@ -35560,8 +35560,8 @@
               0.7,
               0.9,
               null,
-              0.20000000000000007,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -36041,8 +36041,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.19999999999999996,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 90
                 }
               },
@@ -36053,8 +36053,8 @@
               0.5,
               0.7,
               null,
-              0.19999999999999996,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -36694,8 +36694,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.6,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 91
                 }
               },
@@ -36706,8 +36706,8 @@
               0.6,
               0.7,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -37483,8 +37483,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.19999999999999996,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 92
                 }
               },
@@ -37495,8 +37495,8 @@
               0.5,
               0.7,
               null,
-              0.19999999999999996,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -38020,8 +38020,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.6,
                   "reportedHdi": 0.8,
-                  "deviationValue": 0.20000000000000007,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 93
                 }
               },
@@ -38032,8 +38032,8 @@
               0.6,
               0.8,
               null,
-              0.20000000000000007,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -38329,8 +38329,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.8,
-                  "deviationValue": 0.30000000000000004,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 94
                 }
               },
@@ -38341,8 +38341,8 @@
               0.5,
               0.8,
               null,
-              0.30000000000000004,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -38938,8 +38938,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.7,
                   "reportedHdi": 0.9,
-                  "deviationValue": 0.20000000000000007,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 95
                 }
               },
@@ -38950,8 +38950,8 @@
               0.7,
               0.9,
               null,
-              0.20000000000000007,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -39599,8 +39599,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.6,
                   "reportedHdi": 0.9,
-                  "deviationValue": 0.30000000000000004,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 96
                 }
               },
@@ -39611,8 +39611,8 @@
               0.6,
               0.9,
               null,
-              0.30000000000000004,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -40250,8 +40250,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.2,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.2,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 97
                 }
               },
@@ -40262,8 +40262,8 @@
               0.2,
               0.4,
               null,
-              0.2,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -40895,8 +40895,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.29999999999999993,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 98
                 }
               },
@@ -40907,8 +40907,8 @@
               0.4,
               0.7,
               null,
-              0.29999999999999993,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -41492,8 +41492,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 1,
                   "reportedHdi": 0.9,
-                  "deviationValue": -0.09999999999999998,
-                  "deviationAccuracy": "Overestimate",
+                  "deviationValue": "0.1",
+                  "deviationAccuracy": "Negative",
                   "index": 99
                 }
               },
@@ -41504,8 +41504,8 @@
               1,
               0.9,
               null,
-              -0.09999999999999998,
-              "Overestimate"
+              "0.1",
+              "Negative"
             ],
             [
               {
@@ -42173,8 +42173,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.7,
                   "reportedHdi": 0.9,
-                  "deviationValue": 0.20000000000000007,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 100
                 }
               },
@@ -42185,8 +42185,8 @@
               0.7,
               0.9,
               null,
-              0.20000000000000007,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -42774,8 +42774,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.6,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 101
                 }
               },
@@ -42786,8 +42786,8 @@
               0.6,
               0.7,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -43291,8 +43291,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.7,
                   "reportedHdi": 0.8,
-                  "deviationValue": 0.10000000000000009,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 102
                 }
               },
@@ -43303,8 +43303,8 @@
               0.7,
               0.8,
               null,
-              0.10000000000000009,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -43648,8 +43648,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.8,
                   "reportedHdi": 0.8,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 103
                 }
               },
@@ -43660,8 +43660,8 @@
               0.8,
               0.8,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -44229,8 +44229,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.19999999999999996,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 104
                 }
               },
@@ -44241,8 +44241,8 @@
               0.5,
               0.7,
               null,
-              0.19999999999999996,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -44990,8 +44990,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.29999999999999993,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 105
                 }
               },
@@ -45002,8 +45002,8 @@
               0.4,
               0.7,
               null,
-              0.29999999999999993,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -45523,8 +45523,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.1,
                   "reportedHdi": 0.3,
-                  "deviationValue": 0.19999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 106
                 }
               },
@@ -45535,8 +45535,8 @@
               0.1,
               0.3,
               null,
-              0.19999999999999998,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -45892,8 +45892,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.2,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.39999999999999997,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.4",
+                  "deviationAccuracy": "Positive",
                   "index": 107
                 }
               },
@@ -45904,8 +45904,8 @@
               0.2,
               0.6,
               null,
-              0.39999999999999997,
-              "Underestimate"
+              "-0.4",
+              "Positive"
             ],
             [
               {
@@ -46237,8 +46237,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.3,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.10000000000000003,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 108
                 }
               },
@@ -46249,8 +46249,8 @@
               0.3,
               0.4,
               null,
-              0.10000000000000003,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -46458,8 +46458,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.6,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 109
                 }
               },
@@ -46470,8 +46470,8 @@
               0.6,
               0.7,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -46667,8 +46667,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.2,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.3,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 110
                 }
               },
@@ -46679,8 +46679,8 @@
               0.2,
               0.5,
               null,
-              0.3,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -47152,8 +47152,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.29999999999999993,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 111
                 }
               },
@@ -47164,8 +47164,8 @@
               0.4,
               0.7,
               null,
-              0.29999999999999993,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -47529,8 +47529,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 1,
                   "reportedHdi": 1,
-                  "deviationValue": 0,
-                  "deviationAccuracy": "Match",
+                  "deviationValue": "0.0",
+                  "deviationAccuracy": "None",
                   "index": 112
                 }
               },
@@ -47541,8 +47541,8 @@
               1,
               1,
               null,
-              0,
-              "Match"
+              "0.0",
+              "None"
             ],
             [
               {
@@ -47782,8 +47782,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.1,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.30000000000000004,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 113
                 }
               },
@@ -47794,8 +47794,8 @@
               0.1,
               0.4,
               null,
-              0.30000000000000004,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -48287,8 +48287,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.1,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.4,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.4",
+                  "deviationAccuracy": "Positive",
                   "index": 114
                 }
               },
@@ -48299,8 +48299,8 @@
               0.1,
               0.5,
               null,
-              0.4,
-              "Underestimate"
+              "-0.4",
+              "Positive"
             ],
             [
               {
@@ -48624,8 +48624,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.2,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.3,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 115
                 }
               },
@@ -48636,8 +48636,8 @@
               0.2,
               0.5,
               null,
-              0.3,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -48885,8 +48885,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.3,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.3,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 116
                 }
               },
@@ -48897,8 +48897,8 @@
               0.3,
               0.6,
               null,
-              0.3,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -49154,8 +49154,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.09999999999999998,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.1",
+                  "deviationAccuracy": "Positive",
                   "index": 117
                 }
               },
@@ -49166,8 +49166,8 @@
               0.4,
               0.5,
               null,
-              0.09999999999999998,
-              "Underestimate"
+              "-0.1",
+              "Positive"
             ],
             [
               {
@@ -49767,8 +49767,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.1,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.30000000000000004,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 119
                 }
               },
@@ -49779,8 +49779,8 @@
               0.1,
               0.4,
               null,
-              0.30000000000000004,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -50300,8 +50300,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.3,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.39999999999999997,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.4",
+                  "deviationAccuracy": "Positive",
                   "index": 120
                 }
               },
@@ -50312,8 +50312,8 @@
               0.3,
               0.7,
               null,
-              0.39999999999999997,
-              "Underestimate"
+              "-0.4",
+              "Positive"
             ],
             [
               {
@@ -50601,8 +50601,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.4,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.19999999999999996,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 121
                 }
               },
@@ -50613,8 +50613,8 @@
               0.4,
               0.6,
               null,
-              0.19999999999999996,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -50826,8 +50826,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.2,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.3,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 122
                 }
               },
@@ -50838,8 +50838,8 @@
               0.2,
               0.5,
               null,
-              0.3,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -51219,8 +51219,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.5,
                   "reportedHdi": 0.7,
-                  "deviationValue": 0.19999999999999996,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.2",
+                  "deviationAccuracy": "Positive",
                   "index": 123
                 }
               },
@@ -51231,8 +51231,8 @@
               0.5,
               0.7,
               null,
-              0.19999999999999996,
-              "Underestimate"
+              "-0.2",
+              "Positive"
             ],
             [
               {
@@ -51424,8 +51424,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.1,
                   "reportedHdi": 0.6,
-                  "deviationValue": 0.5,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.5",
+                  "deviationAccuracy": "Positive",
                   "index": 124
                 }
               },
@@ -51436,8 +51436,8 @@
               0.1,
               0.6,
               null,
-              0.5,
-              "Underestimate"
+              "-0.5",
+              "Positive"
             ],
             [
               {
@@ -51781,8 +51781,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.2,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.3,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 125
                 }
               },
@@ -51793,8 +51793,8 @@
               0.2,
               0.5,
               null,
-              0.3,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -52394,8 +52394,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.1,
                   "reportedHdi": 0.4,
-                  "deviationValue": 0.30000000000000004,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 126
                 }
               },
@@ -52406,8 +52406,8 @@
               0.1,
               0.4,
               null,
-              0.30000000000000004,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -54913,8 +54913,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.2,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.3,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 127
                 }
               },
@@ -54925,8 +54925,8 @@
               0.2,
               0.5,
               null,
-              0.3,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ],
             [
               {
@@ -55362,8 +55362,8 @@
                   "poverty_type": "HDI",
                   "estimatedHdi": 0.2,
                   "reportedHdi": 0.5,
-                  "deviationValue": 0.3,
-                  "deviationAccuracy": "Underestimate",
+                  "deviationValue": "-0.3",
+                  "deviationAccuracy": "Positive",
                   "index": 128
                 }
               },
@@ -55374,8 +55374,8 @@
               0.2,
               0.5,
               null,
-              0.3,
-              "Underestimate"
+              "-0.3",
+              "Positive"
             ]
           ],
           "fields": [
@@ -55439,38 +55439,38 @@
           "filters": [],
           "layers": [
             {
-              "id": "3b1hymg",
+              "id": "estimated",
               "type": "geojson",
               "config": {
-                "dataId": "3m1dft3jc",
+                "dataId": "nuuqxdkh",
                 "label": "Estimated HDI",
                 "color": [
                   23,
                   184,
-                  190,
-                  255
+                  190
                 ],
                 "columns": {
                   "geojson": "_geojson"
                 },
                 "isVisible": true,
                 "visConfig": {
-                  "opacity": 0.9,
+                  "opacity": 1,
                   "thickness": 0.5,
                   "colorRange": {
-                    "name": "UberPool 9",
+                    "name": "Uber Viz Diverging 3.5",
                     "type": "diverging",
                     "category": "Uber",
                     "colors": [
+                      "#9e9e9e",
                       "#E4E6EA",
-                        "#CACFE2",
-                        "#B1B8DA",
-                        "#97A1D2",
-                        "#7E8ACA",
-                        "#6473C2",
-                        "#4B5CBA",
-                        "#3145B2",
-                        "#182FAB"
+                      "#CACFE2",
+                      "#B1B8DA",
+                      "#97A1D2",
+                      "#7E8ACA",
+                      "#6473C2",
+                      "#4B5CBA",
+                      "#3145B2",
+                      "#182FAB"
                     ],
                     "reversed": false
                   },
@@ -55524,38 +55524,38 @@
               }
             },
             {
-              "id": "nph780s",
+              "id": "reported",
               "type": "geojson",
               "config": {
-                "dataId": "3m1dft3jc",
+                "dataId": "nuuqxdkh",
                 "label": "Reported HDI",
                 "color": [
-                  231,
-                  159,
-                  213,
-                  255
+                  241,
+                  92,
+                  23
                 ],
                 "columns": {
                   "geojson": "_geojson"
                 },
                 "isVisible": false,
                 "visConfig": {
-                  "opacity": 0.9,
+                  "opacity": 1,
                   "thickness": 0.5,
                   "colorRange": {
-                    "name": "UberPool 9",
+                    "name": "Uber Viz Diverging 3.5",
                     "type": "diverging",
                     "category": "Uber",
                     "colors": [
+                      "#9e9e9e",
                       "#E4E6EA",
-                        "#CACFE2",
-                        "#B1B8DA",
-                        "#97A1D2",
-                        "#7E8ACA",
-                        "#6473C2",
-                        "#4B5CBA",
-                        "#3145B2",
-                        "#182FAB"
+                      "#CACFE2",
+                      "#B1B8DA",
+                      "#97A1D2",
+                      "#7E8ACA",
+                      "#6473C2",
+                      "#4B5CBA",
+                      "#3145B2",
+                      "#182FAB"
                     ],
                     "reversed": false
                   },
@@ -55612,28 +55612,27 @@
               "id": "Deviation",
               "type": "geojson",
               "config": {
-                "dataId": "3m1dft3jc",
+                "dataId": "nuuqxdkh",
                 "label": "HDI Deviation",
                 "color": [
-                  18,
-                  147,
-                  154,
-                  255
+                  137,
+                  218,
+                  193
                 ],
                 "columns": {
                   "geojson": "_geojson"
                 },
                 "isVisible": false,
                 "visConfig": {
-                  "opacity": 0.9,
+                  "opacity": 1,
                   "thickness": 0.5,
                   "colorRange": {
                     "name": "ColorBrewer RdGy-4",
                     "type": "diverging",
                     "category": "ColorBrewer",
                     "colors": [
-                      "#44b800",
                       "#e94133",
+                      "#44b800",
                       "#0034bc",
                       "#bababa"
                     ],
@@ -55692,14 +55691,12 @@
           "interactionConfig": {
             "tooltip": {
               "fieldsToShow": {
-                "3m1dft3jc": [
-                  "admin",
+                "nuuqxdkh": [
                   "region",
                   "poverty_type",
                   "estimatedHdi",
                   "reportedHdi",
-                  "deviationValue",
-                  "deviationAccuracy"
+                  "deviationValue"
                 ]
               },
               "enabled": true
@@ -55715,10 +55712,10 @@
         "mapState": {
           "bearing": 0,
           "dragRotate": false,
-          "latitude": 32.44740582065062,
-          "longitude": 69.11227003265142,
+          "latitude": 31.29155312768115,
+          "longitude": 69.14540500230868,
           "pitch": 0,
-          "zoom": 5.042885176859837,
+          "zoom": 5.417877871368553,
           "isSplit": false
         },
         "mapStyle": {
@@ -55739,7 +55736,7 @@
     },
     "info": {
       "app": "kepler.gl",
-      "created_at": "Fri Mar 08 2019 11:00:47 GMT-0500 (Eastern Standard Time)"
+      "created_at": "Tue Apr 02 2019 15:05:44 GMT-0400 (Eastern Daylight Time)"
     }
   }
   ,"appConfig":{"title":"Global Explorer","dataInfo":[{"title":"About","content":"This is the content for Nigeria!","order":1},{"title":"General Info","content":"This is the global explorer, here you can see all the countries and click on them to get more data for each one.","order":2}],"sidePanel":[{"component":"Header","props":{},"order":1},{"component":"LayerToggler","props":{"title":"HUMAN DEVELOPEMENT INDEX", "scaleTitle":"HDI SCALE","numericRange":["0.1","0.5","0.9"], "divergentRange":["Positive","No Deviation","Negative"],"layers":[{"id":"3b1hymg","label":"Estimated HDI"},{"id":"nph780s","label":"Reported HDI"}, {"id":"Deviation","label":"HDI Deviation"}]},"order":2}]}}
