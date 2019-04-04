@@ -43,6 +43,18 @@ const styles = theme => ({
     top: 0,
     zIndex: 1,
   },
+  listItemNormal: {
+    '&:hover, &:focus': {
+      backgroundColor: 'rgba(0, 0, 0, 0)',
+      textDecoration: 'underline',
+      transform: 'scale(1.05) translateX(3%)',
+    },
+  },
+  listItemSelected: {
+    backgroundColor: 'rgba(0, 0, 0, 0) !important',
+    textDecoration: 'underline',
+    transform: 'scale(1.05) translateX(3%)',
+  },
   paper: {
     overflowY: 'visible',
   },
@@ -106,7 +118,10 @@ class DataInfo extends Component {
                   selected={i === selectedIndex}
                   onClick={event => this.handleClick(event, i)}
                   dense
-                  classes={{ dense: classes.listItem }}
+                  classes={{
+                    dense: classes.listItemNormal,
+                    selected: classes.listItemSelected,
+                  }}
                 >
                   <ListItemText primary={item.title} />
                 </ListItem>
