@@ -65,8 +65,8 @@ const Scale = ({
 }) => (
   <div className={classes.scale}>
     <div className={classes.title}>{title}</div>
-    <Chip className={scaleType === 'Deviation' ? classes.chipDivergent : classes.chipGradient} style={style} />
-    { scaleType === 'Deviation'
+    <Chip className={scaleType.toLowerCase() === 'deviation' ? classes.chipDivergent : classes.chipGradient} style={style} />
+    { scaleType.toLowerCase() === 'deviation'
       ? divergentRange.map(item => (
         <span className={classes.scaleText} key={item}>{item}</span>
       ))
