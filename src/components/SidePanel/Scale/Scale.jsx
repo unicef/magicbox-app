@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Chip from '@material-ui/core/Chip';
 import Deviation from './deviation_scale.png';
-import MoreInfoIcon from '../MoreInfoIcon/MoreInfoIcon';
 
 
 const styles = {
@@ -33,6 +32,7 @@ const styles = {
   title: {
     paddingTop: '17px',
     paddingLeft: '22px',
+    paddingRight: '5px',
     fontFamily: 'IBM Plex Sans',
     fontSize: '13px',
     fontWeight: 'bold',
@@ -56,9 +56,6 @@ const styles = {
     color: '#000000',
     fontSize: '13px',
   },
-  icon: {
-    paddingLeft: '10px',
-  },
 };
 
 const Scale = ({
@@ -72,7 +69,6 @@ const Scale = ({
   <div className={classes.scale}>
     <div className={classes.title}>
       {title}
-      <MoreInfoIcon />
     </div>
     <Chip className={scaleType === 'Deviation' ? classes.chipDivergent : classes.chipGradient} style={style} />
     { scaleType === 'Deviation'
