@@ -20,12 +20,10 @@ const styles = ({
     backgroundColor: '#000000',
     color: '#ffffff',
     paddingTop: '20px',
-    paddingLeft: '26px',
+    paddingLeft: '30px',
+    paddingRight: '26px',
     fontSize: '15px',
     lineHeight: 1.47,
-  },
-  paper: {
-    borderRight: 'none',
   },
 });
 
@@ -64,13 +62,14 @@ class MoreInfoIcon extends React.Component {
           open={open}
           anchorEl={anchorEl}
           onClose={this.handleClose}
+          PaperProps={{ borderRight: 'none' }}
           anchorOrigin={{
             vertical: 'center',
             horizontal: 'right',
           }}
           transformOrigin={{
-            vertical: 'top',
-            horizontal: 'left',
+            vertical: 30,
+            horizontal: -15,
           }}
         >
           <Typography className={classes.typography}>
