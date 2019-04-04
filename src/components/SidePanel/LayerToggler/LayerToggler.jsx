@@ -10,7 +10,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { setVisibleLayers } from '../../../actions';
 import Scale from '../Scale/Scale';
 import MoreInfoIcon from '../MoreInfoIcon/MoreInfoIcon';
-import Lens from '@material-ui/icons/lens';
 
 const styles = theme => ({
   root: {
@@ -39,17 +38,16 @@ const styles = theme => ({
     verticalAlign: 'middle',
     paddingLeft: '15px',
   },
-  icon: {
-    position: 'absolute',
-    right: '0',
-    zIndex: '100',
+  toggler: {
+    display: 'flex',
+    flexDirection: 'row',
   },
   radio: {
     '&$checked': {
-      color: '#2c2cff'
-    }
+      color: '#2c2cff',
+    },
   },
-  checked: {}
+  checked: {},
 });
 
 class LayerToggler extends Component {
@@ -84,6 +82,7 @@ class LayerToggler extends Component {
       title,
       layers,
       scaleTitle,
+      popupContent,
     } = this.props;
     const {
       selectedValue,
@@ -102,15 +101,18 @@ class LayerToggler extends Component {
             >
               {
                 layers.map(layer => (
-                  <FormControlLabel
+                  <div className={classes.toggler}>
+                    <FormControlLabel
                       value={layer.id}
-                      control={<Radio classes={{root: classes.radio, checked: classes.checked}}/>}
+                      control={
+                        <Radio classes={{ root: classes.radio, checked: classes.checked }} />
+                      }
                       label={layer.label}
                       key={layer.id}
                       className={classes.listItem}
-                    >
-                    <MoreInfoIcon />
-                  </FormControlLabel>
+                    />
+                    { layer.label === 'Estimated HDI' && <MoreInfoIcon popupContent={popupContent} /> }
+                  </div>
                 ))
               }
             </RadioGroup>
@@ -135,6 +137,7 @@ LayerToggler.propTypes = {
   })).isRequired,
   selectLayer: PropTypes.func.isRequired,
   scaleTitle: PropTypes.string.isRequired,
+  popupContent: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => state;

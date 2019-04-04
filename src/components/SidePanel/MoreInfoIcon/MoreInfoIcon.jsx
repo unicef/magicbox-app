@@ -9,17 +9,20 @@ const styles = ({
   icon: {
     height: '16px',
     width: '16px',
-    marginLeft: '5px',
-    marginTop: '1px',
+    marginTop: '7px',
+    marginLeft: '-3px',
     zIndex: '10',
   },
   typography: {
-    height: '100px',
-    width: '180px',
+    height: '182px',
+    width: '352px',
     fontFamily: 'IBM Plex Sans',
     backgroundColor: '#000000',
     color: '#ffffff',
-    padding: '20px',
+    paddingTop: '20px',
+    paddingLeft: '26px',
+    fontSize: '15px',
+    lineHeight: 1.47,
   },
   paper: {
     borderRight: 'none',
@@ -44,7 +47,7 @@ class MoreInfoIcon extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, popupContent } = this.props;
     const { anchorEl } = this.state;
     const open = Boolean(anchorEl);
 
@@ -70,7 +73,9 @@ class MoreInfoIcon extends React.Component {
             horizontal: 'left',
           }}
         >
-          <Typography className={classes.typography}>The content of the Popover.</Typography>
+          <Typography className={classes.typography}>
+            {popupContent}
+          </Typography>
         </Popover>
       </div>
     );
@@ -79,6 +84,7 @@ class MoreInfoIcon extends React.Component {
 
 MoreInfoIcon.propTypes = {
   classes: PropTypes.shape({}).isRequired,
+  popupContent: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles)(MoreInfoIcon);
