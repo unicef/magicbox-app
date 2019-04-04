@@ -33,6 +33,7 @@ const styles = ({
     fontWeight: 600,
     letterSpacing: '1.4px',
     color: '#f8e71c',
+    textDecoration: 'none',
   },
 });
 
@@ -77,17 +78,17 @@ class MoreInfoIcon extends React.Component {
             horizontal: 'right',
           }}
           transformOrigin={{
-            vertical: 30,
+            vertical: 25,
             horizontal: -15,
           }}
         >
           <Typography className={classes.typography}>
             {popupContent.map((child) => {
               if (child.tag === 'a') {
-                return <a href={child.href} className={classes.link}>{child.content}</a>
+                return <a href={child.href} className={classes.link}>{child.content}</a>;
               }
-              return child.content
-            })};
+              return <p>{child.content}</p>;
+            })}
           </Typography>
         </Popover>
       </div>
