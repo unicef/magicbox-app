@@ -25,6 +25,15 @@ const styles = ({
     fontSize: '15px',
     lineHeight: 1.47,
   },
+  link: {
+    width: '96px',
+    height: '19px',
+    fontFamily: 'IBM Plex Mono',
+    fontSize: '15px',
+    fontWeight: 600,
+    letterSpacing: '1.4px',
+    color: '#f8e71c',
+  },
 });
 
 class MoreInfoIcon extends React.Component {
@@ -73,7 +82,12 @@ class MoreInfoIcon extends React.Component {
           }}
         >
           <Typography className={classes.typography}>
-            {popupContent}
+            {popupContent.map((child) => {
+              if (child.tag === 'a') {
+                return <a href={child.href} className={classes.link}>{child.content}</a>
+              }
+              return child.content
+            })};
           </Typography>
         </Popover>
       </div>
@@ -83,7 +97,7 @@ class MoreInfoIcon extends React.Component {
 
 MoreInfoIcon.propTypes = {
   classes: PropTypes.shape({}).isRequired,
-  popupContent: PropTypes.string.isRequired,
+  popupContent: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
 export default withStyles(styles)(MoreInfoIcon);

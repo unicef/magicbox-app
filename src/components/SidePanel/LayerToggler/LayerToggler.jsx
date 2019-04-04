@@ -137,7 +137,7 @@ LayerToggler.propTypes = {
   })).isRequired,
   selectLayer: PropTypes.func.isRequired,
   scaleTitle: PropTypes.string.isRequired,
-  popupContent: PropTypes.string.isRequired,
+  popupContent: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
 const mapStateToProps = state => state;
