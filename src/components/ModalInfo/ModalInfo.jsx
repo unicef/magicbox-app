@@ -13,7 +13,7 @@ const styles = ({
     fontFamily: 'IBM Plex Sans',
     fontSize: '22px',
   },
-  titleLink: {
+  link: {
     marginRight: '57px',
     fontFamily: 'IBM Plex Sans',
     fontSize: '18px',
@@ -41,9 +41,10 @@ const ModalInfo = ({ classes, content }) => (
     { content && content.content && content.content.map && content.content.map(c => (
       <span key={c.id}>
         { c.header && <p className={classes.header}>{c.header}</p> }
-        { c.titleLink && <p><a href={c.href} className={classes.titleLink}>{c.titleLink}</a></p> }
+        { c.titleLink && <p><a href={c.href} className={classes.link}>{c.titleLink}</a></p> }
         { c.title && <p className={classes.title}>{c.title}</p> }
         { c.content && <p className={classes.text}>{c.content}</p> }
+        { c.emailLink && <a href={c.href} className={classes.link}>{c.emailLink}</a>  }
         { c.contentGray && <p className={classes.textGray}>{c.contentGray}</p> }
       </span>
     ))
