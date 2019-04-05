@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import MoreInfoIcon from '../MoreInfoIcon/MoreInfoIcon';
+import Instructions from './Instructions_icon.svg';
 
 const styles = {
   legend: {
@@ -11,6 +11,10 @@ const styles = {
     backgroundColor: '#e3e3e3',
     fontColor: 'black',
   },
+  image: {
+    paddingTop: '30px',
+    paddingLeft: '96px',
+  },
   content: {
     marginTop: '22px',
     paddingLeft: '22px',
@@ -19,7 +23,7 @@ const styles = {
 
 const Legend = ({ classes, text }) => (
   <div className={classes.legend}>
-    <MoreInfoIcon style={{ marginLeft: '5px' }} />
+    <img src={Instructions} alt="Instructions for how to identify and select countries that have data" className={classes.image} />
     <div className={classes.content}>
       {text}
     </div>
