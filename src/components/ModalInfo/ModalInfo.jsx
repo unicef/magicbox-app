@@ -7,6 +7,7 @@ const styles = ({
     marginRight: '57px',
     fontFamily: 'IBM Plex Sans',
     fontSize: '31px',
+    lineHeight: '10px',
   },
   title: {
     marginRight: '57px',
@@ -44,7 +45,7 @@ const ModalInfo = ({ classes, content }) => (
         { c.titleLink && <p><a href={c.href} className={classes.link}>{c.titleLink}</a></p> }
         { c.title && <p className={classes.title}>{c.title}</p> }
         { c.content && <p className={classes.text}>{c.content}</p> }
-        { c.emailLink && <a href={c.href} className={classes.link}>{c.emailLink}</a>  }
+        { c.emailLink && <a href={c.href} className={classes.link}>{c.emailLink}</a> }
         { c.contentGray && <p className={classes.textGray}>{c.contentGray}</p> }
       </span>
     ))

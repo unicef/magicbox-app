@@ -11,6 +11,7 @@ export default createMuiTheme({
   },
   typography: {
     useNextVariants: true,
+    color: '#000000',
   },
   props: {
     MuiButtonBase: {

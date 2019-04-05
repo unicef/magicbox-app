@@ -23,6 +23,7 @@ const styles = theme => ({
     height: '100%',
     float: 'left',
     fontSize: '15px',
+    paddingTop: '20px',
   },
   dataInfoContent__content: {
     overflow: 'auto',
