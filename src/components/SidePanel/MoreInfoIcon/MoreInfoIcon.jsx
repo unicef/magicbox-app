@@ -83,7 +83,7 @@ class MoreInfoIcon extends React.Component {
           }}
         >
           <Typography className={classes.typography}>
-            {popupContent.map((child) => {
+            { popupContent && popupContent.map((child) => {
               if (child.tag === 'a') {
                 return <a href={child.href} className={classes.link}>{child.content}</a>;
               }
