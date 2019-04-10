@@ -9,6 +9,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { setVisibleLayers } from '../../../actions';
 import Scale from '../Scale/Scale';
+import MoreInfoIcon from '../MoreInfoIcon/MoreInfoIcon';
 
 const styles = theme => ({
   root: {
@@ -28,19 +29,23 @@ const styles = theme => ({
     fontWeight: 'bold',
     letterSpacing: '0.9px',
     color: '#000000',
-    marginTop: '0px',
+  },
+  label: {
+    display: 'flex',
+    flexDirection: 'row',
   },
   listItem: {
-    paddingLeft: '18px',
-    lineHeight: '2.33',
-    fontSize: '15px',
-    color: '#4a4a4a',
+    verticalAlign: 'middle',
+    paddingLeft: '15px',
+  },
+  toggler: {
+    display: 'flex',
+    flexDirection: 'row',
   },
   radio: {
     '&$checked': {
       color: '#2c2cff',
     },
-    padding: '8px',
   },
   checked: {},
 });
@@ -77,6 +82,7 @@ class LayerToggler extends Component {
       title,
       layers,
       scaleTitle,
+      popupContent,
     } = this.props;
     const {
       selectedValue,
@@ -95,12 +101,18 @@ class LayerToggler extends Component {
             >
               {
                 layers.map(layer => (
-                  <FormControlLabel
-                    value={layer.id}
-                    control={<Radio />}
-                    label={layer.label}
-                    key={layer.id}
-                  />
+                  <div className={classes.toggler}>
+                    <FormControlLabel
+                      value={layer.id}
+                      control={
+                        <Radio />
+                      }
+                      label={layer.label}
+                      key={layer.id}
+                      className={classes.listItem}
+                    />
+                    { layer.label === 'Estimated HDI' && <MoreInfoIcon popupContent={popupContent} /> }
+                  </div>
                 ))
               }
             </RadioGroup>
@@ -115,7 +127,6 @@ class LayerToggler extends Component {
   }
 }
 
-
 LayerToggler.propTypes = {
   classes: PropTypes.shape({}).isRequired,
   title: PropTypes.string.isRequired,
@@ -125,6 +136,7 @@ LayerToggler.propTypes = {
   })).isRequired,
   selectLayer: PropTypes.func.isRequired,
   scaleTitle: PropTypes.string.isRequired,
+  popupContent: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
 const mapStateToProps = state => state;

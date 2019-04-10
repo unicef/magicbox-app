@@ -32,11 +32,14 @@ const styles = {
   title: {
     paddingTop: '17px',
     paddingLeft: '22px',
+    paddingRight: '5px',
     fontFamily: 'IBM Plex Sans',
     fontSize: '13px',
     fontWeight: 'bold',
     letterSpacing: '0.9px',
     color: '#000000',
+    display: 'flex',
+    flexDirection: 'row',
   },
   scaleNumbers: {
     paddingLeft: '22px',
