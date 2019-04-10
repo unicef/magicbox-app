@@ -11,6 +11,7 @@ import { setVisibleLayers } from '../../../actions';
 import Scale from '../Scale/Scale';
 import MoreInfoIcon from '../MoreInfoIcon/MoreInfoIcon';
 
+
 const styles = theme => ({
   root: {
     backgroundColor: '#e3e3e3',
@@ -88,6 +89,7 @@ class LayerToggler extends Component {
       selectedValue,
     } = this.state;
 
+
     return (
       <div>
         <div className={classes.root}>
@@ -101,18 +103,22 @@ class LayerToggler extends Component {
             >
               {
                 layers.map(layer => (
-                  <div className={classes.toggler}>
-                    <FormControlLabel
-                      value={layer.id}
-                      control={
-                        <Radio />
-                      }
-                      label={layer.label}
-                      key={layer.id}
-                      className={classes.listItem}
-                    />
-                    { layer.label === 'Estimated HDI' && <MoreInfoIcon popupContent={popupContent} /> }
-                  </div>
+                  <FormControlLabel
+                    value={layer.id}
+                    control={
+                      <Radio classes={{ root: classes.radio, checked: classes.checked }} />
+                    }
+                    label={
+                      (
+                        <div className={classes.toggler}>
+                          { layer.label }
+                          { layer.label === 'Estimated HDI' && <MoreInfoIcon popupContent={popupContent} /> }
+                        </div>
+                      )
+                    }
+                    key={layer.id}
+                    className={classes.listItem}
+                  />
                 ))
               }
             </RadioGroup>

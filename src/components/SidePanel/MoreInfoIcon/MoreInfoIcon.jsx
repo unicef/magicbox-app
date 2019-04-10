@@ -9,8 +9,8 @@ const styles = ({
   icon: {
     height: '16px',
     width: '16px',
-    marginTop: '7px',
-    marginLeft: '-3px',
+    marginTop: '1px',
+    marginLeft: '3px',
     zIndex: '10',
   },
   typography: {
