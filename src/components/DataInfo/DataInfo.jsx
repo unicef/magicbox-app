@@ -116,17 +116,14 @@ class DataInfo extends Component {
             >
               <CloseIcon />
             </Fab>
-            <Fab
-              aria-label="E-mail"
-              className={classes.button}
-            >
-              <a
-                href="mailto:contact@magicbox.org"
-                style={{ color: 'inherit', display: 'contents' }}
+            <a href="mailto:contact@magicbox.org">
+              <Fab
+                aria-label="E-mail"
+                className={classes.button}
               >
                 <EmailIcon />
-              </a>
-            </Fab>
+              </Fab>
+            </a>
             <Fab
               aria-label="Share"
               className={classes.button}
