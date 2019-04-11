@@ -32,11 +32,14 @@ const styles = {
   title: {
     paddingTop: '17px',
     paddingLeft: '22px',
+    paddingRight: '5px',
     fontFamily: 'IBM Plex Sans',
     fontSize: '13px',
     fontWeight: 'bold',
     letterSpacing: '0.9px',
     color: '#000000',
+    display: 'flex',
+    flexDirection: 'row',
   },
   scaleNumbers: {
     paddingLeft: '22px',
@@ -47,11 +50,11 @@ const styles = {
     fontSize: '15px',
   },
   scaleText: {
-    paddingLeft: '30px',
+    paddingLeft: '20px',
     fontFamily: 'IBM Plex Sans',
     lineHeight: '3',
     color: '#000000',
-    fontSize: '13px',
+    fontSize: '11px',
   },
 };
 
@@ -81,7 +84,7 @@ Scale.defaultProps = {
   style: {},
   scaleType: 'Gradient',
   numericRange: ['0.1', '0.5', '0.9'],
-  divergentRange: ['Positive', 'No Deviation', 'Negative'],
+  divergentRange: ['Overestimate', 'No Deviation', 'Underestimate'],
 };
 
 Scale.propTypes = {

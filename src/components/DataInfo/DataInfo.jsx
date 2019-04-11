@@ -8,25 +8,27 @@ import CloseIcon from '@material-ui/icons/Close';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
+import ModalInfo from '../ModalInfo';
 
 const styles = theme => ({
-  dataInfo: {
-  },
   dataInfoContent: {
-    width: '60vw',
     height: '100%',
     backgroundColor: '#f1f1f1',
+    width: '842px',
+    paddingTop: '41px',
   },
   dataInfoContent__tabs: {
-    padding: theme.spacing.unit,
-    maxWidth: '30%',
+    paddingLeft: '46px',
+    width: '215px',
     height: '100%',
     float: 'left',
+    fontSize: '15px',
+    paddingTop: '20px',
   },
   dataInfoContent__content: {
-    padding: theme.spacing.unit,
     overflow: 'auto',
-    height: '100%',
+    width: '570px',
+    height: '90%',
   },
   closeExploreButton: {
     margin: theme.spacing.unit,
@@ -41,6 +43,18 @@ const styles = theme => ({
     right: 0,
     top: 0,
     zIndex: 1,
+  },
+  listItemNormal: {
+    '&:hover, &:focus': {
+      backgroundColor: 'rgba(0, 0, 0, 0)',
+      textDecoration: 'underline',
+      transform: 'scale(1.05) translateX(3%)',
+    },
+  },
+  listItemSelected: {
+    backgroundColor: 'rgba(0, 0, 0, 0) !important',
+    textDecoration: 'underline',
+    transform: 'scale(1.05) translateX(3%)',
   },
   paper: {
     overflowY: 'visible',
@@ -105,15 +119,22 @@ class DataInfo extends Component {
                   selected={i === selectedIndex}
                   onClick={event => this.handleClick(event, i)}
                   dense
-                  classes={{ dense: classes.listItem }}
+                  classes={{
+                    dense: classes.listItemNormal,
+                    selected: classes.listItemSelected,
+                  }}
                 >
                   <ListItemText primary={item.title} />
                 </ListItem>
               ))}
             </div>
             <div className={classes.dataInfoContent__content}>
-              <Typography>
-                {content.length ? content[selectedIndex].content : ''}
+              <Typography component="span">
+                {
+                  content.length
+                    ? <ModalInfo content={content[selectedIndex]} key={selectedIndex} />
+                    : 'Loading...'
+                }
               </Typography>
             </div>
           </div>
