@@ -10,6 +10,9 @@ import ShareIcon from '@material-ui/icons/Share';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
+import Modal from '@material-ui/core/Modal';
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
 import ModalInfo from '../ModalInfo';
 
 const styles = theme => ({
@@ -64,6 +67,15 @@ const styles = theme => ({
   paper: {
     overflowY: 'visible',
   },
+  modal: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    width: '300px',
+    padding: theme.spacing.unit * 4,
+    outline: 'none',
+    transform: 'translate(-50%, -50%)',
+  },
 });
 
 class DataInfo extends Component {
@@ -72,11 +84,16 @@ class DataInfo extends Component {
 
     this.state = {
       selectedIndex: 0,
+      shareModalOpen: false,
     };
   }
 
   handleClick = (event, index) => {
     this.setState({ selectedIndex: index });
+  };
+
+  toggleShareModal = () => {
+    this.setState(prevState => ({ shareModalOpen: !prevState.shareModalOpen }));
   };
 
   render() {
@@ -88,10 +105,27 @@ class DataInfo extends Component {
     } = this.props;
     const {
       selectedIndex,
+      shareModalOpen,
     } = this.state;
 
     return (
       <React.Fragment>
+        <Modal
+          aria-labelledby="Share"
+          aria-describedby="Share with your friends"
+          open={shareModalOpen}
+          onClose={this.toggleShareModal}
+        >
+          <Paper className={classes.modal}>
+            <Typography variant="subtitle1">
+              Share Link
+            </Typography>
+            <Typography variant="subtitle1" id="simple-modal-description">
+              Teste
+            </Typography>
+            <Button color="secondary">Copy Link</Button>
+          </Paper>
+        </Modal>
         <Fab
           color="secondary"
           aria-label="Explore"
@@ -127,6 +161,7 @@ class DataInfo extends Component {
             <Fab
               aria-label="Share"
               className={classes.button}
+              onClick={this.toggleShareModal}
             >
               <ShareIcon />
             </Fab>
