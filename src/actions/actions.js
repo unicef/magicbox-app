@@ -4,7 +4,7 @@ import {
   updateVisData,
   layerConfigChange,
 } from 'kepler.gl/actions';
-// import Processors from 'kepler.gl/processors';
+import Processors from 'kepler.gl/processors';
 import { push } from 'connected-react-router';
 import ActionTypes from '../constants/action-types';
 
@@ -54,62 +54,21 @@ const loadData = (dataset = null, path = null) => ((dispatch, getState) => {
 
   // fetch dataset from url
   const { app: { data } } = getState();
-  const url = `${data.path}${data.datasetName}.json`;
+  const url = `${data.path}${data.datasetName}`;
 
   // eslint-disable-next-line
   console.log('Getting data from:', url);
 
   fetch('http://localhost:5000/api/views')
     .then(response => response.json())
-    .then(json => console.log(json))
-    //   const totalSizeString = response.headers.get('X-Original-Content-Length')
-    // || response.headers.get('Content-Length');
-    //   // get stream reader
-    //   const reader = response.body.getReader();
-    //   const totalSize = parseFloat(totalSizeString, 10) || 0;
-    //   let totalRead = 0;
-    //
-    //   return new ReadableStream({
-    //     start(controller) {
-    //       // define function to pump data from stream
-    //       const pump = () => reader.read().then(({ done, value }) => {
-    //         if (done) {
-    //           controller.close();
-    //           return;
-    //         }
-    //         // add size of byte length to total of bytes read
-    //         totalRead += value.byteLength;
-    //         // dispatch fetching data with percentage read
-    //         if (totalSize !== 0) {
-    //           dispatch(fetchingData(100 * totalRead / totalSize));
-    //         }
-    //         // Enqueue value
-    //         controller.enqueue(value);
-    //         // keep pumping
-    //         pump();
-    //       });
-    //
-    //       return pump();
-    //     },
-    //   });
-    // })
-    // // transform stream into a response
-    // .then(stream => new Response(stream))
-    // // parse to json
-    // .then(response => response.json())
-    // // set fetching data with 1 -> 100%
-    // .then(responseJson => dispatch(fetchedData(responseJson)))
-
-    // set error
-    .catch(err => dispatch(errorFetchingData(err)));
+    .then(json => json[0].data_endpoints.forEach(endpoint => fetch(`http://localhost:5000/api/${endpoint}`)
+        .then(response => response.json())
+        .then(newData =>
+            newData && newData.type? console.log(Processors.processGeojson(newData)) : console.log(Processors.processCsvData(newData)))));
 });
-
 // Load data to map
-const loadDataToMap = (dataset = null, path = null) => ((dispatch, getState) => (
+const loadDataToMap = (dataset = null, path = null) => (dispatch => (
   dispatch(loadData(dataset, path))
-    .then(() => getState().app.data.dataset)
-    .then(console.log(getState().app.data.dataset))
-    // .then(data => dispatch(addDataToMap(data)))
 ));
 
 // On Zoom level change
