@@ -1,5 +1,6 @@
 import { createAction } from 'redux-actions';
 import {
+  addDataToMap,
   onLayerClick,
   updateVisData,
   layerConfigChange,
@@ -7,6 +8,7 @@ import {
 import Processors from 'kepler.gl/processors';
 import { push } from 'connected-react-router';
 import ActionTypes from '../constants/action-types';
+import KeplerGlSchema from 'kepler.gl/schemas';
 
 const [
   noop,
@@ -55,17 +57,53 @@ const loadData = (dataset = null, path = null) => ((dispatch, getState) => {
   // fetch dataset from url
   const { app: { data } } = getState();
   const url = `${data.path}${data.datasetName}`;
-
-  // eslint-disable-next-line
-  console.log('Getting data from:', url);
+  let dataConfig;
 
   fetch('http://localhost:5000/api/views')
     .then(response => response.json())
     .then(json => json[0].data_endpoints.forEach(endpoint => fetch(`http://localhost:5000/api/${endpoint}`)
-        .then(response => response.json())
-        .then(newData =>
-            newData && newData.type? console.log(Processors.processGeojson(newData)) : console.log(Processors.processCsvData(newData)))));
-});
+      .then(response => response.json())
+      // eslint-disable-next-line
+      .then(function(newData) {
+        if (newData && newData.appConfig) {
+          dataConfig = newData
+        } else if (newData && newData.type) {
+          dispatch(
+            addDataToMap({
+              datasets: [
+                {
+                  info: {
+                    label: 'CSV Data',
+                    id: Math.random().toString(36).substring(7)
+                  },
+                  data: Processors.processGeojson(newData)
+                }
+              ]
+            })
+          );
+        } else {
+          dispatch(
+            addDataToMap({
+              datasets: [
+                {
+                  info: {
+                    label: 'CSV Data',
+                    id: Math.random().toString(36).substring(7)
+                  },
+                  data: Processors.processCsvData(newData)
+                }
+              ]
+            })
+          );
+        }})));
+
+  // const { keplerGl } = getState();
+  // return {
+  //         datasets: KeplerGlSchema.getDatasetToSave(keplerGl),
+  //         config: KeplerGlSchema.getConfigToSave(keplerGl),
+  //         info: { app: 'kepler.gl', created_at: new Date() }
+  //       };
+  });
 // Load data to map
 const loadDataToMap = (dataset = null, path = null) => (dispatch => (
   dispatch(loadData(dataset, path))
