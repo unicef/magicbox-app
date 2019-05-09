@@ -6,9 +6,9 @@ import {
   layerConfigChange,
 } from 'kepler.gl/actions';
 import Processors from 'kepler.gl/processors';
+import KeplerGlSchema from 'kepler.gl/schemas';
 import { push } from 'connected-react-router';
 import ActionTypes from '../constants/action-types';
-import KeplerGlSchema from 'kepler.gl/schemas';
 
 const [
   noop,
@@ -56,57 +56,28 @@ const loadData = (dataset = null, path = null) => ((dispatch, getState) => {
 
   // fetch dataset from url
   const { app: { data } } = getState();
-  const url = `${data.path}${data.datasetName}`;
-  let dataConfig;
-
-  fetch('http://localhost:5000/api/views')
+  let id;
+  let url;
+  if (data.path === "/") {
+    url = new URL(`http://localhost:5000/api/files/`);
+  } else {
+    let id = data.path.split("/")[2]
+    url = new URL(`http://localhost:5000/api/files/c/${id}`);
+  }
+  console.log(url)
+  return fetch(url)
     .then(response => response.json())
-    .then(json => json[0].data_endpoints.forEach(endpoint => fetch(`http://localhost:5000/api/${endpoint}`)
-      .then(response => response.json())
-      // eslint-disable-next-line
-      .then(function(newData) {
-        if (newData && newData.appConfig) {
-          dataConfig = newData
-        } else if (newData && newData.type) {
-          dispatch(
-            addDataToMap({
-              datasets: [
-                {
-                  info: {
-                    label: 'CSV Data',
-                    id: Math.random().toString(36).substring(7)
-                  },
-                  data: Processors.processGeojson(newData)
-                }
-              ]
-            })
-          );
-        } else {
-          dispatch(
-            addDataToMap({
-              datasets: [
-                {
-                  info: {
-                    label: 'CSV Data',
-                    id: Math.random().toString(36).substring(7)
-                  },
-                  data: Processors.processCsvData(newData)
-                }
-              ]
-            })
-          );
-        }})));
+    .then(responseJson => dispatch(fetchedData(responseJson[0])))
+    // set error
+    .catch(err => dispatch(errorFetchingData(err)));
+});
 
-  // const { keplerGl } = getState();
-  // return {
-  //         datasets: KeplerGlSchema.getDatasetToSave(keplerGl),
-  //         config: KeplerGlSchema.getConfigToSave(keplerGl),
-  //         info: { app: 'kepler.gl', created_at: new Date() }
-  //       };
-  });
 // Load data to map
-const loadDataToMap = (dataset = null, path = null) => (dispatch => (
+const loadDataToMap = (dataset = null, path = null) => ((dispatch, getState) => (
   dispatch(loadData(dataset, path))
+    .then(() => getState().app.data.dataset)
+    .then(Processors.processKeplerglJSON)
+    .then(data => dispatch(addDataToMap(data)))
 ));
 
 // On Zoom level change
