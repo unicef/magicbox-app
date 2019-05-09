@@ -6,7 +6,6 @@ import {
   layerConfigChange,
 } from 'kepler.gl/actions';
 import Processors from 'kepler.gl/processors';
-import KeplerGlSchema from 'kepler.gl/schemas';
 import { push } from 'connected-react-router';
 import ActionTypes from '../constants/action-types';
 
@@ -56,15 +55,13 @@ const loadData = (dataset = null, path = null) => ((dispatch, getState) => {
 
   // fetch dataset from url
   const { app: { data } } = getState();
-  let id;
   let url;
-  if (data.path === "/") {
-    url = new URL(`http://localhost:5000/api/files/`);
+  if (data.path === '/') {
+    url = new URL('http://localhost:5000/api/files/');
   } else {
-    let id = data.path.split("/")[2]
+    const id = data.path.split('/')[2];
     url = new URL(`http://localhost:5000/api/files/c/${id}`);
   }
-  console.log(url)
   return fetch(url)
     .then(response => response.json())
     .then(responseJson => dispatch(fetchedData(responseJson[0])))
