@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 import ActionTypes from '../constants/action-types';
 
-const DEFAULT_DATASET_NAME = 'shape';
+const DEFAULT_DATASET_NAME = '';
 const DEFAULT_PATH = '/';
 const DEFAULT_TITLE = 'POVERTY MAP';
 

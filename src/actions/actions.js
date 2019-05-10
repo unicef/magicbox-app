@@ -55,16 +55,11 @@ const loadData = (dataset = null, path = null) => ((dispatch, getState) => {
 
   // fetch dataset from url
   const { app: { data } } = getState();
-  let url;
-  if (data.path === '/') {
-    url = new URL('http://localhost:5000/api/files/');
-  } else {
-    const id = data.path.split('/')[2];
-    url = new URL(`http://localhost:5000/api/files/c/${id}`);
-  }
+
+  const url = `http://localhost:5000/api/files${data.path}${data.datasetName}`;
   return fetch(url)
     .then(response => response.json())
-    .then(responseJson => dispatch(fetchedData(responseJson[0])))
+    .then(responseJson => dispatch(fetchedData(responseJson)))
     // set error
     .catch(err => dispatch(errorFetchingData(err)));
 });
