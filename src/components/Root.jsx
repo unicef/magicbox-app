@@ -13,6 +13,7 @@ const Root = ({ store, history, theme }) => (
       <MuiThemeProvider theme={theme}>
         <Switch>
           <Route path="/c/:country/:dataset?" component={ConnectedApp} />
+          <Route path="/u/:user" component={ConnectedApp} />
           <Route path="/:dataset" component={ConnectedApp} />
           <Route path="/" component={ConnectedApp} />
         </Switch>
