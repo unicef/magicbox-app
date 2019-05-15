@@ -20,7 +20,6 @@ export class App extends Component {
       history,
       match: { params: { dataset } },
     } = this.props;
-    console.log('props', this.props);
     // Enable new data to be loaded when URL changes
     history.listen(loc => onLoadMap(dataset, loc.pathname));
     // Add mouse wheel event to control dataset accordingly
