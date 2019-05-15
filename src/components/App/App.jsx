@@ -36,7 +36,7 @@ export class App extends Component {
       location: { search, pathname },
     } = this.props;
     // Load data to map
-    onLoadMap(dataset, `${pathname}/`);
+    onLoadMap(dataset, `${pathname}`);
 
     // Enable builder mode if needed
     // Once it is activated, it will not be deactivated
