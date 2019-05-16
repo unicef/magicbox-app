@@ -24,8 +24,10 @@ make
 
 ## Build and Deploy
 
-Build this application triggers several tasks that results in a docker image built on top of [nginx](https://hub.docker.com/_/nginx/) configured to serve the static files bundled inside the container which includes the main application (index.html and compiled javascript sources) and a set of pre-configured visualizations in the json format, all of them statically zipped and stored during the build process.  
-Statically zipping all the content can take a while, this is done in the build phase to prevent the nginx server to dynamically zip the content, optimizing the overral server performance and user experience, you can see more of this specific module [here](http://nginx.org/en/docs/http/ngx_http_gzip_static_module.html).  
+Build this application triggers several tasks that results in a docker image built on top of [nginx](https://hub.docker.com/_/nginx/) configured to serve the static files bundled inside the container which includes the main application (index.html and compiled javascript sources) and a set of pre-configured visualizations in the json format, all of them statically zipped and stored during the build process.
+
+Statically zipping all the content can take a while, this is done in the build phase to prevent the nginx server to dynamically zip the content, optimizing the overral server performance and user experience, you can see more of this specific module [here](http://nginx.org/en/docs/http/ngx_http_gzip_static_module.html).
+
 This application can be deployed as a docker container, using your preferred method to do that.
 
 ## TODO
@@ -36,11 +38,13 @@ This application can be deployed as a docker container, using your preferred met
 
 ## How does it work?
 
-This application uses [kepler.gl](https://github.com/keplergl/kepler.gl) as a library to display our visualizations. Each visualization is a json config that stores:
+This application uses [kepler.gl](https://github.com/keplergl/kepler.gl) as a library to display our visualizations. Each view is a json config that stores:
   - data for the visualization components
   - map configuration (as kepler stores it)
 
-Each visualization is a set of configurations for the global view and countries that display
+A theme is a set of visual components that has all the information to correctly display the data associated with a view. A visualization is a set of views that uses the same theme. Each visualization is associated with one global view and many country views. Each visualization is associated with a specific dataset/insight (school-mapping, poverty-radar).
+
+Each view configuration is a set of attributes stored in the same json file configurations for the global view and countries that display
 
 ## How routes are handled?
 
