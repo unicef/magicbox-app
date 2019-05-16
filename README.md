@@ -46,6 +46,7 @@ Each visualization is a set of configurations for the global view and countries 
 
 Paths in this application indicates the dataset and view level selected to be displayed. The following table show the patterns and the specific view to load.
 
+| Route              | View                                      |
 |:------------------:|:-----------------------------------------:|
 | /                  | default global view                       |
 | /:theme            | :theme in global view                     |
