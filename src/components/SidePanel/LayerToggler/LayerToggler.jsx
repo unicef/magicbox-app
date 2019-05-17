@@ -8,6 +8,9 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { setVisibleLayers } from '../../../actions';
+import Scale from '../Scale/Scale';
+import MoreInfoIcon from '../MoreInfoIcon/MoreInfoIcon';
+
 
 const styles = theme => ({
   root: {
@@ -15,17 +18,37 @@ const styles = theme => ({
     height: '238px',
     width: '291px',
     margin: `${theme.spacing.unit}px 0`,
+    marginTop: '0px',
     padding: theme.spacing.unit,
   },
   title: {
     paddingTop: '17px',
     paddingLeft: '22px',
+    paddingBottom: '11px',
     fontFamily: 'IBM Plex Sans',
     fontSize: '13px',
     fontWeight: 'bold',
     letterSpacing: '0.9px',
     color: '#000000',
   },
+  label: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  listItem: {
+    verticalAlign: 'middle',
+    paddingLeft: '15px',
+  },
+  toggler: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  radio: {
+    '&$checked': {
+      color: '#2c2cff',
+    },
+  },
+  checked: {},
 });
 
 class LayerToggler extends Component {
@@ -59,33 +82,52 @@ class LayerToggler extends Component {
       classes,
       title,
       layers,
+      scaleTitle,
+      popupContent,
     } = this.props;
     const {
       selectedValue,
     } = this.state;
 
+
     return (
-      <div className={classes.root}>
-        <FormControl component="fieldset">
-          <FormLabel component="legend" className={classes.title}>{title}</FormLabel>
-          <RadioGroup
-            aria-label={title}
-            name={`layer-selector-${title}`}
-            value={selectedValue}
-            onChange={this.handleChange}
-          >
-            {
-              layers.map(layer => (
-                <FormControlLabel
-                  value={layer.id}
-                  control={<Radio />}
-                  label={layer.label}
-                  key={layer.id}
-                />
-              ))
-            }
-          </RadioGroup>
-        </FormControl>
+      <div>
+        <div className={classes.root}>
+          <FormControl component="fieldset">
+            <FormLabel component="legend" className={classes.title}>{title}</FormLabel>
+            <RadioGroup
+              aria-label={title}
+              name={`layer-selector-${title}`}
+              value={selectedValue}
+              onChange={this.handleChange}
+            >
+              {
+                layers.map(layer => (
+                  <FormControlLabel
+                    value={layer.id}
+                    control={
+                      <Radio classes={{ root: classes.radio, checked: classes.checked }} />
+                    }
+                    label={
+                      (
+                        <div className={classes.toggler}>
+                          { layer.label }
+                          { layer.label === 'Estimated HDI' && <MoreInfoIcon popupContent={popupContent} /> }
+                        </div>
+                      )
+                    }
+                    key={layer.id}
+                    className={classes.listItem}
+                  />
+                ))
+              }
+            </RadioGroup>
+          </FormControl>
+        </div>
+        <Scale
+          title={scaleTitle}
+          scaleType={selectedValue}
+        />
       </div>
     );
   }
@@ -99,6 +141,8 @@ LayerToggler.propTypes = {
     label: PropTypes.string.isRequired,
   })).isRequired,
   selectLayer: PropTypes.func.isRequired,
+  scaleTitle: PropTypes.string.isRequired,
+  popupContent: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
 const mapStateToProps = state => state;
