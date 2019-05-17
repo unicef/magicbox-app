@@ -30,7 +30,8 @@ export const countrySelectUpdater = (state, action) => ({
   data: {
     ...state.data,
     country: action.payload ? action.payload.name : null,
-    path: action.payload ? `/c/${action.payload.url}/` : null,
+    path: action.payload ? `${action.payload.path}` : null,
+    datasetName: action.payload ? `${action.payload.datasetName}` : null,
   },
 });
 
@@ -46,7 +47,7 @@ export const fetchDataUpdater = (state, action) => ({
   data: {
     ...state.data,
     path: action.payload.path || DEFAULT_PATH,
-    datasetName: action.payload.dataset || DEFAULT_DATASET_NAME,
+    datasetName: action.payload.datasetName || DEFAULT_DATASET_NAME,
     dataset: null,
   },
 });
