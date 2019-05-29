@@ -31,7 +31,6 @@ const [
 
 // On country click action
 const onCountryClick = info => (dispatch, getState) => {
-  console.log('clicked a country');
   // dispatch usual kepler.gl action
   dispatch(onLayerClick(info));
   // if the user clicked in a object with properties
@@ -57,9 +56,43 @@ const loadData = (dataset = null, path = null) => ((dispatch, getState) => {
   const { app: { data } } = getState();
 
   const url = `${process.env.SERVER_URL}/api/views${data.datasetName}${data.path}`;
-  console.log(url);
   return fetch(url)
+    .then((response) => {
+      const totalSizeString = response.headers.get('X-Original-Content-Length') || response.headers.get('Content-Length');
+      // get stream reader
+      const reader = response.body.getReader();
+      const totalSize = parseFloat(totalSizeString, 10) || 0;
+      let totalRead = 0;
+
+      return new ReadableStream({
+        start(controller) {
+          // define function to pump data from stream
+          const pump = () => reader.read().then(({ done, value }) => {
+            if (done) {
+              controller.close();
+              return;
+            }
+            // add size of byte length to total of bytes read
+            totalRead += value.byteLength;
+            // dispatch fetching data with percentage read
+            if (totalSize !== 0) {
+              dispatch(fetchingData(100 * totalRead / totalSize));
+            }
+            // Enqueue value
+            controller.enqueue(value);
+            // keep pumping
+            pump();
+          });
+
+          return pump();
+        },
+      });
+    })
+    // transform stream into a response
+    .then(stream => new Response(stream))
+    // parse to json
     .then(response => response.json())
+    // set fetching data with 1 -> 100%
     .then(responseJson => dispatch(fetchedData(responseJson)))
     // set error
     .catch(err => dispatch(errorFetchingData(err)));
