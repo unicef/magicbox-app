@@ -56,7 +56,7 @@ const loadData = (dataset = null, path = null) => ((dispatch, getState) => {
   // fetch dataset from url
   const { app: { data } } = getState();
 
-  const url = `${process.env.SERVER_URL}/api/files${data.datasetName}${data.path}`;
+  const url = `${process.env.SERVER_URL}/api/views${data.datasetName}${data.path}`;
   console.log(url);
   return fetch(url)
     .then(response => response.json())
