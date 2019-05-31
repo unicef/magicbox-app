@@ -34,6 +34,7 @@ module.exports = {
       'process.env': {
         MAPBOX_TOKEN: JSON.stringify(process.env.REACT_APP_MAPBOX_TOKEN),
         PUBLIC_URL: JSON.stringify(''),
+        SERVER_URL: JSON.stringify(process.env.REACT_APP_SERVER_URL),
       },
     }),
     // Clean build directory

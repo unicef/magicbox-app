@@ -20,10 +20,8 @@ export class App extends Component {
       history,
       match: { params: { dataset } },
     } = this.props;
-
     // Enable new data to be loaded when URL changes
     history.listen(loc => onLoadMap(dataset, loc.pathname));
-
     // Add mouse wheel event to control dataset accordingly
     // with zoom level
     window.addEventListener('mousewheel', onZoomLevelChange);
@@ -33,11 +31,11 @@ export class App extends Component {
     const {
       onLoadMap,
       enableBuilderMode,
-      match: { params: { country, dataset } },
-      location: { search },
+      match: { params: { dataset } },
+      location: { search, pathname },
     } = this.props;
     // Load data to map
-    onLoadMap(dataset, country ? `/c/${country}/` : '/');
+    onLoadMap(dataset, `${pathname}`);
 
     // Enable builder mode if needed
     // Once it is activated, it will not be deactivated

@@ -33,15 +33,14 @@ const [
 const onCountryClick = info => (dispatch, getState) => {
   // dispatch usual kepler.gl action
   dispatch(onLayerClick(info));
-
   // if the user clicked in a object with properties
-  if (info && info.object && info.object.properties && info.object.properties.url) {
+  if (info && info.object && info.object.properties && info.object.properties.path) {
     // dispatch country select action
     dispatch(onCountrySelect(info.object.properties));
     // get current state
     const { app: { data } } = getState();
     // dispatch push to change the url
-    dispatch(push(data.path));
+    dispatch(push(`${data.datasetName}${data.path}`));
   }
 
   // return noop because kepler is expecting a action
@@ -55,12 +54,8 @@ const loadData = (dataset = null, path = null) => ((dispatch, getState) => {
 
   // fetch dataset from url
   const { app: { data } } = getState();
-  const url = `${data.path}${data.datasetName}.json`;
 
-  // eslint-disable-next-line
-  console.log('Getting data from:', url);
-
-  // Fetch data from url
+  const url = `${process.env.SERVER_URL}/api/views${data.datasetName}${data.path}`;
   return fetch(url)
     .then((response) => {
       const totalSizeString = response.headers.get('X-Original-Content-Length') || response.headers.get('Content-Length');

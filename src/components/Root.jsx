@@ -12,8 +12,9 @@ const Root = ({ store, history, theme }) => (
     <ConnectedRouter history={history}>
       <MuiThemeProvider theme={theme}>
         <Switch>
-          <Route path="/c/:country/:dataset?" component={ConnectedApp} />
+          <Route path="/:dataset/c/:country" component={ConnectedApp} />
           <Route path="/:dataset" component={ConnectedApp} />
+          <Route path="/u/:user" component={ConnectedApp} />
           <Route path="/" component={ConnectedApp} />
         </Switch>
       </MuiThemeProvider>
