@@ -2,20 +2,35 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
+const marginRightMobile = '1px';
+const marginLeftMobile = '15px';
+const marginRight = '57px';
+const fontSizeMobile = '12px';
 const styles = ({
   header: {
-    marginRight: '57px',
+    marginRight,
     fontFamily: 'IBM Plex Sans',
     fontSize: '31px',
     lineHeight: '10px',
+    ['@media (max-width:780px)']: { // eslint-disable-line no-useless-computed-key
+      lineHeight: '30px',
+      fontSize: '18px',
+      marginLeft: marginLeftMobile,
+      marginRight: marginRightMobile,
+    },
   },
   title: {
-    marginRight: '57px',
+    marginRight,
     fontFamily: 'IBM Plex Sans',
     fontSize: '22px',
+    ['@media (max-width:780px)']: { // eslint-disable-line no-useless-computed-key
+      marginLeft: marginLeftMobile,
+      marginRight: marginRightMobile,
+      fontSize: fontSizeMobile,
+    },
   },
   link: {
-    marginRight: '57px',
+    marginRight,
     fontFamily: 'IBM Plex Sans',
     fontSize: '18px',
     textDecoration: 'none',
@@ -23,17 +38,32 @@ const styles = ({
     '&:hover': {
       textDecoration: 'underline',
     },
+    ['@media (max-width:780px)']: { // eslint-disable-line no-useless-computed-key
+      fontSize: fontSizeMobile,
+      marginLeft: marginLeftMobile,
+      marginRight: marginRightMobile,
+    },
   },
   text: {
-    marginRight: '57px',
+    marginRight,
     fontFamily: 'IBM Plex Sans',
     fontSize: '18px',
+    ['@media (max-width:780px)']: { // eslint-disable-line no-useless-computed-key
+      fontSize: fontSizeMobile,
+      marginLeft: marginLeftMobile,
+      marginRight: marginRightMobile,
+    },
   },
   textGray: {
-    marginRight: '57px',
+    marginRight,
     fontFamily: 'IBM Plex Sans',
     fontSize: '18px',
     color: '#828282',
+    ['@media (max-width:780px)']: { // eslint-disable-line no-useless-computed-key
+      fontSize: fontSizeMobile,
+      marginLeft: marginLeftMobile,
+      marginRight: marginRightMobile,
+    },
   },
 });
 
