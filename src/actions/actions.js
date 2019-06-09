@@ -9,6 +9,7 @@ import Processors from 'kepler.gl/processors';
 import { push } from 'connected-react-router';
 import ActionTypes from '../constants/action-types';
 
+const deployedToSubPath = process.env.PUBLIC_URL.length > 0;
 const [
   noop,
   onCountrySelect,
@@ -40,7 +41,10 @@ const onCountryClick = info => (dispatch, getState) => {
     // get current state
     const { app: { data } } = getState();
     // dispatch push to change the url
-    dispatch(push(`${data.datasetName}${data.path}`));
+    if (deployedToSubPath) {
+      return dispatch(push(`${data.datasetName}${data.path}`));
+    }
+    return dispatch(push(`${data.path}`));
   }
 
   // return noop because kepler is expecting a action
@@ -55,7 +59,7 @@ const loadData = (dataset = null, path = null) => ((dispatch, getState) => {
   // fetch dataset from url
   const { app: { data } } = getState();
 
-  const url = `${process.env.SERVER_URL}/api/views${data.datasetName}${data.path}`;
+  const url = `${process.env.SERVER_URL}${process.env.API_PATH}/files${data.datasetName}${data.path}`;
   return fetch(url)
     .then((response) => {
       const totalSizeString = response.headers.get('X-Original-Content-Length') || response.headers.get('Content-Length');
