@@ -22,6 +22,9 @@ const styles = theme => ({
   },
   dataInfoContent__tabs: {
     width: '200px',
+    ['@media (min-width:781px)']: { // eslint-disable-line no-useless-computed-key
+      paddingLeft: '50px',
+    },
     ['@media (max-width:780px)']: { // eslint-disable-line no-useless-computed-key
       width: '65px',
       paddingRight: '0px',
