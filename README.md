@@ -154,3 +154,74 @@ The appConfig is intended to be flexible and completely customizable, so that th
       ]
     }
 
+
+
+Below are guides that indicate the location and style by which this data is rendered on the page.
+
+#### DataInfo: Visual Guide
+
+![](https://paper-attachments.dropbox.com/s_5A3FDBD0671FBF613C10969E2209848E0747D152D292BE58817B645C42ADFB8D_1560786306909_Screen+Shot+2019-06-17+at+11.33.41+AM.png)
+
+![](https://paper-attachments.dropbox.com/s_5A3FDBD0671FBF613C10969E2209848E0747D152D292BE58817B645C42ADFB8D_1560786302350_Screen+Shot+2019-06-17+at+11.41.19+AM.png)
+
+
+##### SidePanel: Visual Guide
+
+![](https://paper-attachments.dropbox.com/s_5A3FDBD0671FBF613C10969E2209848E0747D152D292BE58817B645C42ADFB8D_1560787840310_Screen+Shot+2019-06-17+at+12.07.49+PM.png)
+
+![](https://paper-attachments.dropbox.com/s_5A3FDBD0671FBF613C10969E2209848E0747D152D292BE58817B645C42ADFB8D_1560787435772_Screen+Shot+2019-06-17+at+11.55.00+AM.png)
+
+
+### Config, State, and Reducers
+
+Below is the initial app state for the HDI/poverty version of this map. This can be fully customized, with keys/values added to created to support new React components. 
+
+
+    // reducers.js 
+    
+    const DEFAULT_DATASET_NAME = '';
+    const DEFAULT_PATH = '/';
+    const DEFAULT_TITLE = 'POVERTY MAP';
+    
+    export const INITIAL_APP_STATE = {
+      title: DEFAULT_TITLE,
+      dataInfo: [],
+      sidePanel: [],
+      ui: {
+        sidePanelOpen: true,
+        dataInfoOpen: false,
+        isLoading: false,
+        loading: 1,
+        error: null,
+      },
+      data: {
+        country: null,
+        path: DEFAULT_PATH,
+        datasetName: DEFAULT_DATASET_NAME,
+        dataset: null,
+      },
+    };
+
+The main content of the dataInfo and sidePanel are managed with those keys in the state component, and their visibility is controlled in the ui layer of the state. 
+
+
+### How are routes handled?
+
+Routes in this application indicates the dataset and view level selected to be displayed and is consistent across the stack with the magicbox-app-backend repository. 
+
+On the front end, the value of these routes is constructed in the reducer with the state values data.datasetName and data.path. We map the values to the routing convention so that the datasetName is the name of the theme (i.e. ‘/poverty-radar’ or ‘/school-mapping’) and the path to be a more specific view within the theme, (i.e. ‘/c/nepal’). The following table shows the patterns and the specific view to load.
+
+| Route              | View                             | Example State Value (React App)                          |
+| ------------------ | -------------------------------- | -------------------------------------------------------- |
+| /                  | default global view              | path: DEFAULT_PATH,<br>datasetName: DEFAULT_DATASET_NAME |
+| /:theme            | :theme in global view            | datasetName:  ‘poverty-radar’                            |
+| /:theme/c/:country | :country level with given :theme | path: ‘/c/nepal’,<br>datasetName: ‘poverty-radar’        |
+
+The route can be constructed with any combination or absence of these two parameters, allowing flexibility to construct paths for a variety of use cases without causing errors. In particular, we imagine a future use case where there is a path but no theme, such as if a user creates their own map (route: ‘/u/:username’, path: ‘/u/mmaki’).
+
+
+### Component Structure/Relationships
+
+For a comprehensive understanding of component structure, please refer to [this component map](https://www.draw.io/#G1zLmMAYgRLVnk1tjhBi29SYJWcXcAtd9B). 
+
+
