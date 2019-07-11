@@ -15,11 +15,20 @@ const styles = theme => ({
     height: '100%',
     backgroundColor: '#f1f1f1',
     width: '842px',
+    ['@media (max-width:780px)']: { // eslint-disable-line no-useless-computed-key
+      width: '260px',
+    },
     paddingTop: '41px',
   },
   dataInfoContent__tabs: {
-    paddingLeft: '46px',
-    width: '215px',
+    width: '200px',
+    ['@media (min-width:781px)']: { // eslint-disable-line no-useless-computed-key
+      paddingLeft: '50px',
+    },
+    ['@media (max-width:780px)']: { // eslint-disable-line no-useless-computed-key
+      width: '65px',
+      paddingRight: '0px',
+    },
     height: '100%',
     float: 'left',
     fontSize: '15px',
@@ -28,6 +37,9 @@ const styles = theme => ({
   dataInfoContent__content: {
     overflow: 'auto',
     width: '570px',
+    ['@media (max-width:780px)']: { // eslint-disable-line no-useless-computed-key
+      width: '195px',
+    },
     height: '90%',
   },
   closeExploreButton: {
@@ -81,6 +93,7 @@ class DataInfo extends Component {
       toggleAction,
       content,
     } = this.props;
+
     const {
       selectedIndex,
     } = this.state;
