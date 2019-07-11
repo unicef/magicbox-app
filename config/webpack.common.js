@@ -33,8 +33,9 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         MAPBOX_TOKEN: JSON.stringify(process.env.REACT_APP_MAPBOX_TOKEN),
-        PUBLIC_URL: JSON.stringify(''),
+        PUBLIC_URL: JSON.stringify(process.env.REACT_APP_PUBLIC_URL),
         SERVER_URL: JSON.stringify(process.env.REACT_APP_SERVER_URL),
+        API_PATH: JSON.stringify(process.env.REACT_APP_API_PATH),
       },
     }),
     // Clean build directory
