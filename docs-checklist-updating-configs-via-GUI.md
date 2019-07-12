@@ -168,3 +168,106 @@ Below is a snippet of the portion of the kepler configuration (which you have ju
                        "#bababa"
                        ],
     
+    
+
+### Updating the global map
+1. The global map has both visual and interactive elements that indicate which countries have information about HDI. 
+    - Red outline of countries where HDI estimations are available 
+    - Greyed out countries/areas where no reported HDI is available at the national level
+    - countries with HDI estimates are clickable, and click leads to a zoom in of that country, whereas the map does not change when a country without subnational data is clicked
+2. Update the global_shp.json. This file is the foundation for the global map and a copy of the current version is in the public folder. The properties of the geojson are structured as follows:
+
+ 
+
+    // to update a country with a national HDI index and estimated HDI, i.e. adding a new country to the visualization (most likely use case)
+    "properties":
+      { "name":"Colombia",
+        "nationalHdiIndex":0.739,
+        "hdi":"estimated",
+        "url":"colombia" // you *MUST* add this for the routing to work on click
+                        // and, you *MUST* replace any spaces with "-" i.e. "costa-rica"
+    },
+    
+    // to update a country with a national HDI index but no estimate
+    "properties":
+      { "name":"Afghanistan",
+        "nationalHdiIndex":0.491,
+        "hdi":"reported only"
+      },
+    
+    // for a country without a reported national HDI index
+    "properties":
+      { "name":"Somaliland",
+        "nationalHdiIndex":null,
+        "hdi":"none"
+    }
+
+
+3. To create the global view, you will have to add the data 3 times in the kepler.gl interface, not just create 3 layers. This is because a feature/bug of kepler is the “filter” function (used to create the greyed out countries as well as the outlines) works on an entire data set, not just on a layer. 
+
+
+4. Create first layer - global, colored view of national HDI index
+    - Use a 10 step gradient for the fill, and turn off stroke (outline)
+![](https://paper-attachments.dropbox.com/s_0D3260D1F77F98BFD246AAC8E61D328FA5FA54C9F631C1E217ECB2C208CC7952_1560974074591_Screen+Shot+2019-06-19+at+3.40.44+PM.png)
+
+5. Create second layer - no reported national HDI index
+    - Toggle off the view of the current map, using the “eye” icon (this just makes it easier to track what you’re doing, and isn’t strictly necessary)
+    - Click “Add Data” again, and drop the same global_shp.json into kepler.gl
+    - Navigate to the filter tab (it looks similar to the Excel filter icon or a funnel)
+    - Filter this second dataset to only show nationalHdiIndex values in the range 0 - 0 (which will show only null values, countries with no reported national HDI)
+![](https://paper-attachments.dropbox.com/s_0D3260D1F77F98BFD246AAC8E61D328FA5FA54C9F631C1E217ECB2C208CC7952_1560974724976_Screen+Shot+2019-06-19+at+3.41.38+PM.png)
+
+    - Update the fill to be grey, and for no outline
+![](https://paper-attachments.dropbox.com/s_0D3260D1F77F98BFD246AAC8E61D328FA5FA54C9F631C1E217ECB2C208CC7952_1560974887676_Screen+Shot+2019-06-19+at+3.42.05+PM.png)
+
+6. Create the outline layer
+    - Again, toggle off the view of the current map using the “eye” icon
+    - Click “Add Data” again, and drop the same global_shp.json into kepler.gl
+    - Filter the third data set using the “url” which is a parameter used for countries that have an estimated HDI view. The filter will include only those selected countries with that parameter
+    - Then, turn off the fill, and use a 0.5 width red stroke to outline these countries.
+![](https://paper-attachments.dropbox.com/s_0D3260D1F77F98BFD246AAC8E61D328FA5FA54C9F631C1E217ECB2C208CC7952_1560976272336_Screen+Shot+2019-06-19+at+3.43.17+PM.png)
+
+![](https://paper-attachments.dropbox.com/s_0D3260D1F77F98BFD246AAC8E61D328FA5FA54C9F631C1E217ECB2C208CC7952_1560976520852_Screen+Shot+2019-06-19+at+4.33.57+PM.png)
+
+
+
+7. As with the country level, test your map. You can use the “eye” icon to hide or view layers. View each layer separately. Make sure everything looks the way you are expecting. Ensure that the layers are in the correct order. The global colored map should be on the bottom. On top of this should be the grey and red layers. This will ensure that all of these indicators are visible to the user. 
+![](https://paper-attachments.dropbox.com/s_0D3260D1F77F98BFD246AAC8E61D328FA5FA54C9F631C1E217ECB2C208CC7952_1560976615655_Screen+Shot+2019-06-19+at+4.35.48+PM.png)
+
+
+
+
+8. Again, just like with the country level, export the map in a json format once you are finished. On the kepler.gl side panel: 
+    Share > Export Map > json > Export. 
+
+Additional support for creating kepler.gl maps can be found in the github documentation. 
+
+
+#### Create the view configuration to be stored in MongoDB
+
+After the kepler configs have been updated, the complete view configurations, which are the documents stored in mongoDB that contain all information for the map and the rest of the view, must also be updated. 
+
+For an extensive explanation of the architecture, you can refer to the magicbox-app documentation on github. 
+
+For a series of the most basic steps of what to do, with only a short summary of context, please see below. 
+
+#### Basic Application structure
+Each page is composed using a “view”, a json config that stores:
+
+- data for the visualization components (“appConfig”)
+- map configuration (as generated by kepler; “mapConfig”)
+
+A theme is a set of visual components that has all the information to correctly display the data associated with a view. A visualization is a set of views that uses the same theme. Each visualization is associated with one global view and many country views. Each visualization is associated with a specific dataset/insight (school-mapping, poverty-radar).
+Each view configuration is a set of attributes stored in the same json file configurations for the global view and countries that display. This json file contains two subsections, the “mapConfig” and the “appConfig”.
+
+#### Config format (aka how your file should look) 
+
+
+    var newConfig = { 
+      url: "/:datasetName/c/:country", // follow the routing convention to create a url,   if making a completely new config for a country, not just updating the global. There  should not be a trailing slash at the end of the url
+      mapConfig: // insert customized kepler config here
+      appConfig: // insert app file here. It is currently consistent for all countries, although there are some differences between the global and country level views in relation to the side bar 
+    }
+
+Create a variable “newConfig” with the above structure. You may want to use the terminal and save to a file, as the contents will be very large and may crash a text editor.  Add the customized kepler.gl config to “mapConfig” as the value, and add the appropriate appConfig. (Note: The appConfig will not have to be updated for the global view unless you make additional customizations.)
+    
