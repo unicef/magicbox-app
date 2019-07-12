@@ -178,29 +178,7 @@ Below is a snippet of the portion of the kepler configuration (which you have ju
 2. Update the global_shp.json. This file is the foundation for the global map and a copy of the current version is in the public folder. The properties of the geojson are structured as follows:
 
  
-
-    // to update a country with a national HDI index and estimated HDI, i.e. adding a new country to the visualization (most likely use case)
-    "properties":
-      { "name":"Colombia",
-        "nationalHdiIndex":0.739,
-        "hdi":"estimated",
-        "url":"colombia" // you *MUST* add this for the routing to work on click
-                        // and, you *MUST* replace any spaces with "-" i.e. "costa-rica"
-    },
-    
-    // to update a country with a national HDI index but no estimate
-    "properties":
-      { "name":"Afghanistan",
-        "nationalHdiIndex":0.491,
-        "hdi":"reported only"
-      },
-    
-    // for a country without a reported national HDI index
-    "properties":
-      { "name":"Somaliland",
-        "nationalHdiIndex":null,
-        "hdi":"none"
-    }
+![](https://paper-attachments.dropbox.com/s_0D3260D1F77F98BFD246AAC8E61D328FA5FA54C9F631C1E217ECB2C208CC7952_1562957116120_Screen+Shot+2019-07-12+at+2.44.59+PM.png)
 
 
 3. To create the global view, you will have to add the data 3 times in the kepler.gl interface, not just create 3 layers. This is because a feature/bug of kepler is the “filter” function (used to create the greyed out countries as well as the outlines) works on an entire data set, not just on a layer. 
@@ -271,3 +249,60 @@ Each view configuration is a set of attributes stored in the same json file conf
 
 Create a variable “newConfig” with the above structure. You may want to use the terminal and save to a file, as the contents will be very large and may crash a text editor.  Add the customized kepler.gl config to “mapConfig” as the value, and add the appropriate appConfig. (Note: The appConfig will not have to be updated for the global view unless you make additional customizations.)
     
+### Adding to MongoDB using a database interface
+To update the MongoDB instance, we will use Robo 3T (formerly known as robomongo), an open-source GUI for MongoDB. 
+
+#### To add a new country to MongoDB
+
+1. Once you are connected using Robo 3T, open your config file that you saved.
+2. To the end of the file, add the code to insert a document: 
+    db.getCollection('config').insertOne(newConfig);
+3. Execute the file using the green triangle/play icon. When the file executes, it will return a message to tell you whether or not the insert was successful.
+![](https://paper-attachments.dropbox.com/s_0D3260D1F77F98BFD246AAC8E61D328FA5FA54C9F631C1E217ECB2C208CC7952_1561062024692_Screen+Shot+2019-06-20+at+4.17.48+PM.png)
+
+
+#### To update the current global map in MongoDB
+
+1. Using the same steps as above, ensure you are connected to the database, and open the new global config file. 
+2. To the end of the file, add the code to update a document: 
+    var query = {url: '/povertyradar'};
+    var newData = {
+            $set: {
+                mapConfig: newConfig.mapConfig,
+                appConfig: newConfig.appConfig
+            }
+        };
+        db.collection('config').updateOne(query, newData, function(err, result) {
+            if (err) throw err;
+            res.send(result);
+        });
+
+
+
+Troubleshooting errors
+
+One of the most common errors that you may encounter is when you navigate to a new country that you have added, the map simply doesn’t load. You may see something like this: 
+
+![](https://paper-attachments.dropbox.com/s_0D3260D1F77F98BFD246AAC8E61D328FA5FA54C9F631C1E217ECB2C208CC7952_1561126045388_Screen+Shot+2019-06-21+at+10.07.04+AM.png)
+
+
+To check the error, use Chrome. Right click on the map (you will need to hover somewhere where you see the arrow mouse, not the hand, such as the side panel) and navigate to inspect. Then, navigate to the console. 
+
+If you see this error “Cannot read property ‘datasets’ of null”, then the fetch from the database is not returning anything. Do other countries work? If so, it’s not an issue with MongoDB being down entirely. Either the document wasn’t successfully added to the database, or there is an error or typo with the urls, which is causing a mismatch that the code can’t find.
+
+![](https://paper-attachments.dropbox.com/s_0D3260D1F77F98BFD246AAC8E61D328FA5FA54C9F631C1E217ECB2C208CC7952_1561126211861_Screen+Shot+2019-06-21+at+10.03.51+AM.png)
+
+
+You can use Robo 3T to verify the url and ensure that the document has been successfully added to the database: 
+
+Document found in database: 
+(Note: Ensure URL is the same as the URL in the project. There should not be a trailing slash.)
+
+![](https://paper-attachments.dropbox.com/s_0D3260D1F77F98BFD246AAC8E61D328FA5FA54C9F631C1E217ECB2C208CC7952_1561126788906_Screen+Shot+2019-06-21+at+10.14.12+AM.png)
+
+
+Document found in database:
+
+![](https://paper-attachments.dropbox.com/s_0D3260D1F77F98BFD246AAC8E61D328FA5FA54C9F631C1E217ECB2C208CC7952_1561126876366_Screen+Shot+2019-06-21+at+10.20.22+AM.png)
+
+
